@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F097B4727AA6F1F00E4D791 /* RegistrForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4627AA6F1F00E4D791 /* RegistrForm.swift */; };
+		8F097B4927AA6F2C00E4D791 /* RegistrResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4827AA6F2C00E4D791 /* RegistrResponse.swift */; };
+		8F097B4C27AA702800E4D791 /* RegistrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4B27AA702800E4D791 /* RegistrService.swift */; };
+		8F097B4E27AADB3000E4D791 /* RegistrConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4D27AADB3000E4D791 /* RegistrConfigurator.swift */; };
+		8F097B5027AADC1800E4D791 /* RegistrRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4F27AADC1800E4D791 /* RegistrRouter.swift */; };
+		8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */; };
+		8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91C27A9C23D004B18DE /* Endpoint.swift */; };
+		8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91E27A9C2A6004B18DE /* Networker.swift */; };
+		8F5AB92627A9C6B7004B18DE /* Endpoint+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */; };
+		8F5AB92827A9C769004B18DE /* Endpoint+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92727A9C769004B18DE /* Endpoint+User.swift */; };
 		8FD81F30277D1E040078AB1A /* RumbaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F2F277D1E040078AB1A /* RumbaApp.swift */; };
-		8FD81F32277D1E040078AB1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F31277D1E040078AB1A /* ContentView.swift */; };
+		8FD81F32277D1E040078AB1A /* RegistrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F31277D1E040078AB1A /* RegistrView.swift */; };
 		8FD81F34277D1E060078AB1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD81F33277D1E060078AB1A /* Assets.xcassets */; };
 		8FD81F37277D1E060078AB1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD81F36277D1E060078AB1A /* Preview Assets.xcassets */; };
 		8FD81F41277D1E060078AB1A /* RumbaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F40277D1E060078AB1A /* RumbaTests.swift */; };
@@ -34,9 +44,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F097B4627AA6F1F00E4D791 /* RegistrForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrForm.swift; sourceTree = "<group>"; };
+		8F097B4827AA6F2C00E4D791 /* RegistrResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrResponse.swift; sourceTree = "<group>"; };
+		8F097B4B27AA702800E4D791 /* RegistrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrService.swift; sourceTree = "<group>"; };
+		8F097B4D27AADB3000E4D791 /* RegistrConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrConfigurator.swift; sourceTree = "<group>"; };
+		8F097B4F27AADC1800E4D791 /* RegistrRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrRouter.swift; sourceTree = "<group>"; };
+		8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrViewModel.swift; sourceTree = "<group>"; };
+		8F5AB91C27A9C23D004B18DE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8F5AB91E27A9C2A6004B18DE /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
+		8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+URL.swift"; sourceTree = "<group>"; };
+		8F5AB92727A9C769004B18DE /* Endpoint+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+User.swift"; sourceTree = "<group>"; };
 		8FD81F2C277D1E040078AB1A /* Rumba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rumba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD81F2F277D1E040078AB1A /* RumbaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbaApp.swift; sourceTree = "<group>"; };
-		8FD81F31277D1E040078AB1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8FD81F31277D1E040078AB1A /* RegistrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrView.swift; sourceTree = "<group>"; };
 		8FD81F33277D1E060078AB1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FD81F36277D1E060078AB1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8FD81F3C277D1E060078AB1A /* RumbaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RumbaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +91,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F097B4427AA6EEA00E4D791 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F097B4527AA6EF600E4D791 /* Registr */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F097B4527AA6EF600E4D791 /* Registr */ = {
+			isa = PBXGroup;
+			children = (
+				8F097B4627AA6F1F00E4D791 /* RegistrForm.swift */,
+				8F097B4827AA6F2C00E4D791 /* RegistrResponse.swift */,
+			);
+			path = Registr;
+			sourceTree = "<group>";
+		};
+		8F097B4A27AA6FF700E4D791 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8F097B4B27AA702800E4D791 /* RegistrService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8F5AB91227A84A1B004B18DE /* Registr */ = {
+			isa = PBXGroup;
+			children = (
+				8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */,
+				8FD81F31277D1E040078AB1A /* RegistrView.swift */,
+				8F097B4D27AADB3000E4D791 /* RegistrConfigurator.swift */,
+				8F097B4F27AADC1800E4D791 /* RegistrRouter.swift */,
+			);
+			path = Registr;
+			sourceTree = "<group>";
+		};
+		8F5AB91727A9B076004B18DE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8FD81F2F277D1E040078AB1A /* RumbaApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8F5AB91827A9B087004B18DE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8F5AB91227A84A1B004B18DE /* Registr */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8F5AB91927A9C1B9004B18DE /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				8F097B4A27AA6FF700E4D791 /* Services */,
+				8F097B4427AA6EEA00E4D791 /* Models */,
+				8F5AB92427A9C676004B18DE /* Endpoints */,
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		8F5AB91A27A9C1D7004B18DE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8F5AB91B27A9C1DE004B18DE /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8F5AB91B27A9C1DE004B18DE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8F5AB91C27A9C23D004B18DE /* Endpoint.swift */,
+				8F5AB91E27A9C2A6004B18DE /* Networker.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8F5AB92427A9C676004B18DE /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */,
+				8F5AB92727A9C769004B18DE /* Endpoint+User.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 		8FD81F23277D1E040078AB1A = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +202,10 @@
 		8FD81F2E277D1E040078AB1A /* Rumba */ = {
 			isa = PBXGroup;
 			children = (
-				8FD81F2F277D1E040078AB1A /* RumbaApp.swift */,
-				8FD81F31277D1E040078AB1A /* ContentView.swift */,
+				8F5AB91A27A9C1D7004B18DE /* Core */,
+				8F5AB91927A9C1B9004B18DE /* Business Logic */,
+				8F5AB91827A9B087004B18DE /* Presentation */,
+				8F5AB91727A9B076004B18DE /* App */,
 				8FD81F33277D1E060078AB1A /* Assets.xcassets */,
 				8FD81F35277D1E060078AB1A /* Preview Content */,
 			);
@@ -257,7 +367,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FD81F32277D1E040078AB1A /* ContentView.swift in Sources */,
+				8F097B4E27AADB3000E4D791 /* RegistrConfigurator.swift in Sources */,
+				8F097B4727AA6F1F00E4D791 /* RegistrForm.swift in Sources */,
+				8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */,
+				8F097B4C27AA702800E4D791 /* RegistrService.swift in Sources */,
+				8FD81F32277D1E040078AB1A /* RegistrView.swift in Sources */,
+				8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */,
+				8F097B4927AA6F2C00E4D791 /* RegistrResponse.swift in Sources */,
+				8F097B5027AADC1800E4D791 /* RegistrRouter.swift in Sources */,
+				8F5AB92827A9C769004B18DE /* Endpoint+User.swift in Sources */,
+				8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */,
+				8F5AB92627A9C6B7004B18DE /* Endpoint+URL.swift in Sources */,
 				8FD81F30277D1E040078AB1A /* RumbaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

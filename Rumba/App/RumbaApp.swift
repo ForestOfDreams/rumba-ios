@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct RumbaApp: App {
+//    @AppStorage("her") private var lol = "her"
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RegistrView().environmentObject(RegistrViewModel())
         }
     }
 }
