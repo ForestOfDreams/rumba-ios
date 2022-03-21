@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct RegistrView: View {
-    @EnvironmentObject var viewModel: RegistrViewModel
+    // ???
+    @Environment(\.presentationMode) var presentationMode
+    @StateObject var viewModel: RegistrViewModel = RegistrViewModel()
     @State var presentAlert = false
     var body: some View {
         Form {
@@ -30,14 +32,16 @@ struct RegistrView: View {
                     Text("Sign up")
                 }
                 .disabled(!viewModel.isValid)
+                Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Go to log in")
+                }
 
             }
         }
-        .sheet(isPresented: $presentAlert) {
-            VStack {
-                Text(viewModel.token)
-            }
-        }
+        .navigationTitle("Sign Up")
+        .navigationBarBackButtonHidden(true)
 
     }
     func signUp() {
@@ -49,6 +53,7 @@ struct RegistrView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrView()
+            
     }
 }
 

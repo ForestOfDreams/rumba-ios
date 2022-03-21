@@ -12,11 +12,20 @@
 		8F097B4C27AA702800E4D791 /* RegistrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4B27AA702800E4D791 /* RegistrService.swift */; };
 		8F097B4E27AADB3000E4D791 /* RegistrConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4D27AADB3000E4D791 /* RegistrConfigurator.swift */; };
 		8F097B5027AADC1800E4D791 /* RegistrRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4F27AADC1800E4D791 /* RegistrRouter.swift */; };
+		8F1F8D0827E790CA00BE9F44 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 8F1F8D0727E790CA00BE9F44 /* SwiftKeychainWrapper */; };
+		8F1F8D0A27E7978700BE9F44 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D0927E7978700BE9F44 /* KeychainStorage.swift */; };
+		8F1F8D1727E80C6400BE9F44 /* ParticipationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */; };
+		8F1F8D1927E80C8D00BE9F44 /* ManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1827E80C8D00BE9F44 /* ManageView.swift */; };
+		8F1F8D1B27E80C9E00BE9F44 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1A27E80C9E00BE9F44 /* ProfileView.swift */; };
 		8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */; };
 		8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91C27A9C23D004B18DE /* Endpoint.swift */; };
 		8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91E27A9C2A6004B18DE /* Networker.swift */; };
 		8F5AB92627A9C6B7004B18DE /* Endpoint+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */; };
-		8F5AB92827A9C769004B18DE /* Endpoint+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92727A9C769004B18DE /* Endpoint+User.swift */; };
+		8F5AB92827A9C769004B18DE /* Endpoint+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92727A9C769004B18DE /* Endpoint+Auth.swift */; };
+		8F6CB2BE27E50AEC00C3A995 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2BD27E50AEC00C3A995 /* MyError.swift */; };
+		8F6CB2C027E50E1800C3A995 /* Endpoint+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */; };
+		8F6CB2C227E50E3F00C3A995 /* Endpoint+Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */; };
+		8F6CB2C627E50E6F00C3A995 /* Endpoint+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */; };
 		8FD81F30277D1E040078AB1A /* RumbaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F2F277D1E040078AB1A /* RumbaApp.swift */; };
 		8FD81F32277D1E040078AB1A /* RegistrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F31277D1E040078AB1A /* RegistrView.swift */; };
 		8FD81F34277D1E060078AB1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD81F33277D1E060078AB1A /* Assets.xcassets */; };
@@ -24,6 +33,12 @@
 		8FD81F41277D1E060078AB1A /* RumbaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F40277D1E060078AB1A /* RumbaTests.swift */; };
 		8FD81F4B277D1E060078AB1A /* RumbaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F4A277D1E060078AB1A /* RumbaUITests.swift */; };
 		8FD81F4D277D1E060078AB1A /* RumbaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F4C277D1E060078AB1A /* RumbaUITestsLaunchTests.swift */; };
+		8FDDCF9327C6DBA50045CA52 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9227C6DBA50045CA52 /* LoginView.swift */; };
+		8FDDCF9527C6DBE90045CA52 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9427C6DBE90045CA52 /* LoginViewModel.swift */; };
+		8FDDCF9727C6F0F80045CA52 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9627C6F0F80045CA52 /* LoginForm.swift */; };
+		8FDDCF9927C6F1060045CA52 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9827C6F1060045CA52 /* LoginResponse.swift */; };
+		8FDDCF9B27C705310045CA52 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9A27C705310045CA52 /* LoginService.swift */; };
+		8FDDCF9F27C70FA30045CA52 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9E27C70FA30045CA52 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +64,19 @@
 		8F097B4B27AA702800E4D791 /* RegistrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrService.swift; sourceTree = "<group>"; };
 		8F097B4D27AADB3000E4D791 /* RegistrConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrConfigurator.swift; sourceTree = "<group>"; };
 		8F097B4F27AADC1800E4D791 /* RegistrRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrRouter.swift; sourceTree = "<group>"; };
+		8F1F8D0927E7978700BE9F44 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationView.swift; sourceTree = "<group>"; };
+		8F1F8D1827E80C8D00BE9F44 /* ManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageView.swift; sourceTree = "<group>"; };
+		8F1F8D1A27E80C9E00BE9F44 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrViewModel.swift; sourceTree = "<group>"; };
 		8F5AB91C27A9C23D004B18DE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8F5AB91E27A9C2A6004B18DE /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+URL.swift"; sourceTree = "<group>"; };
-		8F5AB92727A9C769004B18DE /* Endpoint+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+User.swift"; sourceTree = "<group>"; };
+		8F5AB92727A9C769004B18DE /* Endpoint+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Auth.swift"; sourceTree = "<group>"; };
+		8F6CB2BD27E50AEC00C3A995 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
+		8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Events.swift"; sourceTree = "<group>"; };
+		8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Member.swift"; sourceTree = "<group>"; };
+		8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Tasks.swift"; sourceTree = "<group>"; };
 		8FD81F2C277D1E040078AB1A /* Rumba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rumba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD81F2F277D1E040078AB1A /* RumbaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbaApp.swift; sourceTree = "<group>"; };
 		8FD81F31277D1E040078AB1A /* RegistrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrView.swift; sourceTree = "<group>"; };
@@ -64,6 +87,12 @@
 		8FD81F46277D1E060078AB1A /* RumbaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RumbaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD81F4A277D1E060078AB1A /* RumbaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbaUITests.swift; sourceTree = "<group>"; };
 		8FD81F4C277D1E060078AB1A /* RumbaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8FDDCF9227C6DBA50045CA52 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		8FDDCF9427C6DBE90045CA52 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8FDDCF9627C6F0F80045CA52 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		8FDDCF9827C6F1060045CA52 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		8FDDCF9A27C705310045CA52 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		8FDDCF9E27C70FA30045CA52 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1F8D0827E790CA00BE9F44 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +124,7 @@
 		8F097B4427AA6EEA00E4D791 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8FDDCF9127C6DA830045CA52 /* Login */,
 				8F097B4527AA6EF600E4D791 /* Registr */,
 			);
 			path = Models;
@@ -112,8 +143,35 @@
 			isa = PBXGroup;
 			children = (
 				8F097B4B27AA702800E4D791 /* RegistrService.swift */,
+				8FDDCF9A27C705310045CA52 /* LoginService.swift */,
+				8F6CB2BD27E50AEC00C3A995 /* MyError.swift */,
+				8F1F8D0927E7978700BE9F44 /* KeychainStorage.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8F1F8D0B27E80B7E00BE9F44 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F8D1A27E80C9E00BE9F44 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8F1F8D0C27E80B8800BE9F44 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F8D1827E80C8D00BE9F44 /* ManageView.swift */,
+			);
+			path = Manage;
+			sourceTree = "<group>";
+		};
+		8F1F8D0D27E80BAF00BE9F44 /* Participation */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */,
+			);
+			path = Participation;
 			sourceTree = "<group>";
 		};
 		8F5AB91227A84A1B004B18DE /* Registr */ = {
@@ -138,6 +196,11 @@
 		8F5AB91827A9B087004B18DE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8F1F8D0D27E80BAF00BE9F44 /* Participation */,
+				8F1F8D0C27E80B8800BE9F44 /* Manage */,
+				8F1F8D0B27E80B7E00BE9F44 /* Profile */,
+				8FDDCF9027C6D7240045CA52 /* GeneralView */,
+				8FDDCF8E27C6C4A60045CA52 /* Login */,
 				8F5AB91227A84A1B004B18DE /* Registr */,
 			);
 			path = Presentation;
@@ -174,7 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */,
-				8F5AB92727A9C769004B18DE /* Endpoint+User.swift */,
+				8F5AB92727A9C769004B18DE /* Endpoint+Auth.swift */,
+				8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */,
+				8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */,
+				8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -237,6 +303,32 @@
 			path = RumbaUITests;
 			sourceTree = "<group>";
 		};
+		8FDDCF8E27C6C4A60045CA52 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8FDDCF9227C6DBA50045CA52 /* LoginView.swift */,
+				8FDDCF9427C6DBE90045CA52 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8FDDCF9027C6D7240045CA52 /* GeneralView */ = {
+			isa = PBXGroup;
+			children = (
+				8FDDCF9E27C70FA30045CA52 /* TabBarView.swift */,
+			);
+			path = GeneralView;
+			sourceTree = "<group>";
+		};
+		8FDDCF9127C6DA830045CA52 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8FDDCF9627C6F0F80045CA52 /* LoginForm.swift */,
+				8FDDCF9827C6F1060045CA52 /* LoginResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +345,9 @@
 			dependencies = (
 			);
 			name = Rumba;
+			packageProductDependencies = (
+				8F1F8D0727E790CA00BE9F44 /* SwiftKeychainWrapper */,
+			);
 			productName = Rumba;
 			productReference = 8FD81F2C277D1E040078AB1A /* Rumba.app */;
 			productType = "com.apple.product-type.application";
@@ -325,6 +420,9 @@
 				Base,
 			);
 			mainGroup = 8FD81F23277D1E040078AB1A;
+			packageReferences = (
+				8F1F8D0627E790CA00BE9F44 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = 8FD81F2D277D1E040078AB1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -367,18 +465,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FDDCF9B27C705310045CA52 /* LoginService.swift in Sources */,
 				8F097B4E27AADB3000E4D791 /* RegistrConfigurator.swift in Sources */,
 				8F097B4727AA6F1F00E4D791 /* RegistrForm.swift in Sources */,
 				8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */,
 				8F097B4C27AA702800E4D791 /* RegistrService.swift in Sources */,
 				8FD81F32277D1E040078AB1A /* RegistrView.swift in Sources */,
+				8F6CB2C227E50E3F00C3A995 /* Endpoint+Member.swift in Sources */,
 				8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */,
+				8FDDCF9927C6F1060045CA52 /* LoginResponse.swift in Sources */,
+				8F6CB2BE27E50AEC00C3A995 /* MyError.swift in Sources */,
+				8FDDCF9527C6DBE90045CA52 /* LoginViewModel.swift in Sources */,
+				8FDDCF9F27C70FA30045CA52 /* TabBarView.swift in Sources */,
+				8F1F8D1727E80C6400BE9F44 /* ParticipationView.swift in Sources */,
+				8F6CB2C027E50E1800C3A995 /* Endpoint+Events.swift in Sources */,
+				8F1F8D1B27E80C9E00BE9F44 /* ProfileView.swift in Sources */,
+				8F6CB2C627E50E6F00C3A995 /* Endpoint+Tasks.swift in Sources */,
 				8F097B4927AA6F2C00E4D791 /* RegistrResponse.swift in Sources */,
 				8F097B5027AADC1800E4D791 /* RegistrRouter.swift in Sources */,
-				8F5AB92827A9C769004B18DE /* Endpoint+User.swift in Sources */,
+				8F5AB92827A9C769004B18DE /* Endpoint+Auth.swift in Sources */,
+				8FDDCF9727C6F0F80045CA52 /* LoginForm.swift in Sources */,
 				8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */,
+				8FDDCF9327C6DBA50045CA52 /* LoginView.swift in Sources */,
+				8F1F8D1927E80C8D00BE9F44 /* ManageView.swift in Sources */,
 				8F5AB92627A9C6B7004B18DE /* Endpoint+URL.swift in Sources */,
 				8FD81F30277D1E040078AB1A /* RumbaApp.swift in Sources */,
+				8F1F8D0A27E7978700BE9F44 /* KeychainStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +817,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F1F8D0627E790CA00BE9F44 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F1F8D0727E790CA00BE9F44 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F1F8D0627E790CA00BE9F44 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8FD81F24277D1E040078AB1A /* Project object */;
 }

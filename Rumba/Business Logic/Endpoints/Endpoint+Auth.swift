@@ -11,5 +11,9 @@ extension Endpoint {
     static var registr: Self {
         return Endpoint(path: "/auth/register")
     }
+    
+    static var login: Self {
+        return Endpoint(path: "/auth/login")
+    }
 }
 

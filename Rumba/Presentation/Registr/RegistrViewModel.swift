@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 
-class RegistrViewModel:ObservableObject {
+class RegistrViewModel : ObservableObject {
+    
     @Published var firstName = ""
     @Published var lastName = ""
     @Published var email = ""
@@ -20,7 +21,9 @@ class RegistrViewModel:ObservableObject {
     
     @Published var isValid = false
     
-    @Published var token = ""
+    @Published var showAlert = false
+    @Published var alertMessage = ""
+    
     
     private var registrService: RegistrServiceProtocol
     
@@ -32,13 +35,15 @@ class RegistrViewModel:ObservableObject {
             .sink( receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    var myErrorResult = error as! MyError
-                    print(myErrorResult.message)
+                    let myErrorResult = error as! MyError
+                    
+                    self.alertMessage = myErrorResult.message
+                    self.showAlert = true
                 
                     case .finished: print("Publisher is finished")
                 }
             }, receiveValue: { [weak self] response in
-                self?.token = response.token
+                
             })
             .store(in: &cancellableSet)
     }
@@ -161,6 +166,7 @@ class RegistrViewModel:ObservableObject {
         self.registrService = registrService
         
         isFirstNameValidPublisher
+            .dropFirst()
             .receive(on: RunLoop.main)
             .map { valid in
                 valid ? "" : "Username must at least have 3 character"
@@ -169,6 +175,7 @@ class RegistrViewModel:ObservableObject {
             .store(in: &cancellableSet)
         
         isPasswordValidPublisher
+            .dropFirst()
             .receive(on: RunLoop.main)
             .map { passwordCheck in
                 switch passwordCheck {

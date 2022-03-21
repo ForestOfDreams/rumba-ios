@@ -9,10 +9,18 @@ import SwiftUI
 
 @main
 struct RumbaApp: App {
-//    @AppStorage("her") private var lol = "her"
+    @StateObject var authentication = LoginViewModel()
     var body: some Scene {
         WindowGroup {
-            RegistrView().environmentObject(RegistrViewModel())
+            if authentication.isAuth {
+                TabBarView()
+                    .environmentObject(authentication)
+            }
+            else {
+                LoginView()
+                    .environmentObject(authentication)
+            }
         }
+        
     }
 }

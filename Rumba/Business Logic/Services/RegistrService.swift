@@ -31,12 +31,12 @@ final class RegistrService: RegistrServiceProtocol {
                 guard
                     let response = response as? HTTPURLResponse,
                     response.statusCode >= 200 && response.statusCode < 300 else {
-                        let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
-                        let error = MyError(
-                            type: .init(rawValue: errorResponse.type),
-                            message: errorResponse.message
-                        )
-                        throw error
+                        let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+//                        let error = MyError(
+//                            type: .init(rawValue: errorResponse.type),
+//                            message: errorResponse.message
+//                        )
+                        throw errorResponse
                     }
                 return data
             }
@@ -51,21 +51,6 @@ final class RegistrService: RegistrServiceProtocol {
     }
 }
 
-
-struct MyError: Error {
-    enum ErrorType: String {
-         case ACCOUNT_NOT_CONFIRMED,
-         CONFIRM_TOKEN_EXPIRED,
-         CONFIRM_TOKEN_NOT_EXIST,
-         EMAIL_CONFIRMED,
-         EMAIL_EXIST,
-         EMAIL_NOT_FOUND,
-         INVALID_CREDENTIALS,
-         JWT_EXPIRED
-    }
-    let type: ErrorType?
-    let message: String
-}
 
 struct ErrorResponse: Decodable {
     let timestamp: String
