@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+extension Endpoint {
+    static func member(eventID: Int) -> Self {
+        return Endpoint(path: "/api/members",
+                        queryItems: [
+                            URLQueryItem(name: "event_id", value: String(eventID))
+                        ])
+    }
+}

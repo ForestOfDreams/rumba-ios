@@ -27,4 +27,10 @@ extension Endpoint {
             // "app-id": "YOUR APP ID HERE"
         ]
     }
+    
+    var authHeaders: [String: Any] {
+        return [
+            "Authorization": "Bearer \(KeychainStorage.shared.getToken()!.token)"
+        ]
+    }
 }

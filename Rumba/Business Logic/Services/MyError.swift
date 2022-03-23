@@ -18,9 +18,10 @@ struct MyError: Error, Decodable {
              EMAIL_NOT_FOUND,
              EVENT_NOT_FOUND,
              INVALID_CREDENTIALS,
+             MEMBER_NOT_FOUND,
              TASK_NOT_FOUND,
              VALIDATION_ERROR
     }
     let type: ErrorType?
-    let message: String
+    let messages: [String]
 }

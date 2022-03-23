@@ -14,8 +14,10 @@ struct ProfileView: View {
             Text("Tab bar view")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Log out!") {
+                        Button {
                             loginViewModel.logOut()
+                        } label: {
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
                         }
                     }
                 }

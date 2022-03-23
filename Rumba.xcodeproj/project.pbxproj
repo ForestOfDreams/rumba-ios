@@ -17,15 +17,33 @@
 		8F1F8D1727E80C6400BE9F44 /* ParticipationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */; };
 		8F1F8D1927E80C8D00BE9F44 /* ManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1827E80C8D00BE9F44 /* ManageView.swift */; };
 		8F1F8D1B27E80C9E00BE9F44 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1A27E80C9E00BE9F44 /* ProfileView.swift */; };
+		8F1F8D1E27E9133F00BE9F44 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 8F1F8D1D27E9133F00BE9F44 /* CodeScanner */; };
 		8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */; };
 		8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91C27A9C23D004B18DE /* Endpoint.swift */; };
 		8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91E27A9C2A6004B18DE /* Networker.swift */; };
 		8F5AB92627A9C6B7004B18DE /* Endpoint+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */; };
 		8F5AB92827A9C769004B18DE /* Endpoint+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92727A9C769004B18DE /* Endpoint+Auth.swift */; };
+		8F69863927E9479900E1279A /* ParticipationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69863827E9479900E1279A /* ParticipationViewModel.swift */; };
+		8F69863B27E94A5E00E1279A /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69863A27E94A5E00E1279A /* EventService.swift */; };
 		8F6CB2BE27E50AEC00C3A995 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2BD27E50AEC00C3A995 /* MyError.swift */; };
 		8F6CB2C027E50E1800C3A995 /* Endpoint+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */; };
 		8F6CB2C227E50E3F00C3A995 /* Endpoint+Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */; };
 		8F6CB2C627E50E6F00C3A995 /* Endpoint+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */; };
+		8FD03F1427E9CBB900EF6CD8 /* CreateEventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1327E9CBB900EF6CD8 /* CreateEventForm.swift */; };
+		8FD03F1627E9CCD600EF6CD8 /* CreateEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1527E9CCD600EF6CD8 /* CreateEventResponse.swift */; };
+		8FD03F1827E9D32E00EF6CD8 /* UpdateEventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1727E9D32E00EF6CD8 /* UpdateEventForm.swift */; };
+		8FD03F1C27E9D36200EF6CD8 /* UpdateEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1B27E9D36200EF6CD8 /* UpdateEventResponse.swift */; };
+		8FD03F1E27E9D7A200EF6CD8 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1D27E9D7A200EF6CD8 /* MemberService.swift */; };
+		8FD03F2027E9DBC200EF6CD8 /* GetCreatedEventsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1F27E9DBC200EF6CD8 /* GetCreatedEventsForm.swift */; };
+		8FD03F2227E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2127E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift */; };
+		8FD03F2627E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2527E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift */; };
+		8FD03F2927E9DCF300EF6CD8 /* GetEventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2827E9DCF300EF6CD8 /* GetEventForm.swift */; };
+		8FD03F2C27E9DD2300EF6CD8 /* GetEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2B27E9DD2300EF6CD8 /* GetEventResponse.swift */; };
+		8FD03F2F27EA676000EF6CD8 /* DetailEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2E27EA676000EF6CD8 /* DetailEventView.swift */; };
+		8FD03F3127EB3EAE00EF6CD8 /* JoinEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3027EB3EAE00EF6CD8 /* JoinEventView.swift */; };
+		8FD03F3527EB9C4F00EF6CD8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */; };
+		8FD03F3927EBA8CB00EF6CD8 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */; };
+		8FD03F3B27EBB79600EF6CD8 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3A27EBB79600EF6CD8 /* EventsListView.swift */; };
 		8FD81F30277D1E040078AB1A /* RumbaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F2F277D1E040078AB1A /* RumbaApp.swift */; };
 		8FD81F32277D1E040078AB1A /* RegistrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F31277D1E040078AB1A /* RegistrView.swift */; };
 		8FD81F34277D1E060078AB1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD81F33277D1E060078AB1A /* Assets.xcassets */; };
@@ -68,15 +86,33 @@
 		8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationView.swift; sourceTree = "<group>"; };
 		8F1F8D1827E80C8D00BE9F44 /* ManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageView.swift; sourceTree = "<group>"; };
 		8F1F8D1A27E80C9E00BE9F44 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8F1F8D1F27E91D7F00BE9F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrViewModel.swift; sourceTree = "<group>"; };
 		8F5AB91C27A9C23D004B18DE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8F5AB91E27A9C2A6004B18DE /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+URL.swift"; sourceTree = "<group>"; };
 		8F5AB92727A9C769004B18DE /* Endpoint+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Auth.swift"; sourceTree = "<group>"; };
+		8F69863827E9479900E1279A /* ParticipationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationViewModel.swift; sourceTree = "<group>"; };
+		8F69863A27E94A5E00E1279A /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		8F6CB2BD27E50AEC00C3A995 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Events.swift"; sourceTree = "<group>"; };
 		8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Member.swift"; sourceTree = "<group>"; };
 		8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Tasks.swift"; sourceTree = "<group>"; };
+		8FD03F1327E9CBB900EF6CD8 /* CreateEventForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventForm.swift; sourceTree = "<group>"; };
+		8FD03F1527E9CCD600EF6CD8 /* CreateEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventResponse.swift; sourceTree = "<group>"; };
+		8FD03F1727E9D32E00EF6CD8 /* UpdateEventForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEventForm.swift; sourceTree = "<group>"; };
+		8FD03F1B27E9D36200EF6CD8 /* UpdateEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEventResponse.swift; sourceTree = "<group>"; };
+		8FD03F1D27E9D7A200EF6CD8 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
+		8FD03F1F27E9DBC200EF6CD8 /* GetCreatedEventsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCreatedEventsForm.swift; sourceTree = "<group>"; };
+		8FD03F2127E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCreatedEventsResponse.swift; sourceTree = "<group>"; };
+		8FD03F2527E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParicipatedEventsResponse.swift; sourceTree = "<group>"; };
+		8FD03F2827E9DCF300EF6CD8 /* GetEventForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventForm.swift; sourceTree = "<group>"; };
+		8FD03F2B27E9DD2300EF6CD8 /* GetEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventResponse.swift; sourceTree = "<group>"; };
+		8FD03F2E27EA676000EF6CD8 /* DetailEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventView.swift; sourceTree = "<group>"; };
+		8FD03F3027EB3EAE00EF6CD8 /* JoinEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventView.swift; sourceTree = "<group>"; };
+		8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		8FD03F3A27EBB79600EF6CD8 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		8FD81F2C277D1E040078AB1A /* Rumba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rumba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD81F2F277D1E040078AB1A /* RumbaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbaApp.swift; sourceTree = "<group>"; };
 		8FD81F31277D1E040078AB1A /* RegistrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrView.swift; sourceTree = "<group>"; };
@@ -100,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1F8D1E27E9133F00BE9F44 /* CodeScanner in Frameworks */,
 				8F1F8D0827E790CA00BE9F44 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,8 +161,10 @@
 		8F097B4427AA6EEA00E4D791 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8FDDCF9127C6DA830045CA52 /* Login */,
-				8F097B4527AA6EF600E4D791 /* Registr */,
+				8F69863727E9473300E1279A /* Member */,
+				8F69863527E946DD00E1279A /* Auth */,
+				8F69863027E92F9500E1279A /* Task */,
+				8F69862F27E92F6F00E1279A /* Event */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +185,8 @@
 				8FDDCF9A27C705310045CA52 /* LoginService.swift */,
 				8F6CB2BD27E50AEC00C3A995 /* MyError.swift */,
 				8F1F8D0927E7978700BE9F44 /* KeychainStorage.swift */,
+				8F69863A27E94A5E00E1279A /* EventService.swift */,
+				8FD03F1D27E9D7A200EF6CD8 /* MemberService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -170,6 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */,
+				8F69863827E9479900E1279A /* ParticipationViewModel.swift */,
+				8FD03F3027EB3EAE00EF6CD8 /* JoinEventView.swift */,
+				8FD03F3A27EBB79600EF6CD8 /* EventsListView.swift */,
 			);
 			path = Participation;
 			sourceTree = "<group>";
@@ -196,6 +240,7 @@
 		8F5AB91827A9B087004B18DE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8FD03F2D27EA673F00EF6CD8 /* SharedViews */,
 				8F1F8D0D27E80BAF00BE9F44 /* Participation */,
 				8F1F8D0C27E80B8800BE9F44 /* Manage */,
 				8F1F8D0B27E80B7E00BE9F44 /* Profile */,
@@ -245,6 +290,96 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
+		8F69862F27E92F6F00E1279A /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				8F69863627E9470200E1279A /* UpdateEvent */,
+				8F69863427E946A700E1279A /* GetCreatedEvents */,
+				8F69863327E92FF400E1279A /* GetParicipatedEvents */,
+				8F69863227E92FE600E1279A /* GetEvent */,
+				8F69863127E92FD000E1279A /* CreateEvent */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		8F69863027E92F9500E1279A /* Task */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		8F69863127E92FD000E1279A /* CreateEvent */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F1327E9CBB900EF6CD8 /* CreateEventForm.swift */,
+				8FD03F1527E9CCD600EF6CD8 /* CreateEventResponse.swift */,
+			);
+			path = CreateEvent;
+			sourceTree = "<group>";
+		};
+		8F69863227E92FE600E1279A /* GetEvent */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F2827E9DCF300EF6CD8 /* GetEventForm.swift */,
+				8FD03F2B27E9DD2300EF6CD8 /* GetEventResponse.swift */,
+			);
+			path = GetEvent;
+			sourceTree = "<group>";
+		};
+		8F69863327E92FF400E1279A /* GetParicipatedEvents */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F2527E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift */,
+			);
+			path = GetParicipatedEvents;
+			sourceTree = "<group>";
+		};
+		8F69863427E946A700E1279A /* GetCreatedEvents */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F1F27E9DBC200EF6CD8 /* GetCreatedEventsForm.swift */,
+				8FD03F2127E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift */,
+			);
+			path = GetCreatedEvents;
+			sourceTree = "<group>";
+			tabWidth = 4;
+		};
+		8F69863527E946DD00E1279A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8FDDCF9127C6DA830045CA52 /* Login */,
+				8F097B4527AA6EF600E4D791 /* Registr */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8F69863627E9470200E1279A /* UpdateEvent */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F1727E9D32E00EF6CD8 /* UpdateEventForm.swift */,
+				8FD03F1B27E9D36200EF6CD8 /* UpdateEventResponse.swift */,
+			);
+			path = UpdateEvent;
+			sourceTree = "<group>";
+		};
+		8F69863727E9473300E1279A /* Member */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		8FD03F2D27EA673F00EF6CD8 /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F2E27EA676000EF6CD8 /* DetailEventView.swift */,
+				8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */,
+				8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */,
+			);
+			path = SharedViews;
+			sourceTree = "<group>";
+		};
 		8FD81F23277D1E040078AB1A = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +403,7 @@
 		8FD81F2E277D1E040078AB1A /* Rumba */ = {
 			isa = PBXGroup;
 			children = (
+				8F1F8D1F27E91D7F00BE9F44 /* Info.plist */,
 				8F5AB91A27A9C1D7004B18DE /* Core */,
 				8F5AB91927A9C1B9004B18DE /* Business Logic */,
 				8F5AB91827A9B087004B18DE /* Presentation */,
@@ -347,6 +483,7 @@
 			name = Rumba;
 			packageProductDependencies = (
 				8F1F8D0727E790CA00BE9F44 /* SwiftKeychainWrapper */,
+				8F1F8D1D27E9133F00BE9F44 /* CodeScanner */,
 			);
 			productName = Rumba;
 			productReference = 8FD81F2C277D1E040078AB1A /* Rumba.app */;
@@ -422,6 +559,7 @@
 			mainGroup = 8FD81F23277D1E040078AB1A;
 			packageReferences = (
 				8F1F8D0627E790CA00BE9F44 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				8F1F8D1C27E9133F00BE9F44 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 8FD81F2D277D1E040078AB1A /* Products */;
 			projectDirPath = "";
@@ -466,27 +604,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FDDCF9B27C705310045CA52 /* LoginService.swift in Sources */,
+				8FD03F3B27EBB79600EF6CD8 /* EventsListView.swift in Sources */,
 				8F097B4E27AADB3000E4D791 /* RegistrConfigurator.swift in Sources */,
 				8F097B4727AA6F1F00E4D791 /* RegistrForm.swift in Sources */,
 				8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */,
+				8FD03F1827E9D32E00EF6CD8 /* UpdateEventForm.swift in Sources */,
 				8F097B4C27AA702800E4D791 /* RegistrService.swift in Sources */,
 				8FD81F32277D1E040078AB1A /* RegistrView.swift in Sources */,
+				8FD03F3527EB9C4F00EF6CD8 /* MapView.swift in Sources */,
+				8FD03F2C27E9DD2300EF6CD8 /* GetEventResponse.swift in Sources */,
+				8FD03F2F27EA676000EF6CD8 /* DetailEventView.swift in Sources */,
+				8FD03F1E27E9D7A200EF6CD8 /* MemberService.swift in Sources */,
 				8F6CB2C227E50E3F00C3A995 /* Endpoint+Member.swift in Sources */,
+				8FD03F1C27E9D36200EF6CD8 /* UpdateEventResponse.swift in Sources */,
+				8FD03F3927EBA8CB00EF6CD8 /* EventCardView.swift in Sources */,
 				8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */,
+				8FD03F2627E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift in Sources */,
 				8FDDCF9927C6F1060045CA52 /* LoginResponse.swift in Sources */,
+				8FD03F1427E9CBB900EF6CD8 /* CreateEventForm.swift in Sources */,
 				8F6CB2BE27E50AEC00C3A995 /* MyError.swift in Sources */,
 				8FDDCF9527C6DBE90045CA52 /* LoginViewModel.swift in Sources */,
 				8FDDCF9F27C70FA30045CA52 /* TabBarView.swift in Sources */,
+				8FD03F3127EB3EAE00EF6CD8 /* JoinEventView.swift in Sources */,
 				8F1F8D1727E80C6400BE9F44 /* ParticipationView.swift in Sources */,
+				8FD03F2227E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift in Sources */,
 				8F6CB2C027E50E1800C3A995 /* Endpoint+Events.swift in Sources */,
 				8F1F8D1B27E80C9E00BE9F44 /* ProfileView.swift in Sources */,
 				8F6CB2C627E50E6F00C3A995 /* Endpoint+Tasks.swift in Sources */,
 				8F097B4927AA6F2C00E4D791 /* RegistrResponse.swift in Sources */,
 				8F097B5027AADC1800E4D791 /* RegistrRouter.swift in Sources */,
+				8F69863927E9479900E1279A /* ParticipationViewModel.swift in Sources */,
 				8F5AB92827A9C769004B18DE /* Endpoint+Auth.swift in Sources */,
+				8F69863B27E94A5E00E1279A /* EventService.swift in Sources */,
 				8FDDCF9727C6F0F80045CA52 /* LoginForm.swift in Sources */,
 				8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */,
 				8FDDCF9327C6DBA50045CA52 /* LoginView.swift in Sources */,
+				8FD03F2927E9DCF300EF6CD8 /* GetEventForm.swift in Sources */,
+				8FD03F2027E9DBC200EF6CD8 /* GetCreatedEventsForm.swift in Sources */,
+				8FD03F1627E9CCD600EF6CD8 /* CreateEventResponse.swift in Sources */,
 				8F1F8D1927E80C8D00BE9F44 /* ManageView.swift in Sources */,
 				8F5AB92627A9C6B7004B18DE /* Endpoint+URL.swift in Sources */,
 				8FD81F30277D1E040078AB1A /* RumbaApp.swift in Sources */,
@@ -654,6 +809,8 @@
 				DEVELOPMENT_TEAM = 2YW5L9733R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rumba/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -683,6 +840,8 @@
 				DEVELOPMENT_TEAM = 2YW5L9733R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rumba/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -827,6 +986,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		8F1F8D1C27E9133F00BE9F44 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -834,6 +1001,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8F1F8D0627E790CA00BE9F44 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		8F1F8D1D27E9133F00BE9F44 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F1F8D1C27E9133F00BE9F44 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

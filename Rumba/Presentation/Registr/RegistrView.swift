@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RegistrView: View {
-    // ???
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: RegistrViewModel = RegistrViewModel()
     @State var presentAlert = false

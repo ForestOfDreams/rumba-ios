@@ -30,7 +30,7 @@ class LoginViewModel : ObservableObject {
                 switch completion {
                 case .failure(let error):
                     let myErrorResult = error as! MyError
-                    self.alertMessage = myErrorResult.message
+                    self.alertMessage = myErrorResult.messages[0]
                     self.showAlert = true
                     
                 case .finished: print("Publisher is finished")

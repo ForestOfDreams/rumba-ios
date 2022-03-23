@@ -27,21 +27,17 @@ final class RegistrService: RegistrServiceProtocol {
             headers: endpoint.headers,
             params: form
         )
-            .tryMap { (data,response) -> Data in
-                guard
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode >= 200 && response.statusCode < 300 else {
-                        let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
-//                        let error = MyError(
-//                            type: .init(rawValue: errorResponse.type),
-//                            message: errorResponse.message
-//                        )
-                        throw errorResponse
-                    }
-                return data
+        .tryMap { (data,response) -> Data in
+            guard
+                let response = response as? HTTPURLResponse,
+                response.statusCode >= 200 && response.statusCode < 300 else {
+                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                throw errorResponse
             }
-            .decode(type: RegistrResponse.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+            return data
+        }
+        .decode(type: RegistrResponse.self, decoder: JSONDecoder())
+        .eraseToAnyPublisher()
     }
     
     let networker: NetworkerProtocol
