@@ -15,45 +15,28 @@ struct EventPlace: Identifiable {
 }
 
 struct ParticipatorEventDetailScreen: View {
-    let event: Event
+    @StateObject var viewModel: ParticipatorEventDetailViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        ScrollView {
-            VStack {
-                EventDetailView(
+        VStack {
+            if let event = viewModel.event {
+                ParticipatorEventDetailView(
                     event: event,
-                    image: UIImage(systemName: "qrcode")!,
-                    shareAction: {}
+                    myTask: viewModel.myTask,
+                    image: viewModel.image,
+                    onShare: {},
+                    onLeaveEvent: viewModel.leaveEvent
                 )
             }
-            .padding()
         }
-    }
-}
-
-struct DetailEventView_Previews: PreviewProvider {
-    static var previews: some View {
-        ParticipatorEventDetailScreen(
-            event: Event(
-                eventId: 1,
-                title: "Уборка пляжа",
-                description: "Необходимо очистить от мусора пляж лазурного озера",
-                isOnline: false,
-                isCancelled: false,
-                isRescheduled: false,
-                placeName: "Лазурное озеро",
-                latitude: 60.886490560469504,
-                longitude: 29.54654745624353,
-                startDate: Date.now,
-                endDate: Date.now,
-                tasks: [],
-                members: [],
-                creator: Creator(
-                    accountId: 1,
-                    firstName: "Петр",
-                    lastName: "Енотов",
-                    email: "touch@gmail.com")
-            )
-        )
+        .navigationTitle(viewModel.event?.title ?? "")
+        .onChange(of: viewModel.shouldCloseView) { newValue in
+            if newValue {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
+        .onAppear(perform: viewModel.fetchEvent)
+        .onAppear(perform: viewModel.fetchMyTask)
     }
 }

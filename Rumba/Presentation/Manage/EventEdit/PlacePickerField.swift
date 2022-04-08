@@ -20,11 +20,11 @@ struct PlacePickerField: View {
                 } label: {
                     Text("Location")
                 }
-                .mapItemPicker(isPresented: $showingPicker) { item in
+                .mapItemPicker(isPresented: $showingPicker) { [weak viewModel] item in
                     if let place = item {
-                        viewModel.latitude = place.placemark.coordinate.latitude
-                        viewModel.longitude = place.placemark.coordinate.longitude
-                        viewModel.placeName = place.name
+                        viewModel?.latitude = place.placemark.coordinate.latitude
+                        viewModel?.longitude = place.placemark.coordinate.longitude
+                        viewModel?.placeName = place.name
                     }
                 }
             }
@@ -33,7 +33,6 @@ struct PlacePickerField: View {
                     Text(viewModel.placeName ?? "")
                     Spacer()
                     Button {
-                        print("clear location")
                         viewModel.latitude = nil
                         viewModel.longitude = nil
                         viewModel.placeName = nil

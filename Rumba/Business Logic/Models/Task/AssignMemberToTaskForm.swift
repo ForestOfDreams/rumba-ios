@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct AssignMemberToTaskForm: Encodable {
+    let startDate: Date
+    let endDate: Date
+}

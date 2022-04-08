@@ -11,10 +11,10 @@ import Combine
 protocol EventApiServiceProtocol: AnyObject {
     var networker: NetworkerProtocol { get }
     
-    func createEvent(_ form: CreateEventForm) -> AnyPublisher<Data, Error>
-    //    func updateEvent(_ form: UpdateEventForm) -> AnyPublisher<UpdateEventResponse, Error>
-    //    func getCreatedEvents(_ form: GetCreatedEventsForm) -> AnyPublisher<GetCreatedEventsResponse, Error>
-    func getParicipatedEvents() -> AnyPublisher<[GetParicipatedEventsResponse], Error>
+    func createEvent( _ form: EventForm) -> AnyPublisher<Data, Error>
+    func updateEvent(eventId: Int, event form: EventForm) -> AnyPublisher<Data, Error>
+    func getCreatedEvents() -> AnyPublisher<[Event], Error>
+    func getParicipatedEvents() -> AnyPublisher<[Event], Error>
     func getEvent(_ id: Int) -> AnyPublisher<Event, Error>
 }
 
@@ -28,17 +28,24 @@ final class EventApiService: EventApiServiceProtocol {
         return decoder
     }
     
+    private var encoder: JSONEncoder {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        return encoder
+    }
+    
     init(networker: NetworkerProtocol = Networker()) {
         self.networker = networker
     }
     
-    func createEvent(_ form: CreateEventForm) -> AnyPublisher<Data, Error> {
-        let endpoint = Endpoint.login
+    func createEvent( _ form: EventForm) -> AnyPublisher<Data, Error> {
+        let endpoint = Endpoint.createEvent
         
         return networker.post(
             url: endpoint.url,
             headers: endpoint.authHeaders,
-            params: form
+            params: form,
+            encoder: encoder
         )
         .tryMap { (data,response) -> Data in
             guard
@@ -49,20 +56,50 @@ final class EventApiService: EventApiServiceProtocol {
             }
             return data
         }
-        //        .decode(type: LoginResponse.self, decoder: decoder)
         .eraseToAnyPublisher()
-        
     }
     
-    //    func updateEvent(_ form: UpdateEventForm) -> AnyPublisher<UpdateEventResponse, Error> {
-    //
-    //    }
+    func updateEvent(eventId: Int, event form: EventForm) -> AnyPublisher<Data, Error> {
+        let endpoint = Endpoint.updateEvent(id: eventId)
+        
+        return networker.put(
+            url: endpoint.url,
+            headers: endpoint.authHeaders,
+            params: form,
+            encoder: encoder
+        )
+        .tryMap { (data,response) -> Data in
+            guard
+                let response = response as? HTTPURLResponse,
+                response.statusCode >= 200 && response.statusCode < 300 else {
+                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                throw errorResponse
+            }
+            return data
+        }
+        .eraseToAnyPublisher()
+    }
     
-    //    func getCreatedEvents(_ form: GetCreatedEventsForm) -> AnyPublisher<GetCreatedEventsResponse, Error> {
-    //
-    //    }
+    func getCreatedEvents() -> AnyPublisher<[Event], Error> {
+        let endpoint = Endpoint.getCreatedEvents
+        return networker.get(
+            url: endpoint.url,
+            headers: endpoint.authHeaders
+        )
+        .tryMap { (data,response) -> Data in
+            guard
+                let response = response as? HTTPURLResponse,
+                response.statusCode >= 200 && response.statusCode < 300 else {
+                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                throw errorResponse
+            }
+            return data
+        }
+        .decode(type: [Event].self, decoder: decoder)
+        .eraseToAnyPublisher()
+    }
     
-    func getParicipatedEvents() -> AnyPublisher<[GetParicipatedEventsResponse], Error> {
+    func getParicipatedEvents() -> AnyPublisher<[Event], Error> {
         let endpoint = Endpoint.getParicipatedEvents
         return networker.get(
             url: endpoint.url,
@@ -77,7 +114,7 @@ final class EventApiService: EventApiServiceProtocol {
             }
             return data
         }
-        .decode(type: [GetParicipatedEventsResponse].self, decoder: decoder)
+        .decode(type: [Event].self, decoder: decoder)
         .eraseToAnyPublisher()
     }
     

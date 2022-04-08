@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct EventCardView: View {
-    let event: GetParicipatedEventsResponse
+    let event: Event
     
     var body: some View {
-        HStack {
+        VStack {
             Text(event.title)
         }
     }
@@ -20,18 +20,7 @@ struct EventCardView: View {
 struct EventCardView_Previews: PreviewProvider {
     static var previews: some View {
         EventCardView(
-            event: GetParicipatedEventsResponse(
-                eventId: 1,
-                title: "Уборка пляжа",
-                description: "Очень увлекательная",
-                isOnline: false,
-                isCancelled: true,
-                isRescheduled: false,
-                latitude: 50,
-                longitude: 40,
-                startDate: Date.now,
-                endDate: Date.now
-            )
+            event: DummyData.event
         )
     }
 }

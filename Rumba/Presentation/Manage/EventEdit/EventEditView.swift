@@ -9,6 +9,7 @@ import SwiftUI
 import MapItemPicker
 
 struct EventEditView: View {
+    typealias EventType = EventEditViewModel.EventType
     @StateObject var viewModel: EventEditViewModel
     @Environment(\.presentationMode) var presentationMode
     
@@ -17,17 +18,10 @@ struct EventEditView: View {
     var body: some View {
         Form {
             Section(
-                footer: VStack(alignment: .leading) {
-                    ForEach(
-                        viewModel.mainErrorMessages.sorted() {
-                            $0.rawValue > $1.rawValue }, id: \.self) { message in
-                                Text(message.rawValue)
-                                    .foregroundColor(.red)
-                            }
-                }
+                footer: FormErrorMesagesView(messages: viewModel.mainErrorMessages)
             ) {
                 TextField("Title", text: $viewModel.title)
-                
+
                 ZStack(alignment: .topLeading) {
                     TextEditor(text: $viewModel.description)
                         .padding(.horizontal, -5)
@@ -44,7 +38,7 @@ struct EventEditView: View {
                 footer: Text("Select the type of event, for an online event you will not be able to select a location.")
             ) {
                 Picker("Event type", selection: $viewModel.type) {
-                    ForEach(viewModel.eventTypes, id: \.self) {
+                    ForEach([EventType.online,EventType.offline], id: \.self) {
                         Text($0.rawValue)
                     }
                 }
@@ -52,14 +46,7 @@ struct EventEditView: View {
             }
             Section(
                 header: Text("Period"),
-                footer:
-                    VStack(alignment: .leading) {
-                        ForEach(
-                            viewModel.dateErrorMessages.sorted() { $0.rawValue > $1.rawValue }, id: \.self) { message in
-                                Text(message.rawValue)
-                                    .foregroundColor(.red)
-                            }
-                    }
+                footer: FormErrorMesagesView(messages: viewModel.dateErrorMessages)
             ) {
                 DatePicker(
                     "Start date",
@@ -73,45 +60,24 @@ struct EventEditView: View {
             if viewModel.type == .offline {
                 Section(
                     header: Text("Location"),
-                    footer: VStack(alignment: .leading) {
-                        ForEach(
-                            viewModel.locationErrorMessages.sorted() {
-                                $0.rawValue > $1.rawValue }, id: \.self) { message in
-                                    Text(message.rawValue)
-                                        .foregroundColor(.red)
-                                }
-                    }
+                    footer: FormErrorMesagesView(messages: viewModel.locationErrorMessages)
                 ) {
                     PlacePickerField(viewModel: viewModel)
                 }
             }
-//            Section(
-//                header: Text("Tasks"),
-//                footer: Text("You need to create at least one task.")) {
-//                    Stepper("Task count") {
-//                        viewModel.onTaskCountIncrement()
-//                    } onDecrement: {
-//                        viewModel.onTaskCountDescrement()
-//                    }
-//                    Text("Selected number of tasks: \(viewModel.tasks.count)")
-//
-//                }
-//            ForEach($viewModel.tasks, id: \.taskId) { $task in
-//                TaskPickerView(task: $task)
-//            }
         }
-        .navigationTitle("Create event")
+        .navigationTitle(viewModel.isEditMode ? "Edit event" : "Create event")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    viewModel.onSaveEvent()
+                    viewModel.onSave()
                 } label: {
                     Image(systemName: "square.and.arrow.down")
                 }
                 .disabled(!viewModel.isFormValid)
             }
         }
-        .onChange(of: viewModel.closeView) { newValue in
+        .onChange(of: viewModel.shouldCloseView) { newValue in
             if newValue {
                 presentationMode.wrappedValue.dismiss()
             }
@@ -119,8 +85,8 @@ struct EventEditView: View {
     }
 }
 
-struct CreateEventView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventEditView(viewModel: EventEditViewModel())
-    }
-}
+//struct CreateEventView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EventEditView(viewModel: EventEditViewModel())
+//    }
+//}

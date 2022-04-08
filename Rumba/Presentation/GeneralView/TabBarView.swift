@@ -13,16 +13,16 @@ struct TabBarView: View {
     var body: some View {
     
         TabView {
-            ParticipationView()
+            ParticipationTabScreen()
                 .tabItem {
                     Label("Events", systemImage: "globe.europe.africa")
                 }
             
-            ManageView()
+            ManageTabScreen()
                 .tabItem {
                     Label("Manage", systemImage: "list.bullet.rectangle")
                 }
-            ProfileView()
+            ProfileTabView()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }

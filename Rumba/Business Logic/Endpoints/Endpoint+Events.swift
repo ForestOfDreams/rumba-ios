@@ -23,4 +23,8 @@ extension Endpoint {
     static func getEvent(id: Int) -> Self {
         return Endpoint(path: "/api/events/\(id)")
     }
+    
+    static func updateEvent(id: Int) -> Self {
+        return Endpoint(path: "/api/events/\(id)")
+    }
 }

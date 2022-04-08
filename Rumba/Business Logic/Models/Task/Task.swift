@@ -7,11 +7,19 @@
 
 import Foundation
 
-struct Task: Encodable {
+struct Task: Decodable {
     let taskId: Int
     let title: String
     let description: String
     let membersCount: Int
+    let startDate: Date
+    let endDate: Date
+    let members: [Member]
+}
+
+struct Member: Decodable {
+    let memberId: Int
+    let member: User
     let startDate: Date
     let endDate: Date
 }

@@ -21,26 +21,28 @@ class RegistrViewModel : ObservableObject {
     
     @Published var isValid = false
     
+    @Published var showProgressView = false
     @Published var showAlert = false
     @Published var alertMessage = ""
     
-    
-    private var registrService: RegistrServiceProtocol
+    private var registrService: RegistrApiServiceProtocol
     
     private var cancellableSet: Set<AnyCancellable> = []
     
     func registrUser() {
+        showProgressView = true
         registrService.registrUser(RegistrForm(firstName: firstName, lastName: lastName, email: email, password: password))
             .receive(on: RunLoop.main)
-            .sink( receiveCompletion: { completion in
+            .sink( receiveCompletion: {[weak self] completion in
                 switch completion {
                 case .failure(let error):
                     let myErrorResult = error as! MyError
+                    self?.alertMessage = myErrorResult.messages[0]
+                    self?.showAlert = true
                     
-                    self.alertMessage = myErrorResult.messages[0]
-                    self.showAlert = true
-                
-                    case .finished: print("Publisher is finished")
+                case .finished:
+                    print("Publisher is finished")
+                    self?.showProgressView = false
                 }
             }, receiveValue: { [weak self] response in
                 
@@ -55,13 +57,13 @@ class RegistrViewModel : ObservableObject {
             isEmailValidPublisher,
             isPasswordValidPublisher
         )
-            .map { firstNameIsValid, lastNameIsValid, emailIsValid, passwordIsValid in
-                return firstNameIsValid &&
-                lastNameIsValid &&
-                emailIsValid &&
-                (passwordIsValid == .valid)
-            }
-            .eraseToAnyPublisher()
+        .map { firstNameIsValid, lastNameIsValid, emailIsValid, passwordIsValid in
+            return firstNameIsValid &&
+            lastNameIsValid &&
+            emailIsValid &&
+            (passwordIsValid == .valid)
+        }
+        .eraseToAnyPublisher()
     }
     
     
@@ -161,7 +163,7 @@ class RegistrViewModel : ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    init(registrService: RegistrServiceProtocol = RegistrService()) {
+    init(registrService: RegistrApiServiceProtocol = RegistrApiService()) {
         
         self.registrService = registrService
         
@@ -171,7 +173,9 @@ class RegistrViewModel : ObservableObject {
             .map { valid in
                 valid ? "" : "Username must at least have 3 character"
             }
-            .assign(to: \.usernameMessage, on: self)
+            .sink(receiveValue: { [weak self] message in
+                self?.usernameMessage = message
+            })
             .store(in: &cancellableSet)
         
         isPasswordValidPublisher
@@ -189,17 +193,18 @@ class RegistrViewModel : ObservableObject {
                     return ""
                 }
             }
-            .assign(to: \.passwordMessage, on: self)
+            .sink(receiveValue: { [weak self] message in
+                self?.passwordMessage = message
+            })
             .store(in: &cancellableSet)
         
         isFormValidPublisher
             .receive(on: RunLoop.main)
-            .assign(to: \.isValid, on:self)
+            .sink(receiveValue: { [weak self] isValid in
+                self?.isValid = isValid
+            })
             .store(in: &cancellableSet)
     }
-    
-    
-    
     enum passwordCheck {
         case valid
         case empty

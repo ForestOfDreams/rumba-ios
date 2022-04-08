@@ -7,70 +7,55 @@
 
 import SwiftUI
 
-struct ParticipatedListView: View {
+struct ParticipatorEventsListView: View {
     let events: [Event]
-    let fetchParticipatedEvents: () -> ()
+    let onRefresh: () -> ()
+    let onEventDisappear: () -> ()
+    let searchText: Binding<String>
+    var filterType: Binding<FilterType>
+
     
     var body: some View {
-        List {
-            ForEach(events, id: \.eventId) { event in
-                NavigationLink {
-                    ParticipatorEventDetailScreen(
-                        viewModel: CreatorEventDetailViewModel(
-                            eventId: event.eventId)
-                    )
-                } label: {
-                    HStack {
-                        Text(event.title)
-                        Spacer()
-                        if (event.isActionsRequired ?? false) {
-                            Image(systemName: "exclamationmark.square")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 15)
-                                .foregroundColor(.yellow)
-                                .padding(.horizontal)
-                        }
+        VStack {
+            Picker("Event type", selection: filterType) {
+                ForEach([FilterType.all, FilterType.past, FilterType.future], id: \.self) {
+                    Text($0.rawValue)
+                }
+            }
+            .padding(.horizontal)
+            .pickerStyle(.segmented)
+            List {
+                ForEach(events, id: \.eventId) { event in
+                    NavigationLink(
+                        destination: ParticipatorEventDetailScreen(
+                            viewModel: ParticipatorEventDetailViewModel(
+                                eventId: event.eventId
+                            )
+                        )
+                        .onDisappear(perform: onEventDisappear)
+                    ) {
+                        ParticipatorEventCardView(event: event)
                     }
                 }
-                
+            }
+            .refreshable {
+                onRefresh()
             }
         }
-        .refreshable {
-            fetchParticipatedEvents()
-        }
+        .searchable(text: searchText, prompt: "Filter events")
     }
 }
 
-//struct ParticipatedListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EventsListView(
-//            events:
-//                [Event(
-//                    eventId: 1,
-//                    title: "Уборка пляжа",
-//                    description: "Очень увлекательна",
-//                    isOnline: false,
-//                    isCancelled: true,
-//                    isRescheduled: false,
-//                    latitude: 50,
-//                    longitude: 40,
-//                    startDate: Date.now,
-//                    endDate: Date.now
-//                ),
-//                 Event(
-//                    eventId: 2,
-//                    title: "Уборка пляжа",
-//                    description: "Очень увлекательна",
-//                    isOnline: false,
-//                    isCancelled: true,
-//                    isRescheduled: false,
-//                    latitude: 50,
-//                    longitude: 40,
-//                    startDate: Date.now,
-//                    endDate: Date.now
-//                 )],
-//            fetchParticipatedEvents: {}
-//        )
-//    }
-//}
+struct ParticipatedListView_Previews: PreviewProvider {
+    @State static var searchText = ""
+    @State static var filterType = FilterType.all
+    static var previews: some View {
+        ParticipatorEventsListView(
+            events: [DummyData.event],
+            onRefresh: {},
+            onEventDisappear: {},
+            searchText: $searchText,
+            filterType: $filterType
+        )
+    }
+}

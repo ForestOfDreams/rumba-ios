@@ -30,7 +30,7 @@ extension Endpoint {
     
     var authHeaders: [String: Any] {
         return [
-            "Authorization": "Bearer \(KeychainStorage.shared.getToken()!.token)"
+            "Authorization": "Bearer \(KeychainStorage.shared.getToken()?.token ?? "")"
         ]
     }
 }

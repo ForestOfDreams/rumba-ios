@@ -12,36 +12,33 @@ struct RegistrView: View {
     @StateObject var viewModel: RegistrViewModel = RegistrViewModel()
     @State var presentAlert = false
     var body: some View {
-        Form {
-            Section(footer: Text(viewModel.usernameMessage)) {
-                TextField("First name", text:$viewModel.firstName)
-                    .autocapitalization(.none)
-                TextField("Last name", text:$viewModel.lastName)
-                    .autocapitalization(.none)
-                TextField("Emal", text:$viewModel.email)
-            }
-            Section(footer: Text(viewModel.passwordMessage)) {
-                SecureField("Password", text:$viewModel.password)
-                SecureField("Confirm password", text: $viewModel.confirmPassword)
-            }
-            Section {
-                Button {
-                    signUp()
-                } label: {
-                    Text("Sign up")
+        VStack {
+            Form {
+                Section(footer: Text(viewModel.usernameMessage)) {
+                    TextField("First name", text:$viewModel.firstName)
+                        .autocapitalization(.none)
+                    TextField("Last name", text:$viewModel.lastName)
+                        .autocapitalization(.none)
+                    TextField("Emal", text:$viewModel.email)
                 }
+                Section(footer: Text(viewModel.passwordMessage)) {
+                    SecureField("Password", text:$viewModel.password)
+                    SecureField("Confirm password", text: $viewModel.confirmPassword)
+                }
+            }
+            if viewModel.showProgressView {
+                ProgressView()
+                    .padding(20)
+            } else {
+                Button("Sign up") {
+                    viewModel.registrUser()
+                }
+                .buttonStyle(PrimaryButton())
+                .padding(20)
                 .disabled(!viewModel.isValid)
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Text("Go to log in")
-                }
-
             }
         }
-        .navigationTitle("Sign Up")
-        .navigationBarBackButtonHidden(true)
-
+        .navigationTitle("Create Account")
     }
     func signUp() {
         viewModel.registrUser()
@@ -52,7 +49,5 @@ struct RegistrView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrView()
-            
     }
 }
-

@@ -11,21 +11,33 @@ struct JoinEventScreen: View {
     @StateObject var viewModel: JoinEventViewModel
     
     var body: some View {
-        VStack {
-            if let event = viewModel.event {
-                ParticipatorEventDetailScreen(
-                    event: event
-                )
+        ScrollView {
+            VStack {
+                if let event = viewModel.event {
+                    EventDetailView(
+                        event: event,
+                        image: UIImage(systemName: "qrcode")!,
+                        shareAction: {}
+                    )
+                    TasksListView(
+                        tasks: event.tasks ?? [],
+                        event: event,
+                        showEdit: false
+                    )
+                }
+                else {
+                    ProgressView()
+                }
+                Button {
+                    viewModel.joinEvent()
+                } label: {
+                    Text("Join")
+                }
+                .buttonStyle(PrimaryButton())
             }
-            else {
-                ProgressView()
-            }
-            Button {
-                viewModel.joinEvent()
-            } label: {
-                Text("Join")
-            }
+            .padding()
         }
+        
     }
 }
 

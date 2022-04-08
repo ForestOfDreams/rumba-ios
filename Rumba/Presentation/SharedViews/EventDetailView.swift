@@ -34,29 +34,10 @@ struct EventDetailView: View {
     }
 }
 
-struct CreatorEventDetailView_Previews: PreviewProvider {
+struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
         EventDetailView(
-            event: Event(
-                eventId: 1,
-                title: "Уборка пляжа",
-                description: "Необходимо очистить от мусора пляж лазурного озера",
-                isOnline: false,
-                isCancelled: false,
-                isRescheduled: false,
-                placeName: "Лазурное озеро",
-                latitude: 60.886490560469504,
-                longitude: 29.54654745624353,
-                startDate: Date.now,
-                endDate: Date.now,
-                tasks: [],
-                members: [],
-                creator: Creator(
-                    accountId: 1,
-                    firstName: "Петр",
-                    lastName: "Енотов",
-                    email: "touch@gmail.com")
-            ),
+            event: DummyData.event,
             image: UIImage(systemName: "qrcode")!,
             shareAction: {}
         )
@@ -112,19 +93,8 @@ struct DescriptionSectionView: View {
             HStack {
                 Text("Description")
                     .font(.title2)
-                //                Button {
-                //                    withAnimation {
-                //                        showDescription.toggle()
-                //                    }
-                //                } label: {
-                //                    showDescription ?
-                //                    expandImage(imageName: "arrow.up.to.line") :
-                //                    expandImage(imageName: "arrow.down.to.line")
-                //                }
             }
-            //            if showDescription {
             Text(event.description)
-            //            }
         }
         .frame(
             maxWidth: .infinity,
@@ -144,9 +114,12 @@ struct LocationSectionView: View {
                     .font(.title2)
             }
             
-            if let latitude = event.latitude, let longitude = event.longitude{
+            if let latitude = event.latitude,
+               let longitude = event.longitude,
+               let placeName = event.placeName
+            {
                 HStack {
-                    Text(event.placeName!)
+                    Text(placeName)
                     Button {
                         withAnimation {
                             showLocation.toggle()

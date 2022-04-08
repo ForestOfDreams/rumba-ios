@@ -9,23 +9,23 @@ import Foundation
 import Combine
 import CoreLocation
 
-
 protocol RegistrApiServiceProtocol: AnyObject {
     var networker: NetworkerProtocol { get }
     
-    func registrUser(_ form: RegistrForm) -> AnyPublisher<RegistrResponse, Error>
+    func registrUser(_ form: RegistrForm) -> AnyPublisher<Data, Error>
 }
 
 final class RegistrApiService: RegistrApiServiceProtocol {
     func registrUser(
         _ form: RegistrForm
-    ) -> AnyPublisher<RegistrResponse, Error> {
+    ) -> AnyPublisher<Data, Error> {
         let endpoint = Endpoint.registr
         
         return networker.post(
             url: endpoint.url,
             headers: endpoint.headers,
-            params: form
+            params: form,
+            encoder: JSONEncoder()
         )
         .tryMap { (data,response) -> Data in
             guard
@@ -36,7 +36,6 @@ final class RegistrApiService: RegistrApiServiceProtocol {
             }
             return data
         }
-        .decode(type: RegistrResponse.self, decoder: JSONDecoder())
         .eraseToAnyPublisher()
     }
     
@@ -45,13 +44,4 @@ final class RegistrApiService: RegistrApiServiceProtocol {
     init(networker: NetworkerProtocol = Networker()) {
         self.networker = networker
     }
-}
-
-
-struct ErrorResponse: Decodable {
-    let timestamp: String
-    let type: String
-    let path: String
-    let message: String
-    let status: Int
 }

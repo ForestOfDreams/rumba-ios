@@ -8,26 +8,18 @@
 import SwiftUI
 import MapKit
 
-struct Place: Identifiable {
-    let id = UUID()
-    let name: String
-    let coordinate: CLLocationCoordinate2D
-}
-
 struct MapView: View {
     @State var region: MKCoordinateRegion
     
-    let annotationItems: [Place]
+    let annotationItems: [EventPlace]
     
     var body: some View {
         Map(
             coordinateRegion: $region,
-            annotationItems: annotationItems) {
-                MapMarker(coordinate: $0.coordinate)
-            }
-        
-            .frame(width: 400, height: 300
-        )
+            annotationItems: annotationItems
+        ) {
+            MapMarker(coordinate: $0.coordinate, tint: .green)
+        }
     }
 }
 
@@ -35,12 +27,12 @@ struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView(
             region: MKCoordinateRegion(
-                center: CLLocationCoordinate2D(latitude: 3, longitude: 4),
+                center: CLLocationCoordinate2D(latitude: 60.886490560469504, longitude: 29.54654745624353),
                 span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)),
             annotationItems: [
-                Place(
-                    name: "London",
-                    coordinate: CLLocationCoordinate2D(latitude: 3, longitude: 4)
+                EventPlace(
+                    name: "Лазурное озеро",
+                    coordinate: CLLocationCoordinate2D(latitude: 60.886490560469504, longitude: 29.54654745624353)
                 )
             ]
         )

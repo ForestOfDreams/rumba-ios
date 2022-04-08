@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 import Combine
 
 class EventEditViewModel: ObservableObject {
@@ -14,16 +13,15 @@ class EventEditViewModel: ObservableObject {
     private var cancellableSet: Set<AnyCancellable> = []
     
     @Published var isFormValid: Bool = false
-    @Published var dateErrorMessages: Set<DateErrorMessage> = Set<DateErrorMessage>()
-    @Published var mainErrorMessages: Set<MainErrorMessage> = Set<MainErrorMessage>()
-    @Published var locationErrorMessages: Set<LocationErrorMessage> = Set<LocationErrorMessage>()
+    @Published var dateErrorMessages: Set<String> = Set<String>()
+    @Published var mainErrorMessages: Set<String> = Set<String>()
+    @Published var locationErrorMessages: Set<String> = Set<String>()
     
-    @Published var closeView: Bool = false
+    @Published var shouldCloseView: Bool = false
     @Published var isEditMode: Bool = false
     
     @Published var title: String = ""
     @Published var description: String = ""
-    var eventTypes: [EventType] = [.online,.offline]
     @Published var type: EventType = .offline
     @Published var isCancelled: Bool?
     @Published var isRescheduled: Bool?
@@ -44,11 +42,11 @@ class EventEditViewModel: ObservableObject {
             isRescheduled: isRescheduled,
             latitude: latitude,
             longitude: longitude,
+            placeName: placeName,
             startDate: startDate,
             endDate: endDate
         )
     }
-    
     
     init(editingEventId: Int? = nil) {
         //        self.objectWillChange.send()
@@ -61,21 +59,27 @@ class EventEditViewModel: ObservableObject {
         setUpSubscribers()
     }
     
-    func setUpSubscribers() {
+    deinit {
+        print("DEINIT")
+    }
+    
+    private func setUpSubscribers() {
         isFormValidPublisher
             .receive(on: RunLoop.main)
-            .assign(to: \.isFormValid, on:self)
+            .sink(receiveValue: { [weak self] isValid in
+                self?.isFormValid = isValid
+            })
             .store(in: &cancellableSet)
         
         isTitleLongEnoughPublisher
             .dropFirst()
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { isValid in
+            .sink(receiveValue: { [weak self] isValid in
                 if !isValid {
-                    self.mainErrorMessages.insert(MainErrorMessage.titleTooShort)
+                    self?.mainErrorMessages.insert(EventMainErrorMessage.titleTooShort.rawValue)
                 }
                 else {
-                    self.mainErrorMessages.remove(MainErrorMessage.titleTooShort)
+                    self?.mainErrorMessages.remove(EventMainErrorMessage.titleTooShort.rawValue)
                 }
             })
             .store(in: &cancellableSet)
@@ -83,12 +87,12 @@ class EventEditViewModel: ObservableObject {
         isTitleShortEnoughPublisher
             .dropFirst()
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { isValid in
+            .sink(receiveValue: { [weak self] isValid in
                 if !isValid {
-                    self.mainErrorMessages.insert(MainErrorMessage.titleTooLong)
+                    self?.mainErrorMessages.insert(EventMainErrorMessage.titleTooLong.rawValue)
                 }
                 else {
-                    self.mainErrorMessages.remove(MainErrorMessage.titleTooLong)
+                    self?.mainErrorMessages.remove(EventMainErrorMessage.titleTooLong.rawValue)
                 }
             })
             .store(in: &cancellableSet)
@@ -96,12 +100,12 @@ class EventEditViewModel: ObservableObject {
         isDescriptionLongEnoughPublisher
             .dropFirst()
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { isValid in
+            .sink(receiveValue: { [weak self] isValid in
                 if !isValid {
-                    self.mainErrorMessages.insert(MainErrorMessage.descriptionTooShort)
+                    self?.mainErrorMessages.insert(EventMainErrorMessage.descriptionTooShort.rawValue)
                 }
                 else {
-                    self.mainErrorMessages.remove(MainErrorMessage.descriptionTooShort)
+                    self?.mainErrorMessages.remove(EventMainErrorMessage.descriptionTooShort.rawValue)
                 }
             })
             .store(in: &cancellableSet)
@@ -109,12 +113,12 @@ class EventEditViewModel: ObservableObject {
         isLocationValidPublisher
             .dropFirst()
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { isValid in
+            .sink(receiveValue: { [weak self] isValid in
                 if !isValid {
-                    self.locationErrorMessages.insert(LocationErrorMessage.locationIsEmpty)
+                    self?.locationErrorMessages.insert(EventLocationErrorMessage.locationIsEmpty.rawValue)
                 }
                 else {
-                    self.locationErrorMessages.remove(LocationErrorMessage.locationIsEmpty)
+                    self?.locationErrorMessages.remove(EventLocationErrorMessage.locationIsEmpty.rawValue)
                 }
             })
             .store(in: &cancellableSet)
@@ -122,12 +126,12 @@ class EventEditViewModel: ObservableObject {
         isStartDateNotPastPublisher
             .dropFirst()
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { isValid in
+            .sink(receiveValue: { [weak self] isValid in
                 if !isValid {
-                    self.dateErrorMessages.insert(DateErrorMessage.startDateInPast)
+                    self?.dateErrorMessages.insert(EventDateErrorMessage.startDateInPast.rawValue)
                 }
                 else {
-                    self.dateErrorMessages.remove(DateErrorMessage.startDateInPast)
+                    self?.dateErrorMessages.remove(EventDateErrorMessage.startDateInPast.rawValue)
                 }
             })
             .store(in: &cancellableSet)
@@ -135,12 +139,12 @@ class EventEditViewModel: ObservableObject {
         isEndDateNotPastPublisher
             .dropFirst()
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { isValid in
+            .sink(receiveValue: { [weak self] isValid in
                 if !isValid {
-                    self.dateErrorMessages.insert(DateErrorMessage.endDateInPast)
+                    self?.dateErrorMessages.insert(EventDateErrorMessage.endDateInPast.rawValue)
                 }
                 else {
-                    self.dateErrorMessages.remove(DateErrorMessage.endDateInPast)
+                    self?.dateErrorMessages.remove(EventDateErrorMessage.endDateInPast.rawValue)
                 }
             })
             .store(in: &cancellableSet)
@@ -148,12 +152,12 @@ class EventEditViewModel: ObservableObject {
         isEndDateBiggerThanStartDatePublisher
             .dropFirst()
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { isValid in
+            .sink(receiveValue: { [weak self] isValid in
                 if !isValid {
-                    self.dateErrorMessages.insert(DateErrorMessage.endDateEarlierThanStartDate)
+                    self?.dateErrorMessages.insert(EventDateErrorMessage.endDateEarlierThanStartDate.rawValue)
                 }
                 else {
-                    self.dateErrorMessages.remove(DateErrorMessage.endDateEarlierThanStartDate)
+                    self?.dateErrorMessages.remove(EventDateErrorMessage.endDateEarlierThanStartDate.rawValue)
                 }
             })
             .store(in: &cancellableSet)
@@ -175,6 +179,7 @@ class EventEditViewModel: ObservableObject {
                 self?.type = response.isOnline ? .online : .offline
                 self?.isCancelled = response.isCancelled
                 self?.isRescheduled = response.isRescheduled
+                self?.placeName = response.placeName
                 self?.latitude = response.latitude
                 self?.longitude = response.longitude
                 self?.startDate = response.startDate
@@ -194,8 +199,7 @@ class EventEditViewModel: ObservableObject {
                 case .finished: print("Publisher is finished")
                 }
             }, receiveValue: { [weak self] (response:Data) in
-                print(response)
-                self?.closeView = true
+                self?.shouldCloseView = true
             })
             .store(in: &cancellableSet)
     }
@@ -212,35 +216,14 @@ class EventEditViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] (response:Data) in
                 print(response)
-                self?.closeView = true
+                self?.shouldCloseView = true
             })
             .store(in: &cancellableSet)
     }
     
-    func onSaveEvent()  {
-        if (isEditMode) {
-            updateEvent()
-        }
-        else {
-            createEvent()
-        }
+    func onSave() {
+        isEditMode ? updateEvent() : createEvent()
     }
-}
-
-enum DateErrorMessage: String {
-    case startDateInPast = "Start time cannot be in the past."
-    case endDateInPast = "End time cannot be in the past."
-    case endDateEarlierThanStartDate = "The end time cannot be earlier than the start time."
-}
-
-enum MainErrorMessage: String {
-    case titleTooShort = "Title must contain at least 4 characters."
-    case titleTooLong = "Title must be less than 40 characters."
-    case descriptionTooShort = "Description must contain at least 4 characters."
-}
-
-enum LocationErrorMessage: String {
-    case locationIsEmpty = "Location must not be empty for offline event."
 }
 
 extension EventEditViewModel {
@@ -311,33 +294,63 @@ extension EventEditViewModel {
     }
     
     private var isTitleValidPublisher: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest(isTitleLongEnoughPublisher, isTitleShortEnoughPublisher)
-            .debounce(for: 0.8, scheduler: RunLoop.main)
-            .map { isTitleLongEnough, isTitleShortEnough in
-                return isTitleLongEnough && isTitleShortEnough
-            }
-            .eraseToAnyPublisher()
+        Publishers.CombineLatest(isTitleLongEnoughPublisher,
+                                 isTitleShortEnoughPublisher
+        )
+        .debounce(for: 0.8, scheduler: RunLoop.main)
+        .map { isTitleLongEnough, isTitleShortEnough in
+            return isTitleLongEnough && isTitleShortEnough
+        }
+        .eraseToAnyPublisher()
     }
     
     private var isDateValidPublisher: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest3(isStartDateNotPastPublisher, isEndDateNotPastPublisher, isEndDateBiggerThanStartDatePublisher)
-            .debounce(for: 0.8, scheduler: RunLoop.main)
-            .map { isStartDateValid, isEndDateValid, isEndDateBiggerThanStartDate in
-                return isEndDateValid && isEndDateValid && isEndDateBiggerThanStartDate
-            }
-            .eraseToAnyPublisher()
+        Publishers.CombineLatest3(isStartDateNotPastPublisher,
+                                  isEndDateNotPastPublisher,
+                                  isEndDateBiggerThanStartDatePublisher
+        )
+        .debounce(for: 0.8, scheduler: RunLoop.main)
+        .map { isStartDateValid, isEndDateValid, isEndDateBiggerThanStartDate in
+            return isEndDateValid && isEndDateValid && isEndDateBiggerThanStartDate
+        }
+        .eraseToAnyPublisher()
     }
     
     private var isFormValidPublisher: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest4(isTitleValidPublisher, isDescriptionLongEnoughPublisher, isLocationValidPublisher, isDateValidPublisher)
-            .map { isTitleValid, isDescriptionValid, isLocationValid, isDateValid in
-                return isTitleValid && isDescriptionValid && isLocationValid && isDateValid
-            }
-            .eraseToAnyPublisher()
+        Publishers.CombineLatest4(isTitleValidPublisher,
+                                  isDescriptionLongEnoughPublisher,
+                                  isLocationValidPublisher,
+                                  isDateValidPublisher
+        )
+        .map { isTitleValid, isDescriptionValid, isLocationValid, isDateValid in
+            return isTitleValid && isDescriptionValid && isLocationValid && isDateValid
+        }
+        .eraseToAnyPublisher()
     }
 }
 
-enum EventType: String {
-    case online = "Online"
-    case offline = "Offline"
+extension EventEditViewModel {
+    enum EventType: String {
+        case online = "Online"
+        case offline = "Offline"
+    }
+}
+
+
+extension EventEditViewModel {
+    enum EventDateErrorMessage: String {
+        case startDateInPast = "Start time cannot be in the past."
+        case endDateInPast = "End time cannot be in the past."
+        case endDateEarlierThanStartDate = "The end time cannot be earlier than the start time."
+    }
+
+    enum EventMainErrorMessage: String {
+        case titleTooShort = "Title must contain at least 4 characters."
+        case titleTooLong = "Title must be less than 40 characters."
+        case descriptionTooShort = "Description must contain at least 4 characters."
+    }
+
+    enum EventLocationErrorMessage: String {
+        case locationIsEmpty = "Location must not be empty for offline event."
+    }
 }

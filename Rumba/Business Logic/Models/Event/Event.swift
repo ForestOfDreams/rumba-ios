@@ -7,24 +7,27 @@
 
 import Foundation
 
-struct Event: Codable {
-    var eventId: Int?
-    var title: String
-    var description: String
-    var isOnline: Bool
-    var isCancelled: Bool?
-    var isRescheduled: Bool?
-    var latitude: Double?
-    var longitude: Double?
-    var startDate: Date
-    var endDate: Date
-    var tasks: [Task]?
-    var creator: Creator?
+struct Event: Decodable {
+    let eventId: Int
+    let title: String
+    let description: String
+    let isOnline: Bool
+    let isCancelled: Bool
+    let isRescheduled: Bool
+    let isActionsRequired: Bool?
+    let placeName: String?
+    let latitude: Double?
+    let longitude: Double?
+    let startDate: Date
+    let endDate: Date
+    let tasks: [Task]?
+    let members: [User]?
+    let creator: Creator?
 }
 
-struct Creator: Codable {
-    var accountId: Int
-    var firstName: String
-    var lastName: String
-    var email: String
+struct Creator: Decodable {
+    let accountId: Int
+    let firstName: String
+    let lastName: String
+    let email: String
 }

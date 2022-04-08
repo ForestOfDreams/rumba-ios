@@ -10,7 +10,9 @@ import SwiftUI
 struct TaskCardView: View {
     let task: Task
     let event: Event
-    let showEdit: Bool
+    let manageMode: Bool
+    
+    @State var showAssignView: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,7 +20,7 @@ struct TaskCardView: View {
                 Text(task.title)
                     .font(.title)
                 Spacer()
-                if showEdit {
+                if manageMode {
                     NavigationLink(
                         destination: TaskEditView(
                             viewModel: TaskEditViewModel(
@@ -29,12 +31,20 @@ struct TaskCardView: View {
                     ) {
                         Text("Edit")
                     }
+                } else {
+                    Button {
+                        showAssignView = true
+                    } label: {
+                        Text("Choose task")
+                    }
                 }
             }
             TaskDetailSectionView(task: task)
             TaskDescriptionSectionView(task: task)
             TaskMembersSectionView(task: task)
-            
+        }
+        .sheet(isPresented: $showAssignView) {
+            ChooseTaskView()
         }
         .padding()
         .background(
@@ -45,29 +55,11 @@ struct TaskCardView: View {
     }
 }
 
-struct CreatorTaskCardView_Previews: PreviewProvider {
+struct TaskCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatorTaskCardView(
-            task: DummyData.task, event: Event(
-                eventId: 1,
-                title: "Уборка пляжа",
-                description: "Необходимо очистить от мусора пляж лазурного озера",
-                isOnline: false,
-                isCancelled: false,
-                isRescheduled: false,
-                placeName: "Лазурное озеро",
-                latitude: 60.886490560469504,
-                longitude: 29.54654745624353,
-                startDate: Date.now,
-                endDate: Date.now,
-                tasks: [],
-                members: [],
-                creator: Creator(
-                    accountId: 1,
-                    firstName: "Петр",
-                    lastName: "Енотов",
-                    email: "touch@gmail.com")
-            )
+        TaskCardView(
+            task: DummyData.task, event: DummyData.event,
+            manageMode: false
         )
     }
 }

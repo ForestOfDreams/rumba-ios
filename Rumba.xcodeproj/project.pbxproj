@@ -8,42 +8,61 @@
 
 /* Begin PBXBuildFile section */
 		8F097B4727AA6F1F00E4D791 /* RegistrForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4627AA6F1F00E4D791 /* RegistrForm.swift */; };
-		8F097B4927AA6F2C00E4D791 /* RegistrResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4827AA6F2C00E4D791 /* RegistrResponse.swift */; };
-		8F097B4C27AA702800E4D791 /* RegistrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4B27AA702800E4D791 /* RegistrService.swift */; };
-		8F097B4E27AADB3000E4D791 /* RegistrConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4D27AADB3000E4D791 /* RegistrConfigurator.swift */; };
-		8F097B5027AADC1800E4D791 /* RegistrRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4F27AADC1800E4D791 /* RegistrRouter.swift */; };
+		8F097B4C27AA702800E4D791 /* RegistrAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F097B4B27AA702800E4D791 /* RegistrAPIService.swift */; };
 		8F1F8D0827E790CA00BE9F44 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 8F1F8D0727E790CA00BE9F44 /* SwiftKeychainWrapper */; };
 		8F1F8D0A27E7978700BE9F44 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D0927E7978700BE9F44 /* KeychainStorage.swift */; };
-		8F1F8D1727E80C6400BE9F44 /* ParticipationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */; };
-		8F1F8D1927E80C8D00BE9F44 /* ManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1827E80C8D00BE9F44 /* ManageView.swift */; };
-		8F1F8D1B27E80C9E00BE9F44 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1A27E80C9E00BE9F44 /* ProfileView.swift */; };
+		8F1F8D1727E80C6400BE9F44 /* ParticipationTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1627E80C6400BE9F44 /* ParticipationTabScreen.swift */; };
+		8F1F8D1927E80C8D00BE9F44 /* ManageTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1827E80C8D00BE9F44 /* ManageTabScreen.swift */; };
+		8F1F8D1B27E80C9E00BE9F44 /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F8D1A27E80C9E00BE9F44 /* ProfileTabView.swift */; };
 		8F1F8D1E27E9133F00BE9F44 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 8F1F8D1D27E9133F00BE9F44 /* CodeScanner */; };
+		8F47BAE027F6125300C6BAA7 /* TaskEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F47BADF27F6125300C6BAA7 /* TaskEditViewModel.swift */; };
+		8F47BAE327F632E000C6BAA7 /* CreatorEventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F47BAE227F632DF00C6BAA7 /* CreatorEventCardView.swift */; };
+		8F4CEF9D27F63C9E00C24F7F /* CreatorEventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEF9C27F63C9E00C24F7F /* CreatorEventsListView.swift */; };
+		8F4CEFA027F66B5D00C24F7F /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEF9F27F66B5D00C24F7F /* TasksListView.swift */; };
+		8F4CEFA227F66D2C00C24F7F /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFA127F66D2C00C24F7F /* TaskCardView.swift */; };
+		8F4CEFA427F66E0000C24F7F /* TaskAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFA327F66E0000C24F7F /* TaskAPIService.swift */; };
+		8F4CEFA727F6787A00C24F7F /* CreatorEventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFA627F6787A00C24F7F /* CreatorEventDetailViewModel.swift */; };
+		8F4CEFAE27F7A5D500C24F7F /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFAD27F7A5D500C24F7F /* EventDetailView.swift */; };
 		8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */; };
 		8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91C27A9C23D004B18DE /* Endpoint.swift */; };
 		8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91E27A9C2A6004B18DE /* Networker.swift */; };
 		8F5AB92627A9C6B7004B18DE /* Endpoint+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */; };
 		8F5AB92827A9C769004B18DE /* Endpoint+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB92727A9C769004B18DE /* Endpoint+Auth.swift */; };
 		8F69863927E9479900E1279A /* ParticipationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69863827E9479900E1279A /* ParticipationViewModel.swift */; };
-		8F69863B27E94A5E00E1279A /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69863A27E94A5E00E1279A /* EventService.swift */; };
+		8F69863B27E94A5E00E1279A /* EventAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69863A27E94A5E00E1279A /* EventAPIService.swift */; };
 		8F6CB2BE27E50AEC00C3A995 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2BD27E50AEC00C3A995 /* MyError.swift */; };
 		8F6CB2C027E50E1800C3A995 /* Endpoint+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */; };
 		8F6CB2C227E50E3F00C3A995 /* Endpoint+Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */; };
 		8F6CB2C627E50E6F00C3A995 /* Endpoint+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */; };
-		8FD03F1427E9CBB900EF6CD8 /* CreateEventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1327E9CBB900EF6CD8 /* CreateEventForm.swift */; };
-		8FD03F1627E9CCD600EF6CD8 /* CreateEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1527E9CCD600EF6CD8 /* CreateEventResponse.swift */; };
-		8FD03F1827E9D32E00EF6CD8 /* UpdateEventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1727E9D32E00EF6CD8 /* UpdateEventForm.swift */; };
-		8FD03F1C27E9D36200EF6CD8 /* UpdateEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1B27E9D36200EF6CD8 /* UpdateEventResponse.swift */; };
-		8FD03F1E27E9D7A200EF6CD8 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1D27E9D7A200EF6CD8 /* MemberService.swift */; };
-		8FD03F2027E9DBC200EF6CD8 /* GetCreatedEventsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1F27E9DBC200EF6CD8 /* GetCreatedEventsForm.swift */; };
-		8FD03F2227E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2127E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift */; };
-		8FD03F2627E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2527E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift */; };
-		8FD03F2927E9DCF300EF6CD8 /* GetEventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2827E9DCF300EF6CD8 /* GetEventForm.swift */; };
-		8FD03F2C27E9DD2300EF6CD8 /* GetEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2B27E9DD2300EF6CD8 /* GetEventResponse.swift */; };
-		8FD03F2F27EA676000EF6CD8 /* DetailEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2E27EA676000EF6CD8 /* DetailEventView.swift */; };
-		8FD03F3127EB3EAE00EF6CD8 /* JoinEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3027EB3EAE00EF6CD8 /* JoinEventView.swift */; };
+		8FD03F1E27E9D7A200EF6CD8 /* MemberAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1D27E9D7A200EF6CD8 /* MemberAPIService.swift */; };
+		8FD03F2C27E9DD2300EF6CD8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2B27E9DD2300EF6CD8 /* Event.swift */; };
+		8FD03F2F27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2E27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift */; };
+		8FD03F3127EB3EAE00EF6CD8 /* JoinEventScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3027EB3EAE00EF6CD8 /* JoinEventScreen.swift */; };
 		8FD03F3527EB9C4F00EF6CD8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */; };
 		8FD03F3927EBA8CB00EF6CD8 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */; };
-		8FD03F3B27EBB79600EF6CD8 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3A27EBB79600EF6CD8 /* EventsListView.swift */; };
+		8FD03F3B27EBB79600EF6CD8 /* ParticipatorEventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3A27EBB79600EF6CD8 /* ParticipatorEventsListView.swift */; };
+		8FD03F3D27ECAD2B00EF6CD8 /* LinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3C27ECAD2B00EF6CD8 /* LinkService.swift */; };
+		8FD03F3F27ECB09D00EF6CD8 /* ManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3E27ECB09D00EF6CD8 /* ManageViewModel.swift */; };
+		8FD03F4127ECD0FB00EF6CD8 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4027ECD0FB00EF6CD8 /* QRCodeView.swift */; };
+		8FD03F4527ED1C4500EF6CD8 /* BaseQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4427ED1C4500EF6CD8 /* BaseQRCodeView.swift */; };
+		8FD03F4727ED29E300EF6CD8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4627ED29E300EF6CD8 /* ProfileViewModel.swift */; };
+		8FD03F4927ED2E3100EF6CD8 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4827ED2E3100EF6CD8 /* EditProfileView.swift */; };
+		8FD03F4B27ED2ED200EF6CD8 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4A27ED2ED200EF6CD8 /* EventEditView.swift */; };
+		8FD03F5027ED367C00EF6CD8 /* ProfileAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4F27ED367C00EF6CD8 /* ProfileAPIService.swift */; };
+		8FD03F5327EE1E1B00EF6CD8 /* PlacePickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F5227EE1E1B00EF6CD8 /* PlacePickerField.swift */; };
+		8FD03F5F27EE2E8A00EF6CD8 /* MapItemPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8FD03F5E27EE2E8A00EF6CD8 /* MapItemPicker */; };
+		8FD03F6127EF6CD900EF6CD8 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F6027EF6CD900EF6CD8 /* TaskEditView.swift */; };
+		8FD03F6427EF76D600EF6CD8 /* EventEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F6327EF76D600EF6CD8 /* EventEditViewModel.swift */; };
+		8FD03F6627EFB27400EF6CD8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F6527EFB27400EF6CD8 /* Task.swift */; };
+		8FD03F6B27F0651600EF6CD8 /* TaskForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F6A27F0651600EF6CD8 /* TaskForm.swift */; };
+		8FD03F6D27F0653B00EF6CD8 /* EventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F6C27F0653B00EF6CD8 /* EventForm.swift */; };
+		8FD03F7127F0974100EF6CD8 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F7027F0974100EF6CD8 /* EditProfileViewModel.swift */; };
+		8FD03F7327F0976C00EF6CD8 /* JoinEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F7227F0976C00EF6CD8 /* JoinEventViewModel.swift */; };
+		8FD03F7A27F136B400EF6CD8 /* ChooseTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F7927F136B400EF6CD8 /* ChooseTaskViewModel.swift */; };
+		8FD03F7F27F139F500EF6CD8 /* ChooseTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F7E27F139F500EF6CD8 /* ChooseTaskView.swift */; };
+		8FD1D42027F3CAD200A588BE /* Endpoint+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1D41F27F3CAD200A588BE /* Endpoint+User.swift */; };
+		8FD1D42227F3CB3900A588BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1D42127F3CB3900A588BE /* User.swift */; };
+		8FD1D42727F5D5E300A588BE /* CreatorEventDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD1D42627F5D5E300A588BE /* CreatorEventDetailScreen.swift */; };
 		8FD81F30277D1E040078AB1A /* RumbaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F2F277D1E040078AB1A /* RumbaApp.swift */; };
 		8FD81F32277D1E040078AB1A /* RegistrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD81F31277D1E040078AB1A /* RegistrView.swift */; };
 		8FD81F34277D1E060078AB1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD81F33277D1E060078AB1A /* Assets.xcassets */; };
@@ -55,8 +74,16 @@
 		8FDDCF9527C6DBE90045CA52 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9427C6DBE90045CA52 /* LoginViewModel.swift */; };
 		8FDDCF9727C6F0F80045CA52 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9627C6F0F80045CA52 /* LoginForm.swift */; };
 		8FDDCF9927C6F1060045CA52 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9827C6F1060045CA52 /* LoginResponse.swift */; };
-		8FDDCF9B27C705310045CA52 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9A27C705310045CA52 /* LoginService.swift */; };
+		8FDDCF9B27C705310045CA52 /* LoginAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9A27C705310045CA52 /* LoginAPIService.swift */; };
 		8FDDCF9F27C70FA30045CA52 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDCF9E27C70FA30045CA52 /* TabBarView.swift */; };
+		8FEC23A127FFBFF500A1386D /* AssignMemberToTaskForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEC23A027FFBFF500A1386D /* AssignMemberToTaskForm.swift */; };
+		8FFAF0A527FA429000130236 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAF0A427FA429000130236 /* DummyData.swift */; };
+		8FFAF0A727FB021300130236 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAF0A627FB021300130236 /* PrimaryButton.swift */; };
+		8FFAF0A927FB143500130236 /* FormErrorMesagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAF0A827FB143500130236 /* FormErrorMesagesView.swift */; };
+		8FFAF0AC27FB237B00130236 /* ParticipatorEventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAF0AB27FB237B00130236 /* ParticipatorEventDetailViewModel.swift */; };
+		8FFAF0AE27FB5D7900130236 /* CreatorEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAF0AD27FB5D7900130236 /* CreatorEventDetailView.swift */; };
+		8FFAF0B027FB602A00130236 /* ParticipatorEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAF0AF27FB602A00130236 /* ParticipatorEventDetailView.swift */; };
+		8FFAF0B227FB8B6200130236 /* ParticipatorEventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAF0B127FB8B6200130236 /* ParticipatorEventCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,41 +105,59 @@
 
 /* Begin PBXFileReference section */
 		8F097B4627AA6F1F00E4D791 /* RegistrForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrForm.swift; sourceTree = "<group>"; };
-		8F097B4827AA6F2C00E4D791 /* RegistrResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrResponse.swift; sourceTree = "<group>"; };
-		8F097B4B27AA702800E4D791 /* RegistrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrService.swift; sourceTree = "<group>"; };
-		8F097B4D27AADB3000E4D791 /* RegistrConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrConfigurator.swift; sourceTree = "<group>"; };
-		8F097B4F27AADC1800E4D791 /* RegistrRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrRouter.swift; sourceTree = "<group>"; };
+		8F097B4B27AA702800E4D791 /* RegistrAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrAPIService.swift; sourceTree = "<group>"; };
 		8F1F8D0927E7978700BE9F44 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
-		8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationView.swift; sourceTree = "<group>"; };
-		8F1F8D1827E80C8D00BE9F44 /* ManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageView.swift; sourceTree = "<group>"; };
-		8F1F8D1A27E80C9E00BE9F44 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8F1F8D1627E80C6400BE9F44 /* ParticipationTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationTabScreen.swift; sourceTree = "<group>"; };
+		8F1F8D1827E80C8D00BE9F44 /* ManageTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTabScreen.swift; sourceTree = "<group>"; };
+		8F1F8D1A27E80C9E00BE9F44 /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
 		8F1F8D1F27E91D7F00BE9F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8F47BADF27F6125300C6BAA7 /* TaskEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewModel.swift; sourceTree = "<group>"; };
+		8F47BAE227F632DF00C6BAA7 /* CreatorEventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventCardView.swift; sourceTree = "<group>"; };
+		8F4CEF9C27F63C9E00C24F7F /* CreatorEventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventsListView.swift; sourceTree = "<group>"; };
+		8F4CEF9F27F66B5D00C24F7F /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
+		8F4CEFA127F66D2C00C24F7F /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		8F4CEFA327F66E0000C24F7F /* TaskAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAPIService.swift; sourceTree = "<group>"; };
+		8F4CEFA627F6787A00C24F7F /* CreatorEventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventDetailViewModel.swift; sourceTree = "<group>"; };
+		8F4CEFAD27F7A5D500C24F7F /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrViewModel.swift; sourceTree = "<group>"; };
 		8F5AB91C27A9C23D004B18DE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8F5AB91E27A9C2A6004B18DE /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		8F5AB92527A9C6B7004B18DE /* Endpoint+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+URL.swift"; sourceTree = "<group>"; };
 		8F5AB92727A9C769004B18DE /* Endpoint+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Auth.swift"; sourceTree = "<group>"; };
 		8F69863827E9479900E1279A /* ParticipationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationViewModel.swift; sourceTree = "<group>"; };
-		8F69863A27E94A5E00E1279A /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		8F69863A27E94A5E00E1279A /* EventAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPIService.swift; sourceTree = "<group>"; };
 		8F6CB2BD27E50AEC00C3A995 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Events.swift"; sourceTree = "<group>"; };
 		8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Member.swift"; sourceTree = "<group>"; };
 		8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Tasks.swift"; sourceTree = "<group>"; };
-		8FD03F1327E9CBB900EF6CD8 /* CreateEventForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventForm.swift; sourceTree = "<group>"; };
-		8FD03F1527E9CCD600EF6CD8 /* CreateEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventResponse.swift; sourceTree = "<group>"; };
-		8FD03F1727E9D32E00EF6CD8 /* UpdateEventForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEventForm.swift; sourceTree = "<group>"; };
-		8FD03F1B27E9D36200EF6CD8 /* UpdateEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEventResponse.swift; sourceTree = "<group>"; };
-		8FD03F1D27E9D7A200EF6CD8 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
-		8FD03F1F27E9DBC200EF6CD8 /* GetCreatedEventsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCreatedEventsForm.swift; sourceTree = "<group>"; };
-		8FD03F2127E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCreatedEventsResponse.swift; sourceTree = "<group>"; };
-		8FD03F2527E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetParicipatedEventsResponse.swift; sourceTree = "<group>"; };
-		8FD03F2827E9DCF300EF6CD8 /* GetEventForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventForm.swift; sourceTree = "<group>"; };
-		8FD03F2B27E9DD2300EF6CD8 /* GetEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventResponse.swift; sourceTree = "<group>"; };
-		8FD03F2E27EA676000EF6CD8 /* DetailEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventView.swift; sourceTree = "<group>"; };
-		8FD03F3027EB3EAE00EF6CD8 /* JoinEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventView.swift; sourceTree = "<group>"; };
+		8FD03F1D27E9D7A200EF6CD8 /* MemberAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAPIService.swift; sourceTree = "<group>"; };
+		8FD03F2B27E9DD2300EF6CD8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8FD03F2E27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatorEventDetailScreen.swift; sourceTree = "<group>"; };
+		8FD03F3027EB3EAE00EF6CD8 /* JoinEventScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventScreen.swift; sourceTree = "<group>"; };
 		8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
-		8FD03F3A27EBB79600EF6CD8 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
+		8FD03F3A27EBB79600EF6CD8 /* ParticipatorEventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatorEventsListView.swift; sourceTree = "<group>"; };
+		8FD03F3C27ECAD2B00EF6CD8 /* LinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkService.swift; sourceTree = "<group>"; };
+		8FD03F3E27ECB09D00EF6CD8 /* ManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewModel.swift; sourceTree = "<group>"; };
+		8FD03F4027ECD0FB00EF6CD8 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		8FD03F4427ED1C4500EF6CD8 /* BaseQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseQRCodeView.swift; sourceTree = "<group>"; };
+		8FD03F4627ED29E300EF6CD8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8FD03F4827ED2E3100EF6CD8 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		8FD03F4A27ED2ED200EF6CD8 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		8FD03F4F27ED367C00EF6CD8 /* ProfileAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAPIService.swift; sourceTree = "<group>"; };
+		8FD03F5227EE1E1B00EF6CD8 /* PlacePickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerField.swift; sourceTree = "<group>"; };
+		8FD03F6027EF6CD900EF6CD8 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
+		8FD03F6327EF76D600EF6CD8 /* EventEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditViewModel.swift; sourceTree = "<group>"; };
+		8FD03F6527EFB27400EF6CD8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Task.swift; path = "Rumba/Business Logic/Models/Task/Task.swift"; sourceTree = SOURCE_ROOT; };
+		8FD03F6A27F0651600EF6CD8 /* TaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskForm.swift; sourceTree = "<group>"; };
+		8FD03F6C27F0653B00EF6CD8 /* EventForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventForm.swift; sourceTree = "<group>"; };
+		8FD03F7027F0974100EF6CD8 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		8FD03F7227F0976C00EF6CD8 /* JoinEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventViewModel.swift; sourceTree = "<group>"; };
+		8FD03F7927F136B400EF6CD8 /* ChooseTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTaskViewModel.swift; sourceTree = "<group>"; };
+		8FD03F7E27F139F500EF6CD8 /* ChooseTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTaskView.swift; sourceTree = "<group>"; };
+		8FD1D41F27F3CAD200A588BE /* Endpoint+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+User.swift"; sourceTree = "<group>"; };
+		8FD1D42127F3CB3900A588BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8FD1D42627F5D5E300A588BE /* CreatorEventDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventDetailScreen.swift; sourceTree = "<group>"; };
 		8FD81F2C277D1E040078AB1A /* Rumba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rumba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD81F2F277D1E040078AB1A /* RumbaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbaApp.swift; sourceTree = "<group>"; };
 		8FD81F31277D1E040078AB1A /* RegistrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrView.swift; sourceTree = "<group>"; };
@@ -127,8 +172,16 @@
 		8FDDCF9427C6DBE90045CA52 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8FDDCF9627C6F0F80045CA52 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		8FDDCF9827C6F1060045CA52 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
-		8FDDCF9A27C705310045CA52 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		8FDDCF9A27C705310045CA52 /* LoginAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIService.swift; sourceTree = "<group>"; };
 		8FDDCF9E27C70FA30045CA52 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		8FEC23A027FFBFF500A1386D /* AssignMemberToTaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignMemberToTaskForm.swift; sourceTree = "<group>"; };
+		8FFAF0A427FA429000130236 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		8FFAF0A627FB021300130236 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		8FFAF0A827FB143500130236 /* FormErrorMesagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormErrorMesagesView.swift; sourceTree = "<group>"; };
+		8FFAF0AB27FB237B00130236 /* ParticipatorEventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatorEventDetailViewModel.swift; sourceTree = "<group>"; };
+		8FFAF0AD27FB5D7900130236 /* CreatorEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventDetailView.swift; sourceTree = "<group>"; };
+		8FFAF0AF27FB602A00130236 /* ParticipatorEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatorEventDetailView.swift; sourceTree = "<group>"; };
+		8FFAF0B127FB8B6200130236 /* ParticipatorEventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatorEventCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +191,7 @@
 			files = (
 				8F1F8D1E27E9133F00BE9F44 /* CodeScanner in Frameworks */,
 				8F1F8D0827E790CA00BE9F44 /* SwiftKeychainWrapper in Frameworks */,
+				8FD03F5F27EE2E8A00EF6CD8 /* MapItemPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,32 +215,20 @@
 		8F097B4427AA6EEA00E4D791 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8F69863727E9473300E1279A /* Member */,
-				8F69863527E946DD00E1279A /* Auth */,
-				8F69863027E92F9500E1279A /* Task */,
-				8F69862F27E92F6F00E1279A /* Event */,
+				8FD03F6927F064ED00EF6CD8 /* Task */,
+				8FD03F6827F064BD00EF6CD8 /* Auth */,
+				8FD03F6727F0643E00EF6CD8 /* Event */,
+				8FD1D42127F3CB3900A588BE /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		8F097B4527AA6EF600E4D791 /* Registr */ = {
-			isa = PBXGroup;
-			children = (
-				8F097B4627AA6F1F00E4D791 /* RegistrForm.swift */,
-				8F097B4827AA6F2C00E4D791 /* RegistrResponse.swift */,
-			);
-			path = Registr;
 			sourceTree = "<group>";
 		};
 		8F097B4A27AA6FF700E4D791 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8F097B4B27AA702800E4D791 /* RegistrService.swift */,
-				8FDDCF9A27C705310045CA52 /* LoginService.swift */,
-				8F6CB2BD27E50AEC00C3A995 /* MyError.swift */,
+				8FD03F5127ED3BC100EF6CD8 /* API */,
+				8FD03F3C27ECAD2B00EF6CD8 /* LinkService.swift */,
 				8F1F8D0927E7978700BE9F44 /* KeychainStorage.swift */,
-				8F69863A27E94A5E00E1279A /* EventService.swift */,
-				8FD03F1D27E9D7A200EF6CD8 /* MemberService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -194,7 +236,8 @@
 		8F1F8D0B27E80B7E00BE9F44 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				8F1F8D1A27E80C9E00BE9F44 /* ProfileView.swift */,
+				8FD03F7C27F1370400EF6CD8 /* PrimaryProfile */,
+				8FD03F7527F12F1500EF6CD8 /* EditProfile */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -202,7 +245,10 @@
 		8F1F8D0C27E80B8800BE9F44 /* Manage */ = {
 			isa = PBXGroup;
 			children = (
-				8F1F8D1827E80C8D00BE9F44 /* ManageView.swift */,
+				8F4CEFAA27F72D3800C24F7F /* TaskEdit */,
+				8F4CEFA527F6785D00C24F7F /* EventDetail */,
+				8FD03F7D27F1372600EF6CD8 /* PrimaryManage */,
+				8FD03F6227EF76A200EF6CD8 /* EventEdit */,
 			);
 			path = Manage;
 			sourceTree = "<group>";
@@ -210,12 +256,31 @@
 		8F1F8D0D27E80BAF00BE9F44 /* Participation */ = {
 			isa = PBXGroup;
 			children = (
-				8F1F8D1627E80C6400BE9F44 /* ParticipationView.swift */,
-				8F69863827E9479900E1279A /* ParticipationViewModel.swift */,
-				8FD03F3027EB3EAE00EF6CD8 /* JoinEventView.swift */,
-				8FD03F3A27EBB79600EF6CD8 /* EventsListView.swift */,
+				8FFAF0AA27FB232400130236 /* EventDetail */,
+				8FD03F7B27F136BE00EF6CD8 /* PrimaryParticipation */,
+				8FD03F7627F1366A00EF6CD8 /* ChooseTask */,
+				8FD03F7427F12EF700EF6CD8 /* JoinEvent */,
 			);
 			path = Participation;
+			sourceTree = "<group>";
+		};
+		8F4CEFA527F6785D00C24F7F /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8FD1D42627F5D5E300A588BE /* CreatorEventDetailScreen.swift */,
+				8F4CEFA627F6787A00C24F7F /* CreatorEventDetailViewModel.swift */,
+				8FFAF0AD27FB5D7900130236 /* CreatorEventDetailView.swift */,
+			);
+			path = EventDetail;
+			sourceTree = "<group>";
+		};
+		8F4CEFAA27F72D3800C24F7F /* TaskEdit */ = {
+			isa = PBXGroup;
+			children = (
+				8F47BADF27F6125300C6BAA7 /* TaskEditViewModel.swift */,
+				8FD03F6027EF6CD900EF6CD8 /* TaskEditView.swift */,
+			);
+			path = TaskEdit;
 			sourceTree = "<group>";
 		};
 		8F5AB91227A84A1B004B18DE /* Registr */ = {
@@ -223,8 +288,6 @@
 			children = (
 				8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */,
 				8FD81F31277D1E040078AB1A /* RegistrView.swift */,
-				8F097B4D27AADB3000E4D791 /* RegistrConfigurator.swift */,
-				8F097B4F27AADC1800E4D791 /* RegistrRouter.swift */,
 			);
 			path = Registr;
 			sourceTree = "<group>";
@@ -286,98 +349,136 @@
 				8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */,
 				8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */,
 				8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */,
+				8FD1D41F27F3CAD200A588BE /* Endpoint+User.swift */,
 			);
 			path = Endpoints;
-			sourceTree = "<group>";
-		};
-		8F69862F27E92F6F00E1279A /* Event */ = {
-			isa = PBXGroup;
-			children = (
-				8F69863627E9470200E1279A /* UpdateEvent */,
-				8F69863427E946A700E1279A /* GetCreatedEvents */,
-				8F69863327E92FF400E1279A /* GetParicipatedEvents */,
-				8F69863227E92FE600E1279A /* GetEvent */,
-				8F69863127E92FD000E1279A /* CreateEvent */,
-			);
-			path = Event;
-			sourceTree = "<group>";
-		};
-		8F69863027E92F9500E1279A /* Task */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Task;
-			sourceTree = "<group>";
-		};
-		8F69863127E92FD000E1279A /* CreateEvent */ = {
-			isa = PBXGroup;
-			children = (
-				8FD03F1327E9CBB900EF6CD8 /* CreateEventForm.swift */,
-				8FD03F1527E9CCD600EF6CD8 /* CreateEventResponse.swift */,
-			);
-			path = CreateEvent;
-			sourceTree = "<group>";
-		};
-		8F69863227E92FE600E1279A /* GetEvent */ = {
-			isa = PBXGroup;
-			children = (
-				8FD03F2827E9DCF300EF6CD8 /* GetEventForm.swift */,
-				8FD03F2B27E9DD2300EF6CD8 /* GetEventResponse.swift */,
-			);
-			path = GetEvent;
-			sourceTree = "<group>";
-		};
-		8F69863327E92FF400E1279A /* GetParicipatedEvents */ = {
-			isa = PBXGroup;
-			children = (
-				8FD03F2527E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift */,
-			);
-			path = GetParicipatedEvents;
-			sourceTree = "<group>";
-		};
-		8F69863427E946A700E1279A /* GetCreatedEvents */ = {
-			isa = PBXGroup;
-			children = (
-				8FD03F1F27E9DBC200EF6CD8 /* GetCreatedEventsForm.swift */,
-				8FD03F2127E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift */,
-			);
-			path = GetCreatedEvents;
-			sourceTree = "<group>";
-			tabWidth = 4;
-		};
-		8F69863527E946DD00E1279A /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				8FDDCF9127C6DA830045CA52 /* Login */,
-				8F097B4527AA6EF600E4D791 /* Registr */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		8F69863627E9470200E1279A /* UpdateEvent */ = {
-			isa = PBXGroup;
-			children = (
-				8FD03F1727E9D32E00EF6CD8 /* UpdateEventForm.swift */,
-				8FD03F1B27E9D36200EF6CD8 /* UpdateEventResponse.swift */,
-			);
-			path = UpdateEvent;
-			sourceTree = "<group>";
-		};
-		8F69863727E9473300E1279A /* Member */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Member;
 			sourceTree = "<group>";
 		};
 		8FD03F2D27EA673F00EF6CD8 /* SharedViews */ = {
 			isa = PBXGroup;
 			children = (
-				8FD03F2E27EA676000EF6CD8 /* DetailEventView.swift */,
+				8F4CEF9F27F66B5D00C24F7F /* TasksListView.swift */,
+				8F4CEFA127F66D2C00C24F7F /* TaskCardView.swift */,
+				8F4CEFAD27F7A5D500C24F7F /* EventDetailView.swift */,
 				8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */,
 				8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */,
+				8FD03F4027ECD0FB00EF6CD8 /* QRCodeView.swift */,
+				8FD03F4427ED1C4500EF6CD8 /* BaseQRCodeView.swift */,
+				8FFAF0A627FB021300130236 /* PrimaryButton.swift */,
+				8FFAF0A827FB143500130236 /* FormErrorMesagesView.swift */,
 			);
 			path = SharedViews;
+			sourceTree = "<group>";
+		};
+		8FD03F5127ED3BC100EF6CD8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8F097B4B27AA702800E4D791 /* RegistrAPIService.swift */,
+				8F6CB2BD27E50AEC00C3A995 /* MyError.swift */,
+				8FDDCF9A27C705310045CA52 /* LoginAPIService.swift */,
+				8F69863A27E94A5E00E1279A /* EventAPIService.swift */,
+				8FD03F4F27ED367C00EF6CD8 /* ProfileAPIService.swift */,
+				8FD03F1D27E9D7A200EF6CD8 /* MemberAPIService.swift */,
+				8F4CEFA327F66E0000C24F7F /* TaskAPIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		8FD03F6227EF76A200EF6CD8 /* EventEdit */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F5227EE1E1B00EF6CD8 /* PlacePickerField.swift */,
+				8FD03F4A27ED2ED200EF6CD8 /* EventEditView.swift */,
+				8FD03F6327EF76D600EF6CD8 /* EventEditViewModel.swift */,
+			);
+			path = EventEdit;
+			sourceTree = "<group>";
+		};
+		8FD03F6727F0643E00EF6CD8 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F2B27E9DD2300EF6CD8 /* Event.swift */,
+				8FD03F6C27F0653B00EF6CD8 /* EventForm.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		8FD03F6827F064BD00EF6CD8 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8FDDCF9627C6F0F80045CA52 /* LoginForm.swift */,
+				8FDDCF9827C6F1060045CA52 /* LoginResponse.swift */,
+				8F097B4627AA6F1F00E4D791 /* RegistrForm.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8FD03F6927F064ED00EF6CD8 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F6527EFB27400EF6CD8 /* Task.swift */,
+				8FD03F6A27F0651600EF6CD8 /* TaskForm.swift */,
+				8FEC23A027FFBFF500A1386D /* AssignMemberToTaskForm.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		8FD03F7427F12EF700EF6CD8 /* JoinEvent */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F3027EB3EAE00EF6CD8 /* JoinEventScreen.swift */,
+				8FD03F7227F0976C00EF6CD8 /* JoinEventViewModel.swift */,
+			);
+			path = JoinEvent;
+			sourceTree = "<group>";
+		};
+		8FD03F7527F12F1500EF6CD8 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F4827ED2E3100EF6CD8 /* EditProfileView.swift */,
+				8FD03F7027F0974100EF6CD8 /* EditProfileViewModel.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		8FD03F7627F1366A00EF6CD8 /* ChooseTask */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F7927F136B400EF6CD8 /* ChooseTaskViewModel.swift */,
+				8FD03F7E27F139F500EF6CD8 /* ChooseTaskView.swift */,
+			);
+			path = ChooseTask;
+			sourceTree = "<group>";
+		};
+		8FD03F7B27F136BE00EF6CD8 /* PrimaryParticipation */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F3A27EBB79600EF6CD8 /* ParticipatorEventsListView.swift */,
+				8F69863827E9479900E1279A /* ParticipationViewModel.swift */,
+				8F1F8D1627E80C6400BE9F44 /* ParticipationTabScreen.swift */,
+				8FFAF0B127FB8B6200130236 /* ParticipatorEventCardView.swift */,
+			);
+			path = PrimaryParticipation;
+			sourceTree = "<group>";
+		};
+		8FD03F7C27F1370400EF6CD8 /* PrimaryProfile */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F8D1A27E80C9E00BE9F44 /* ProfileTabView.swift */,
+				8FD03F4627ED29E300EF6CD8 /* ProfileViewModel.swift */,
+			);
+			path = PrimaryProfile;
+			sourceTree = "<group>";
+		};
+		8FD03F7D27F1372600EF6CD8 /* PrimaryManage */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F8D1827E80C8D00BE9F44 /* ManageTabScreen.swift */,
+				8FD03F3E27ECB09D00EF6CD8 /* ManageViewModel.swift */,
+				8F47BAE227F632DF00C6BAA7 /* CreatorEventCardView.swift */,
+				8F4CEF9C27F63C9E00C24F7F /* CreatorEventsListView.swift */,
+			);
+			path = PrimaryManage;
 			sourceTree = "<group>";
 		};
 		8FD81F23277D1E040078AB1A = {
@@ -403,6 +504,7 @@
 		8FD81F2E277D1E040078AB1A /* Rumba */ = {
 			isa = PBXGroup;
 			children = (
+				8FFAF0A327FA427700130236 /* DummyData */,
 				8F1F8D1F27E91D7F00BE9F44 /* Info.plist */,
 				8F5AB91A27A9C1D7004B18DE /* Core */,
 				8F5AB91927A9C1B9004B18DE /* Business Logic */,
@@ -456,13 +558,22 @@
 			path = GeneralView;
 			sourceTree = "<group>";
 		};
-		8FDDCF9127C6DA830045CA52 /* Login */ = {
+		8FFAF0A327FA427700130236 /* DummyData */ = {
 			isa = PBXGroup;
 			children = (
-				8FDDCF9627C6F0F80045CA52 /* LoginForm.swift */,
-				8FDDCF9827C6F1060045CA52 /* LoginResponse.swift */,
+				8FFAF0A427FA429000130236 /* DummyData.swift */,
 			);
-			path = Login;
+			path = DummyData;
+			sourceTree = "<group>";
+		};
+		8FFAF0AA27FB232400130236 /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8FD03F2E27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift */,
+				8FFAF0AB27FB237B00130236 /* ParticipatorEventDetailViewModel.swift */,
+				8FFAF0AF27FB602A00130236 /* ParticipatorEventDetailView.swift */,
+			);
+			path = EventDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +595,7 @@
 			packageProductDependencies = (
 				8F1F8D0727E790CA00BE9F44 /* SwiftKeychainWrapper */,
 				8F1F8D1D27E9133F00BE9F44 /* CodeScanner */,
+				8FD03F5E27EE2E8A00EF6CD8 /* MapItemPicker */,
 			);
 			productName = Rumba;
 			productReference = 8FD81F2C277D1E040078AB1A /* Rumba.app */;
@@ -560,6 +672,7 @@
 			packageReferences = (
 				8F1F8D0627E790CA00BE9F44 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				8F1F8D1C27E9133F00BE9F44 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				8FD03F5D27EE2E8A00EF6CD8 /* XCRemoteSwiftPackageReference "swiftui-map-item-picker" */,
 			);
 			productRefGroup = 8FD81F2D277D1E040078AB1A /* Products */;
 			projectDirPath = "";
@@ -603,48 +716,74 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FDDCF9B27C705310045CA52 /* LoginService.swift in Sources */,
-				8FD03F3B27EBB79600EF6CD8 /* EventsListView.swift in Sources */,
-				8F097B4E27AADB3000E4D791 /* RegistrConfigurator.swift in Sources */,
+				8FDDCF9B27C705310045CA52 /* LoginAPIService.swift in Sources */,
+				8FD1D42027F3CAD200A588BE /* Endpoint+User.swift in Sources */,
+				8FD03F3F27ECB09D00EF6CD8 /* ManageViewModel.swift in Sources */,
+				8FFAF0A527FA429000130236 /* DummyData.swift in Sources */,
+				8FD03F3B27EBB79600EF6CD8 /* ParticipatorEventsListView.swift in Sources */,
 				8F097B4727AA6F1F00E4D791 /* RegistrForm.swift in Sources */,
 				8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */,
-				8FD03F1827E9D32E00EF6CD8 /* UpdateEventForm.swift in Sources */,
-				8F097B4C27AA702800E4D791 /* RegistrService.swift in Sources */,
+				8FFAF0A927FB143500130236 /* FormErrorMesagesView.swift in Sources */,
+				8FD03F6427EF76D600EF6CD8 /* EventEditViewModel.swift in Sources */,
+				8FFAF0AE27FB5D7900130236 /* CreatorEventDetailView.swift in Sources */,
+				8F4CEFA027F66B5D00C24F7F /* TasksListView.swift in Sources */,
+				8F4CEFA227F66D2C00C24F7F /* TaskCardView.swift in Sources */,
+				8F097B4C27AA702800E4D791 /* RegistrAPIService.swift in Sources */,
 				8FD81F32277D1E040078AB1A /* RegistrView.swift in Sources */,
+				8FD03F5027ED367C00EF6CD8 /* ProfileAPIService.swift in Sources */,
 				8FD03F3527EB9C4F00EF6CD8 /* MapView.swift in Sources */,
-				8FD03F2C27E9DD2300EF6CD8 /* GetEventResponse.swift in Sources */,
-				8FD03F2F27EA676000EF6CD8 /* DetailEventView.swift in Sources */,
-				8FD03F1E27E9D7A200EF6CD8 /* MemberService.swift in Sources */,
+				8FFAF0A727FB021300130236 /* PrimaryButton.swift in Sources */,
+				8FD03F2C27E9DD2300EF6CD8 /* Event.swift in Sources */,
+				8FD03F2F27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift in Sources */,
+				8FFAF0AC27FB237B00130236 /* ParticipatorEventDetailViewModel.swift in Sources */,
+				8FD03F4127ECD0FB00EF6CD8 /* QRCodeView.swift in Sources */,
+				8FD03F1E27E9D7A200EF6CD8 /* MemberAPIService.swift in Sources */,
 				8F6CB2C227E50E3F00C3A995 /* Endpoint+Member.swift in Sources */,
-				8FD03F1C27E9D36200EF6CD8 /* UpdateEventResponse.swift in Sources */,
+				8FD03F6D27F0653B00EF6CD8 /* EventForm.swift in Sources */,
+				8F47BAE027F6125300C6BAA7 /* TaskEditViewModel.swift in Sources */,
 				8FD03F3927EBA8CB00EF6CD8 /* EventCardView.swift in Sources */,
 				8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */,
-				8FD03F2627E9DC4B00EF6CD8 /* GetParicipatedEventsResponse.swift in Sources */,
+				8FD03F6B27F0651600EF6CD8 /* TaskForm.swift in Sources */,
+				8FD03F7A27F136B400EF6CD8 /* ChooseTaskViewModel.swift in Sources */,
+				8FD03F4927ED2E3100EF6CD8 /* EditProfileView.swift in Sources */,
 				8FDDCF9927C6F1060045CA52 /* LoginResponse.swift in Sources */,
-				8FD03F1427E9CBB900EF6CD8 /* CreateEventForm.swift in Sources */,
+				8FD03F6127EF6CD900EF6CD8 /* TaskEditView.swift in Sources */,
 				8F6CB2BE27E50AEC00C3A995 /* MyError.swift in Sources */,
+				8FFAF0B027FB602A00130236 /* ParticipatorEventDetailView.swift in Sources */,
+				8F4CEFA727F6787A00C24F7F /* CreatorEventDetailViewModel.swift in Sources */,
+				8FEC23A127FFBFF500A1386D /* AssignMemberToTaskForm.swift in Sources */,
+				8FD1D42727F5D5E300A588BE /* CreatorEventDetailScreen.swift in Sources */,
+				8FD03F4727ED29E300EF6CD8 /* ProfileViewModel.swift in Sources */,
 				8FDDCF9527C6DBE90045CA52 /* LoginViewModel.swift in Sources */,
 				8FDDCF9F27C70FA30045CA52 /* TabBarView.swift in Sources */,
-				8FD03F3127EB3EAE00EF6CD8 /* JoinEventView.swift in Sources */,
-				8F1F8D1727E80C6400BE9F44 /* ParticipationView.swift in Sources */,
-				8FD03F2227E9DBE100EF6CD8 /* GetCreatedEventsResponse.swift in Sources */,
+				8FD03F3127EB3EAE00EF6CD8 /* JoinEventScreen.swift in Sources */,
+				8FD03F4B27ED2ED200EF6CD8 /* EventEditView.swift in Sources */,
+				8F1F8D1727E80C6400BE9F44 /* ParticipationTabScreen.swift in Sources */,
 				8F6CB2C027E50E1800C3A995 /* Endpoint+Events.swift in Sources */,
-				8F1F8D1B27E80C9E00BE9F44 /* ProfileView.swift in Sources */,
+				8FD03F7127F0974100EF6CD8 /* EditProfileViewModel.swift in Sources */,
+				8F1F8D1B27E80C9E00BE9F44 /* ProfileTabView.swift in Sources */,
+				8FD03F5327EE1E1B00EF6CD8 /* PlacePickerField.swift in Sources */,
 				8F6CB2C627E50E6F00C3A995 /* Endpoint+Tasks.swift in Sources */,
-				8F097B4927AA6F2C00E4D791 /* RegistrResponse.swift in Sources */,
-				8F097B5027AADC1800E4D791 /* RegistrRouter.swift in Sources */,
 				8F69863927E9479900E1279A /* ParticipationViewModel.swift in Sources */,
+				8F4CEFAE27F7A5D500C24F7F /* EventDetailView.swift in Sources */,
 				8F5AB92827A9C769004B18DE /* Endpoint+Auth.swift in Sources */,
-				8F69863B27E94A5E00E1279A /* EventService.swift in Sources */,
+				8F69863B27E94A5E00E1279A /* EventAPIService.swift in Sources */,
+				8FD03F4527ED1C4500EF6CD8 /* BaseQRCodeView.swift in Sources */,
+				8FFAF0B227FB8B6200130236 /* ParticipatorEventCardView.swift in Sources */,
+				8FD1D42227F3CB3900A588BE /* User.swift in Sources */,
 				8FDDCF9727C6F0F80045CA52 /* LoginForm.swift in Sources */,
+				8F4CEF9D27F63C9E00C24F7F /* CreatorEventsListView.swift in Sources */,
+				8FD03F3D27ECAD2B00EF6CD8 /* LinkService.swift in Sources */,
 				8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */,
 				8FDDCF9327C6DBA50045CA52 /* LoginView.swift in Sources */,
-				8FD03F2927E9DCF300EF6CD8 /* GetEventForm.swift in Sources */,
-				8FD03F2027E9DBC200EF6CD8 /* GetCreatedEventsForm.swift in Sources */,
-				8FD03F1627E9CCD600EF6CD8 /* CreateEventResponse.swift in Sources */,
-				8F1F8D1927E80C8D00BE9F44 /* ManageView.swift in Sources */,
+				8F47BAE327F632E000C6BAA7 /* CreatorEventCardView.swift in Sources */,
+				8FD03F7327F0976C00EF6CD8 /* JoinEventViewModel.swift in Sources */,
+				8F4CEFA427F66E0000C24F7F /* TaskAPIService.swift in Sources */,
+				8FD03F7F27F139F500EF6CD8 /* ChooseTaskView.swift in Sources */,
+				8F1F8D1927E80C8D00BE9F44 /* ManageTabScreen.swift in Sources */,
 				8F5AB92627A9C6B7004B18DE /* Endpoint+URL.swift in Sources */,
 				8FD81F30277D1E040078AB1A /* RumbaApp.swift in Sources */,
+				8FD03F6627EFB27400EF6CD8 /* Task.swift in Sources */,
 				8F1F8D0A27E7978700BE9F44 /* KeychainStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -811,6 +950,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Rumba/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to select location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -842,6 +982,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Rumba/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan QR codes.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to select location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -994,6 +1135,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		8FD03F5D27EE2E8A00EF6CD8 /* XCRemoteSwiftPackageReference "swiftui-map-item-picker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-map-item-picker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1006,6 +1155,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8F1F8D1C27E9133F00BE9F44 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
+		};
+		8FD03F5E27EE2E8A00EF6CD8 /* MapItemPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FD03F5D27EE2E8A00EF6CD8 /* XCRemoteSwiftPackageReference "swiftui-map-item-picker" */;
+			productName = MapItemPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

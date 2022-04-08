@@ -8,20 +8,41 @@
 import SwiftUI
 
 struct CreatorEventsListView: View {
-    @Binding var events: [Event]
-    var onRefresh: () -> ()
+    let events: [Event]
+    let onRefresh: () -> ()
+    let onEventDisappear: () -> ()
+    let searchText: Binding<String>
+    var filterType: Binding<FilterType>
     
     var body: some View {
-        List {
-            ForEach($events, id: \.eventId) { $event in
-                NavigationLink(destination: CreatorEventDetailView(event: $event)) {
-                        CreatorEventCardView(event: event)
+        VStack {
+            Picker("Event type", selection: filterType) {
+                ForEach([FilterType.all, FilterType.past, FilterType.future], id: \.self) {
+                    Text($0.rawValue)
                 }
             }
+            .padding(.horizontal)
+            .pickerStyle(.segmented)
+            List {
+                ForEach(events, id: \.eventId) { event in
+                    NavigationLink(
+                        destination: CreatorEventDetailScreen(
+                            viewModel:
+                                CreatorEventDetailViewModel(
+                                    eventId: event.eventId
+                                )
+                        )
+                        .onDisappear(perform: onEventDisappear)
+                    ) {
+                        CreatorEventCardView(event: event)
+                    }
+                }
+            }
+            .refreshable {
+                onRefresh()
+            }
         }
-        .refreshable {
-            onRefresh()
-        }
+        .searchable(text: searchText, prompt: "Filter events")
     }
 }
 

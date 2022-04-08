@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension Endpoint {
+    static var getCurrentUser: Self {
+        return Endpoint(path: "/api/users")
+    }
+}

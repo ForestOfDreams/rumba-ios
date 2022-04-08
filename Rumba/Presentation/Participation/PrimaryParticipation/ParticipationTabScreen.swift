@@ -14,7 +14,13 @@ struct ParticipationTabScreen: View {
     
     var body: some View {
         NavigationView {
-            ParticipatorEventsListView(events: viewModel.events, fetchParticipatedEvents: viewModel.fetchParticipatedEvents)
+            ParticipatorEventsListView(
+                events: viewModel.filteredEvents,
+                onRefresh: viewModel.fetchParticipatedEvents,
+                onEventDisappear: viewModel.fetchParticipatedEvents,
+                searchText: $viewModel.searchText,
+                filterType: $viewModel.filterType
+            )
                 .navigationTitle("Participation")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -38,9 +44,6 @@ struct ParticipationTabScreen: View {
             JoinEventScreen(viewModel: JoinEventViewModel(eventId: viewModel.joinEventId!))
             
         }
-        .onAppear(perform: {
-            viewModel.fetchParticipatedEvents()
-        })
         .onOpenURL { url in
             viewModel.openDeepLink(url: url)
         }

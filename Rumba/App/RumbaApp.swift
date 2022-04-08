@@ -22,6 +22,5 @@ struct RumbaApp: App {
                     .environmentObject(authentication)
             }
         }
-        
     }
 }

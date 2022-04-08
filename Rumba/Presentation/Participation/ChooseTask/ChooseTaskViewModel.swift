@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class ChooseTaskViewModel: ObservableObject {
+    var taskId: Int
+    
+    init(eventId:Int) {
+        self.eventId = eventId
+    }
+    
+    func tryAssign() {
+        
+    }
+}

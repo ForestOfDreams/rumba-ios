@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct FormErrorMesagesView: View {
+    let messages: Set<String>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            ForEach(
+                messages.sorted() {
+                    $0 > $1 }, id: \.self) { message in
+                        Text(message)
+                            .foregroundColor(.red)
+                    }
+        }
     }
 }
 
-struct FormErrorMesagesView_Previews: PreviewProvider {
-    static var previews: some View {
-        FormErrorMesagesView()
-    }
-}
+//struct FormErrorMesagesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FormErrorMesagesView(messages: <#Set<String>#>)
+//    }
+//}

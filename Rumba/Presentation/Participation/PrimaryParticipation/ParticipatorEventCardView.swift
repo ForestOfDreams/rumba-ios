@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct ParticipatorEventCardView: View {
+    let event: Event
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(event.title)
+            Spacer()
+            if (event.isActionsRequired ?? false) {
+                Image(systemName: "exclamationmark.square")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 15)
+                    .foregroundColor(.yellow)
+                    .padding(.horizontal)
+            }
+        }
     }
 }
 
 struct ParticipatorEventCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipatorEventCardView()
+        ParticipatorEventCardView(event: DummyData.event)
     }
 }

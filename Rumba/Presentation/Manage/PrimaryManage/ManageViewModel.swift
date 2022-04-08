@@ -6,19 +6,65 @@
 //
 
 import Foundation
-import SwiftUI
+import Combine
 
 class ManageViewModel : ObservableObject {
-    private var linkService: LinkServiceProtocol
-    @Published var image: UIImage = UIImage(systemName: "xmark")!
+    private var eventService: EventApiServiceProtocol
+    private var cancellableSet: [AnyCancellable] = []
     
-//    @Published var qr: UIImage?
+    var events: [Event] = []
     
-    func generateQR(link: String) {
-        self.image = linkService.generateQRCode(from: link) ?? UIImage(systemName: "xmark")!
+    @Published var filteredEvents: [Event] = []
+    
+    @Published var searchText: String = ""
+    // Зависиимость с другого пакета
+    @Published var filterType: FilterType = .all
+    
+    
+    // Если после фильтрации вызвать эту функцию, то фильтрация теряется ????
+    func fetchCreatedEvents() {
+        eventService.getCreatedEvents()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    let myErrorResult = error as? MyError
+                    print(myErrorResult)
+                case .finished: print("Publisher is finished")
+                }
+            }, receiveValue: { [weak self] response in
+                self?.events = response
+                self?.filteredEvents = response
+            })
+            .store(in: &cancellableSet)
     }
     
     init() {
-        linkService = LinkService()
+        eventService = EventApiService()
+        fetchCreatedEvents()
+        
+        // Можно вынести ???
+        Publishers.CombineLatest($searchText, $filterType)
+            .receive(on: RunLoop.main)
+            .sink {[weak self] searchText, filterType  in
+                guard let self = self else { return }
+                if !searchText.isEmpty {
+                    self.filteredEvents = self.events.filter({ event in
+                        return event.title.contains(searchText.lowercased())
+                    })
+                }
+                else {
+                    self.filteredEvents = self.events
+                }
+                switch filterType {
+                case .all:
+                    self.filteredEvents = self.filteredEvents
+                case .past:
+                    self.filteredEvents = self.filteredEvents.filter {$0.startDate <= Date.now}
+                case .future:
+                    self.filteredEvents = self.filteredEvents.filter {$0.startDate > Date.now}
+                }
+            }
+            .store(in: &cancellableSet)
     }
 }
