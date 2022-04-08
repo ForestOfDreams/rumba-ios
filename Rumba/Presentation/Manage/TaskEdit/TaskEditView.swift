@@ -1,0 +1,64 @@
+//
+//  TaskPickerView.swift
+//  Rumba
+//
+//  Created by Vladislav Shchukin on 26.03.2022.
+//
+
+import SwiftUI
+import Combine
+
+struct TaskEditView: View {
+    @StateObject var viewModel: TaskEditViewModel
+    
+    var body: some View {
+        VStack {
+            Form {
+                Section {
+                    TextField("Title", text: $viewModel.title)
+                    ZStack(alignment: .topLeading) {
+                        TextEditor(text: $viewModel.description)
+                            .padding(.horizontal, -5)
+                            .padding(.vertical, -5)
+                            .frame(minHeight: 120)
+                        Text("Description")
+                            .foregroundColor(Color(.init(gray: 0.5, alpha: 0.5)))
+                            .padding(.top, 3)
+                            .opacity(viewModel.description.isEmpty ? 1 : 0)
+                    }
+                    Stepper("Member count", value: $viewModel.membersCount, in: 1...Int.max)
+                    Text("Selected number of members: \(viewModel.membersCount)")
+                    DatePicker(
+                        "Start date",
+                        selection: $viewModel.startDate,
+                        displayedComponents: [.date, .hourAndMinute])
+                    DatePicker(
+                        "End date",
+                        selection: $viewModel.endDate,
+                        displayedComponents: [.date, .hourAndMinute])
+                }
+            }
+            Button("Remove task") {
+                viewModel.onRemove()
+            }
+        }
+        .navigationTitle(viewModel.isEditMode ? "Task editor" : "Create task")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    viewModel.onSave()
+                } label: {
+                    Image(systemName: "square.and.arrow.down")
+                }
+                .disabled(!viewModel.isFormValid)
+            }
+        }
+    }
+}
+
+
+//struct TaskPickerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TaskPickerView()
+//    }
+//}
