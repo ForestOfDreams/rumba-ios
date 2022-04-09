@@ -364,7 +364,7 @@ enum TaskDateErrorMessage: String {
     case startDateInPast = "The start time cannot be in the past."
     case endDateInPast = "The end time cannot be in the past."
     case endDateEarlierThanStartDate = "The end time cannot be earlier than the start time."
-    case startDateEarlierThanEventStartDate = "The start time cannot be later than the end time of the event."
+    case startDateEarlierThanEventStartDate = "The start time cannot be earlier than the start time of the event."
     case endDateLaterThanEventEndDate = "The end time cannot be later than the end time of the event."
 }
 

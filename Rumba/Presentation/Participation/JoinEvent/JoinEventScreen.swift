@@ -19,10 +19,12 @@ struct JoinEventScreen: View {
                         image: UIImage(systemName: "qrcode")!,
                         shareAction: {}
                     )
+                    TitleView(text: "Tasks")
                     TasksListView(
                         tasks: event.tasks ?? [],
                         event: event,
-                        showEdit: false
+                        showEdit: false,
+                        showAssignButton: false
                     )
                 }
                 else {
@@ -37,7 +39,6 @@ struct JoinEventScreen: View {
             }
             .padding()
         }
-        
     }
 }
 

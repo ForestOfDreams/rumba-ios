@@ -22,19 +22,12 @@ struct CreatorEventDetailView: View {
                     image: image,
                     shareAction: onShare
                 )
-                VStack {
-                    Text("Other tasks")
-                        .font(.title)
-                        .padding(.top, 10)
-                }
-                .frame(
-                    maxWidth: .infinity,
-                    alignment: .topLeading
-                )
+                TitleView(text: "Tasks")
                 TasksListView(
                     tasks: event.tasks ?? [],
                     event: event,
-                    showEdit: true
+                    showEdit: true,
+                    showAssignButton: false
                 )
                 NavigationLink(
                     destination: TaskEditView(

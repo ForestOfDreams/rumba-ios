@@ -35,5 +35,12 @@ extension Endpoint {
         )
     }
     
-    
+    static func assignMemberToTask(id: Int) -> Self {
+        return Endpoint(
+            path: "/api/members/assign",
+            queryItems: [
+                URLQueryItem(name: "task_id", value: String(id))
+            ]
+        )
+    }
 }

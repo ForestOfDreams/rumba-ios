@@ -17,21 +17,23 @@ struct ParticipationTabScreen: View {
             ParticipatorEventsListView(
                 events: viewModel.filteredEvents,
                 onRefresh: viewModel.fetchParticipatedEvents,
-                onEventDisappear: viewModel.fetchParticipatedEvents,
                 searchText: $viewModel.searchText,
                 filterType: $viewModel.filterType
             )
-                .navigationTitle("Participation")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            viewModel.isPresentingScanner = true
-                        } label: {
-                            Image(systemName: "qrcode.viewfinder")
-                        }
-                        
+            .onAppear(perform: {
+                viewModel.fetchParticipatedEvents()
+            })
+            .navigationTitle("Participation")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        viewModel.isPresentingScanner = true
+                    } label: {
+                        Image(systemName: "qrcode.viewfinder")
                     }
+                    
                 }
+            }
         }
         .sheet(isPresented: $viewModel.isPresentingScanner) {
             CodeScannerView(

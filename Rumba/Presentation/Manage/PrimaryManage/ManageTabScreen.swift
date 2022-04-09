@@ -17,10 +17,12 @@ struct ManageTabScreen: View {
             CreatorEventsListView(
                 events: viewModel.filteredEvents,
                 onRefresh: viewModel.fetchCreatedEvents,
-                onEventDisappear: viewModel.fetchCreatedEvents,
                 searchText: $viewModel.searchText,
                 filterType: $viewModel.filterType
             )
+            .onAppear(perform: {
+                viewModel.fetchCreatedEvents()
+            })
             .navigationTitle("Created events")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

@@ -10,7 +10,6 @@ import SwiftUI
 struct CreatorEventsListView: View {
     let events: [Event]
     let onRefresh: () -> ()
-    let onEventDisappear: () -> ()
     let searchText: Binding<String>
     var filterType: Binding<FilterType>
     
@@ -32,7 +31,7 @@ struct CreatorEventsListView: View {
                                     eventId: event.eventId
                                 )
                         )
-                        .onDisappear(perform: onEventDisappear)
+//                        .onDisappear(perform: onEventDisappear)
                     ) {
                         CreatorEventCardView(event: event)
                     }

@@ -43,6 +43,7 @@ struct LoginView: View {
                     }
                     )
                 }
+                .padding(.bottom)
             }
             .navigationTitle("Log in")
             .alert(isPresented: self.$viewModel.showAlert, content: {

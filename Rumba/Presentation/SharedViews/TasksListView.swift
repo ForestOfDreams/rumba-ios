@@ -10,11 +10,12 @@ import SwiftUI
 struct TasksListView: View {
     var tasks: [Task]
     var event: Event
-    var showEdit: Bool
+    let showEdit: Bool
+    let showAssignButton: Bool
     
     var body: some View {
         ForEach(tasks, id: \.taskId) { task in
-            TaskCardView(task: task, event: event, manageMode: showEdit)
+            TaskCardView(task: task, event: event, manageMode: showEdit, showAssignButton: showAssignButton)
                 .padding(.bottom)
         }
     }
@@ -25,7 +26,8 @@ struct TaskEditListView_Previews: PreviewProvider {
         TasksListView(
             tasks: [DummyData.task],
             event: DummyData.event,
-            showEdit: true
+            showEdit: true,
+            showAssignButton: false
         )
     }
 }

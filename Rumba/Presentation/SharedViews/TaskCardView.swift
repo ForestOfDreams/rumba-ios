@@ -11,6 +11,7 @@ struct TaskCardView: View {
     let task: Task
     let event: Event
     let manageMode: Bool
+    let showAssignButton: Bool
     
     @State var showAssignView: Bool = false
     
@@ -31,7 +32,8 @@ struct TaskCardView: View {
                     ) {
                         Text("Edit")
                     }
-                } else {
+                }
+                if showAssignButton {
                     Button {
                         showAssignView = true
                     } label: {
@@ -44,7 +46,7 @@ struct TaskCardView: View {
             TaskMembersSectionView(task: task)
         }
         .sheet(isPresented: $showAssignView) {
-            ChooseTaskView()
+            ChooseTaskScreen(viewModel: ChooseTaskViewModel(taskId: task.taskId))
         }
         .padding()
         .background(
@@ -59,7 +61,7 @@ struct TaskCardView_Previews: PreviewProvider {
     static var previews: some View {
         TaskCardView(
             task: DummyData.task, event: DummyData.event,
-            manageMode: false
+            manageMode: false, showAssignButton: true
         )
     }
 }

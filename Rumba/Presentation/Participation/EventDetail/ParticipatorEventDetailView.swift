@@ -22,49 +22,30 @@ struct ParticipatorEventDetailView: View {
                     image: image,
                     shareAction: onShare
                 )
-                VStack {
-                    Text("My task")
-                        .font(.title)
-                        .padding(.top, 10)
-                }
-                .frame(
-                    maxWidth: .infinity,
-                    alignment: .topLeading
-                )
+                TitleView(text: "My task")
                 if let myTask = myTask {
                     TaskCardView(
                         task: myTask,
                         event: event,
-                        manageMode: false
+                        manageMode: false,
+                        showAssignButton: false
                     )
                 }
                 else {
                     Text("You need to select a task.")
+                        .foregroundColor(.yellow)
                         .frame(
                             maxWidth: .infinity,
                             alignment: .topLeading
                         )
                 }
-                VStack {
-                    Text("Other tasks")
-                        .font(.title)
-                        .padding(.top, 10)
-                }
-                .frame(
-                    maxWidth: .infinity,
-                    alignment: .topLeading
-                )
+                TitleView(text: "All tasks")
                 TasksListView(
                     tasks: event.tasks ?? [],
                     event: event,
-                    showEdit: false
+                    showEdit: false,
+                    showAssignButton: true
                 )
-//                Button(myTask == nil ? "Choose task" : "Choose another task") {
-//                    onLeaveEvent()
-//                }
-//                .buttonStyle(PrimaryButton())
-//                .padding()
-                
                 Button("Leave event") {
                     onLeaveEvent()
                 }

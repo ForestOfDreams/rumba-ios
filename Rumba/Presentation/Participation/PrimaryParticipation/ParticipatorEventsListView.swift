@@ -10,11 +10,9 @@ import SwiftUI
 struct ParticipatorEventsListView: View {
     let events: [Event]
     let onRefresh: () -> ()
-    let onEventDisappear: () -> ()
     let searchText: Binding<String>
     var filterType: Binding<FilterType>
 
-    
     var body: some View {
         VStack {
             Picker("Event type", selection: filterType) {
@@ -32,7 +30,6 @@ struct ParticipatorEventsListView: View {
                                 eventId: event.eventId
                             )
                         )
-                        .onDisappear(perform: onEventDisappear)
                     ) {
                         ParticipatorEventCardView(event: event)
                     }
@@ -53,7 +50,6 @@ struct ParticipatedListView_Previews: PreviewProvider {
         ParticipatorEventsListView(
             events: [DummyData.event],
             onRefresh: {},
-            onEventDisappear: {},
             searchText: $searchText,
             filterType: $filterType
         )
