@@ -23,6 +23,9 @@ class ParticipatorEventDetailViewModel : ObservableObject {
     
     @Published var shouldCloseView: Bool = false
     
+    @Published var alertMessages: [String] = []
+    @Published var showAlert: Bool = false
+    
     let eventId: Int
     
     func fetchEvent() {
@@ -31,9 +34,11 @@ class ParticipatorEventDetailViewModel : ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(myErrorResult)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] response in
                 self?.event = response
@@ -47,9 +52,11 @@ class ParticipatorEventDetailViewModel : ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(error)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] response in
                 self?.myTask = response
@@ -63,12 +70,13 @@ class ParticipatorEventDetailViewModel : ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(error)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] response in
-                print(response)
                 self?.shouldCloseView = true
             })
             .store(in: &cancellableSet)

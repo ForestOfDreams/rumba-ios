@@ -23,6 +23,9 @@ class EditProfileViewModel: ObservableObject {
     private var userPublishers: UserPublishers
     private var cancellableSet: [AnyCancellable] = []
     
+    @Published var alertMessages: [String] = []
+    @Published var showAlert: Bool = false
+    
     let initialUser: User
     
     init(user: User) {
@@ -90,7 +93,6 @@ class EditProfileViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] isValid in
                 self?.formIsValid = isValid
-                print(isValid)
             })
             .store(in: &cancellableSet)
     }
@@ -113,9 +115,11 @@ class EditProfileViewModel: ObservableObject {
         .sink(receiveCompletion: { completion in
             switch completion {
             case .failure(let error):
-                let myErrorResult = error as? MyError
-                print(myErrorResult)
-            case .finished: print("Publisher is finished")
+                if let myErrorResult = error as? MyError {
+                    self.alertMessages = myErrorResult.messages
+                    self.showAlert = true
+                }
+            default: break
             }
         }, receiveValue: { [weak self] response in
             self?.shouldCloseView = true

@@ -46,7 +46,6 @@ class RegistrViewModel : ObservableObject {
                     self?.alertMessage = myErrorResult.messages[0]
                     self?.showAlert = true
                 case .finished:
-                    print("Publisher is finished")
                     self?.showProgressView = false
                 }
             }, receiveValue: { [weak self] response in
@@ -172,7 +171,6 @@ class RegistrViewModel : ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] isValid in
                 self?.formIsValid = isValid
-                print(isValid)
             })
             .store(in: &cancellableSet)
     }

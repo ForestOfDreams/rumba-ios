@@ -14,6 +14,9 @@ class CreatorEventDetailViewModel : ObservableObject {
     private var eventService: EventApiServiceProtocol
     private var cancellableSet: [AnyCancellable] = []
     
+    @Published var alertMessages: [String] = []
+    @Published var showAlert: Bool = false
+    
     @Published var image: UIImage = UIImage(systemName: "xmark")!
     
     @Published var event: Event?
@@ -25,9 +28,11 @@ class CreatorEventDetailViewModel : ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(myErrorResult)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] response in
                 self?.event = response

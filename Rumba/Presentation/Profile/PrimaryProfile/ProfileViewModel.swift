@@ -14,6 +14,9 @@ class ProfileViewModel: ObservableObject {
     private var profileService: ProfileApiServiceProtocol
     private var cancellableSet: [AnyCancellable] = []
     
+    @Published var alertMessages: [String] = []
+    @Published var showAlert: Bool = false
+    
     init() {
         profileService = ProfileApiService()
         getCurrentUser()
@@ -25,9 +28,11 @@ class ProfileViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(myErrorResult)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] response in
                 self?.user = response

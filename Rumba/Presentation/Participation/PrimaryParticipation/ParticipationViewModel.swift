@@ -23,6 +23,9 @@ class ParticipationViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var filterType: FilterType = .all
     
+    @Published var alertMessages: [String] = []
+    @Published var showAlert: Bool = false
+    
     var scanResult: String = ""
     var joinEventId: Int?
     
@@ -78,10 +81,11 @@ class ParticipationViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(error)
-                    
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] (response:[Event]) in
                 self?.events = response

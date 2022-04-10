@@ -20,6 +20,9 @@ class ChangePasswordViewModel: ObservableObject {
     
     @Published var passwordErrorMessages: Set<String> = Set<String>()
     
+    @Published var alertMessages: [String] = []
+    @Published var showAlert: Bool = false
+    
     private var profileService: ProfileApiServiceProtocol
     private var userPublishers: UserPublishers
     private var cancellableSet: [AnyCancellable] = []
@@ -94,7 +97,6 @@ class ChangePasswordViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] isValid in
                 self?.formIsValid = isValid
-                print(isValid)
             })
             .store(in: &cancellableSet)
         
@@ -103,7 +105,6 @@ class ChangePasswordViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] isValid in
                 self?.formIsValid = isValid
-                print(isValid)
             })
             .store(in: &cancellableSet)
     }
@@ -119,11 +120,13 @@ class ChangePasswordViewModel: ObservableObject {
         .sink(receiveCompletion: { completion in
             switch completion {
             case .failure(let error):
-                let myErrorResult = error as? MyError
-                print(myErrorResult)
-            case .finished: print("Publisher is finished")
+                if let myErrorResult = error as? MyError {
+                    self.alertMessages = myErrorResult.messages
+                    self.showAlert = true
+                }
+            default: break
             }
-        }, receiveValue: { [weak self] response in
+        }, receiveValue: { _ in
             action()
         })
         .store(in: &cancellableSet)

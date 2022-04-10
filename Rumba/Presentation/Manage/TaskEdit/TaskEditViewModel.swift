@@ -24,6 +24,10 @@ class TaskEditViewModel: ObservableObject {
     
     @Published var isEditMode: Bool = false
     @Published var relatedEvent: Event
+    
+    @Published var alertMessages: [String] = []
+    @Published var showAlert: Bool = false
+    
     var editingTask: Task?
     
     @Published var shouldCloseView: Bool = false
@@ -65,12 +69,13 @@ class TaskEditViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(myErrorResult)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] (response:Data) in
-                print(response)
                 self?.shouldCloseView = true
             })
             .store(in: &cancellableSet)
@@ -86,12 +91,13 @@ class TaskEditViewModel: ObservableObject {
         .sink(receiveCompletion: { completion in
             switch completion {
             case .failure(let error):
-                let myErrorResult = error as? MyError
-                print(myErrorResult)
-            case .finished: print("Publisher is finished")
+                if let myErrorResult = error as? MyError {
+                    self.alertMessages = myErrorResult.messages
+                    self.showAlert = true
+                }
+            default: break
             }
         }, receiveValue: { [weak self] (response:Data) in
-            print(response)
             self?.shouldCloseView = true
         })
         .store(in: &cancellableSet)
@@ -104,12 +110,13 @@ class TaskEditViewModel: ObservableObject {
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .failure(let error):
-                        let myErrorResult = error as? MyError
-                        print(myErrorResult)
-                    case .finished: print("Publisher is finished")
+                        if let myErrorResult = error as? MyError {
+                            self.alertMessages = myErrorResult.messages
+                            self.showAlert = true
+                        }
+                    default: break
                     }
                 }, receiveValue: { [weak self] (response:Data) in
-                    print(response)
                     self?.shouldCloseView = true
                 })
                 .store(in: &cancellableSet)

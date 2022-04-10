@@ -31,6 +31,9 @@ class EventEditViewModel: ObservableObject {
     @Published var startDate: Date = Date()
     @Published var endDate: Date = Date()
     
+    @Published var alertMessages: [String] = []
+    @Published var showAlert: Bool = false
+    
     var editingEventId: Int?
     
     private var event: EventForm {
@@ -57,10 +60,6 @@ class EventEditViewModel: ObservableObject {
             fetchEditingEvent()
         }
         setUpSubscribers()
-    }
-    
-    deinit {
-        print("DEINIT")
     }
     
     private func setUpSubscribers() {
@@ -169,9 +168,11 @@ class EventEditViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(error)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] response in
                 self?.title = response.title
@@ -194,9 +195,11 @@ class EventEditViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(myErrorResult)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] (response:Data) in
                 self?.shouldCloseView = true
@@ -210,12 +213,13 @@ class EventEditViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as? MyError
-                    print(myErrorResult)
-                case .finished: print("Publisher is finished")
+                    if let myErrorResult = error as? MyError {
+                        self.alertMessages = myErrorResult.messages
+                        self.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] (response:Data) in
-                print(response)
                 self?.shouldCloseView = true
             })
             .store(in: &cancellableSet)

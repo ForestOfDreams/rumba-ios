@@ -37,10 +37,9 @@ class LoginViewModel : ObservableObject {
                         self.alertMessage = myErrorResult.messages[0]
                         self.showAlert = true
                     }
-                case .finished: print("Publisher is finished")
+                default: break
                 }
             }, receiveValue: { [weak self] response in
-                print(KeychainStorage.shared.saveToken(response))
                 self?.setUpTimer()
             })
             .store(in: &cancellableSet)
