@@ -23,7 +23,7 @@ struct ManageTabScreen: View {
             .onAppear(perform: {
                 viewModel.fetchCreatedEvents()
             })
-            .navigationTitle("Created events")
+            .navigationTitle("Created Events")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {

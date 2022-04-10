@@ -21,11 +21,11 @@ class KeychainStorage {
     
 //    @discardableResult
     func saveToken(_ token: LoginResponse) -> Bool {
-        return KeychainWrapper.standard.set(encode(data: token), forKey: key)
+        KeychainWrapper.standard.set(encode(data: token), forKey: key)
     }
     
-    func removeToken() -> Bool {
-        return KeychainWrapper.standard.removeObject(forKey: key)
+    func removeToken() {
+        KeychainWrapper.standard.removeObject(forKey: key)
     }
     
     private init() {}

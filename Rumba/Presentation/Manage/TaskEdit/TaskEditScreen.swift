@@ -8,8 +8,8 @@
 import SwiftUI
 import Combine
 
-struct TaskEditView: View {
-    @StateObject var viewModel: TaskEditViewModel
+struct TaskEditScreen: View {
+    @StateObject var viewModal: TaskEditViewModel
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -17,54 +17,56 @@ struct TaskEditView: View {
         VStack {
             Form {
                 Section(
-                    header: Text("You need to select time interval between \(viewModel.relatedEvent.startDate.ISO8601Format()) and \(viewModel.relatedEvent.endDate.ISO8601Format())"),
-                    footer: FormErrorMesagesView(messages: viewModel.mainErrorMessages)
+                    header: Text("You need to select time interval between \(viewModal.relatedEvent.startDate.ISO8601Format()) and \(viewModal.relatedEvent.endDate.ISO8601Format())"),
+                    footer: FormErrorMesagesView(messages: viewModal.mainErrorMessages)
                 ){
-                    TextField("Title", text: $viewModel.title)
+                    TextField("Title", text: $viewModal.title)
                     ZStack(alignment: .topLeading) {
-                        TextEditor(text: $viewModel.description)
+                        TextEditor(text: $viewModal.description)
                             .padding(.horizontal, -5)
                             .padding(.vertical, -5)
                             .frame(minHeight: 120)
                         Text("Description")
                             .foregroundColor(Color(.init(gray: 0.5, alpha: 0.5)))
                             .padding(.top, 3)
-                            .opacity(viewModel.description.isEmpty ? 1 : 0)
+                            .opacity(viewModal.description.isEmpty ? 1 : 0)
                     }
                 }
                 Section {
-                    Stepper("Member count", value: $viewModel.membersCount, in: 1...Int.max)
-                    Text("Selected number of members: \(viewModel.membersCount)")
+                    Stepper("Member count", value: $viewModal.membersCount, in: 1...Int.max)
+                    Text("Selected number of members: \(viewModal.membersCount)")
                 }
                 Section(
-                    footer: FormErrorMesagesView(messages: viewModel.dateErrorMessages)
+                    footer: FormErrorMesagesView(messages: viewModal.dateErrorMessages)
                 ) {
                     DatePicker(
                         "Start date",
-                        selection: $viewModel.startDate,
+                        selection: $viewModal.startDate,
                         displayedComponents: [.date, .hourAndMinute])
                     DatePicker(
                         "End date",
-                        selection: $viewModel.endDate,
+                        selection: $viewModal.endDate,
                         displayedComponents: [.date, .hourAndMinute])
                 }
             }
             Button("Remove task") {
-                viewModel.deleteTask()
+                viewModal.deleteTask()
             }
+            .buttonStyle(PrimaryButton(color: .red))
+            .padding()
         }
-        .navigationTitle(viewModel.isEditMode ? "Task editor" : "Create task")
+        .navigationTitle(viewModal.isEditMode ? "Task Editor" : "Create Task")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    viewModel.onSave()
+                    viewModal.onSave()
                 } label: {
                     Image(systemName: "square.and.arrow.down")
                 }
-                .disabled(!viewModel.isFormValid)
+                .disabled(!viewModal.isFormValid)
             }
         }
-        .onChange(of: viewModel.shouldCloseView) { newValue in
+        .onChange(of: viewModal.shouldCloseView) { newValue in
             if newValue {
                 presentationMode.wrappedValue.dismiss()
             }

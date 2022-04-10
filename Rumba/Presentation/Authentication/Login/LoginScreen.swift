@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct LoginScreen: View {
     @EnvironmentObject var viewModel: LoginViewModel
     @State var selection: Int? = nil
     
@@ -30,14 +30,14 @@ struct LoginView: View {
                     Button("Log in") {
                         viewModel.loginUser()
                     }
-                    .buttonStyle(PrimaryButton())
+                    .buttonStyle(PrimaryButton(color: .blue))
                     .padding(20)
                     .disabled(!viewModel.isFormValid)
                 }
                 HStack {
                     Text("Don't have an account?")
                     NavigationLink(destination: {
-                        RegistrView()
+                        RegistrScreen()
                     }, label: {
                         Text("Sign up")
                     }

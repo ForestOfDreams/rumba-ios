@@ -25,8 +25,6 @@ final class LoginApiService:LoginApiServiceProtocol {
     func loginUser(_ form: LoginForm) -> AnyPublisher<LoginResponse, Error> {
         let endpoint = Endpoint.login
         
-        let data = try? JSONEncoder().encode(form)
-        
         return networker.post(
             url: endpoint.url,
             headers: endpoint.headers,

@@ -10,6 +10,9 @@ import Combine
 
 class JoinEventViewModel: ObservableObject {
     @Published var event: Event?
+    
+    @Published var shouldCloseView: Bool = false
+    
     var eventId: Int
     private var memberService: MemberApiServiceProtocol
     private var eventService: EventApiService
@@ -46,12 +49,11 @@ class JoinEventViewModel: ObservableObject {
                     switch completion {
                     case .failure(let error):
                         let myErrorResult = error as? MyError
-                        print(error)
-                        
+                        print(myErrorResult)
                     case .finished: print("Publisher is finished")
                     }
                 }, receiveValue: { [weak self] response in
-                    print("success")
+                    self?.shouldCloseView = true
                 })
                 .store(in: &cancellableSet)
         }

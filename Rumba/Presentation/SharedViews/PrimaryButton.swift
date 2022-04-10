@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct PrimaryButton: ButtonStyle {
+    let color: Color
     @Environment(\.isEnabled) private var isEnabled
 
     func makeBody(configuration: Configuration) -> some View {
@@ -19,7 +20,7 @@ struct PrimaryButton: ButtonStyle {
                 minHeight: 44,
                 alignment: .center
             )
-            .background(isEnabled ? Color.blue : .gray)
+            .background(isEnabled ? color : .gray)
             .foregroundColor(configuration.isPressed ? .gray : .white)
             .font(.system(size: 16, weight: .bold))
             .cornerRadius(8)

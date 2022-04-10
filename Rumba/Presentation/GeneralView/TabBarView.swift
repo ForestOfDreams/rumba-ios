@@ -22,7 +22,7 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Manage", systemImage: "list.bullet.rectangle")
                 }
-            ProfileTabView()
+            ProfileTabScreen()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }

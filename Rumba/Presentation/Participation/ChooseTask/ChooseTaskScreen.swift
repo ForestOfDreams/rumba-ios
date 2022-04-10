@@ -21,12 +21,12 @@ struct ChooseTaskScreen: View {
                 message: viewModel.resultMessage,
                 onSubmit: viewModel.assign
             )
+            .navigationTitle("Choose Task")
             .onChange(of: viewModel.shouldCloseView) { newValue in
                 if newValue {
                     presentationMode.wrappedValue.dismiss()
                 }
             }
-            .navigationTitle("Choose task")
         }
     }
 }

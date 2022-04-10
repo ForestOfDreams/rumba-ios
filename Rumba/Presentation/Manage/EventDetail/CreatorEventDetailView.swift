@@ -30,8 +30,8 @@ struct CreatorEventDetailView: View {
                     showAssignButton: false
                 )
                 NavigationLink(
-                    destination: TaskEditView(
-                        viewModel: TaskEditViewModel(
+                    destination: TaskEditScreen(
+                        viewModal: TaskEditViewModel(
                             relatedEvent: event
                         )
                     ),
@@ -41,7 +41,7 @@ struct CreatorEventDetailView: View {
                     Button("Add new task") {
                         self.selection = 1
                     }
-                    .buttonStyle(PrimaryButton())
+                    .buttonStyle(PrimaryButton(color: .green))
                 }
             }
             .padding()

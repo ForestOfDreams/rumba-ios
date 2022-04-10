@@ -11,4 +11,12 @@ extension Endpoint {
     static var getCurrentUser: Self {
         return Endpoint(path: "/api/users")
     }
+    
+    static var changeProfile: Self {
+        return Endpoint(path: "/api/users")
+    }
+    
+    static var changePassword: Self {
+        return Endpoint(path: "/api/users/password")
+    }
 }

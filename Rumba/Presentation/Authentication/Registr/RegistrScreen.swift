@@ -7,23 +7,44 @@
 
 import SwiftUI
 
-struct RegistrView: View {
+struct RegistrScreen: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel: RegistrViewModel = RegistrViewModel()
+    
     @State var presentAlert = false
+    
     var body: some View {
         VStack {
             Form {
-                Section(footer: Text(viewModel.usernameMessage)) {
+                Section() {
                     TextField("First name", text:$viewModel.firstName)
                         .autocapitalization(.none)
                     TextField("Last name", text:$viewModel.lastName)
                         .autocapitalization(.none)
-                    TextField("Emal", text:$viewModel.email)
+                    TextField("Email", text:$viewModel.email)
+                } footer: {
+                    FormErrorMesagesView(messages: viewModel.mainErrorMessages)
                 }
-                Section(footer: Text(viewModel.passwordMessage)) {
+                
+                Section {
                     SecureField("Password", text:$viewModel.password)
                     SecureField("Confirm password", text: $viewModel.confirmPassword)
+                } footer: {
+                    switch viewModel.passwordStrength {
+                    case .bad:
+                        ProgressView(value: 1, total: 4)
+                            .tint(.red)
+                    case .reasonable:
+                        ProgressView(value: 2, total: 4)
+                            .tint(.yellow)
+                    case .strong:
+                        ProgressView(value: 3, total: 4)
+                            .tint(.green)
+                    case .veryStrong:
+                        ProgressView(value: 4, total: 4)
+                            .tint(.green)
+                    }
+                    FormErrorMesagesView(messages: viewModel.passwordErrorMessages)
                 }
             }
             if viewModel.showProgressView {
@@ -33,9 +54,14 @@ struct RegistrView: View {
                 Button("Sign up") {
                     viewModel.registrUser()
                 }
-                .buttonStyle(PrimaryButton())
+                .buttonStyle(PrimaryButton(color: .blue))
                 .padding(20)
-                .disabled(!viewModel.isValid)
+                .disabled(!viewModel.formIsValid)
+            }
+        }
+        .onChange(of: viewModel.shouldCloseView) { newValue in
+            if newValue {
+                presentationMode.wrappedValue.dismiss()
             }
         }
         .navigationTitle("Create Account")
@@ -48,6 +74,6 @@ struct RegistrView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrView()
+        RegistrScreen()
     }
 }

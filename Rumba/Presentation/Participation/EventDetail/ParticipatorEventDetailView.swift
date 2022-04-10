@@ -49,9 +49,7 @@ struct ParticipatorEventDetailView: View {
                 Button("Leave event") {
                     onLeaveEvent()
                 }
-                .buttonStyle(PrimaryButton())
-                .padding()
-
+                .buttonStyle(PrimaryButton(color: .red))
             }
             .padding()
         }

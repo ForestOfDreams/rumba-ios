@@ -27,7 +27,7 @@ struct ChooseTaskView: View {
             Button("Submit") {
                 onSubmit()
             }
-            .buttonStyle(PrimaryButton())
+            .buttonStyle(PrimaryButton(color: .green))
             .padding(20)
             .disabled(!isFormValid.wrappedValue)
         }

@@ -18,7 +18,7 @@ struct RumbaApp: App {
 
             }
             else {
-                LoginView()
+                LoginScreen()
                     .environmentObject(authentication)
             }
         }

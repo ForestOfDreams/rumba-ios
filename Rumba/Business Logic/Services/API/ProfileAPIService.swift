@@ -12,6 +12,8 @@ protocol ProfileApiServiceProtocol: AnyObject {
     var networker: NetworkerProtocol { get }
     
     func getCurrentUser() -> AnyPublisher<User, Error>
+    func changeProfile(form: ChangeUserForm) -> AnyPublisher<Data, Error>
+    func changePassword(form: ChangePasswordForm) -> AnyPublisher<Data, Error>
 }
 
 final class ProfileApiService: ProfileApiServiceProtocol {
@@ -38,6 +40,48 @@ final class ProfileApiService: ProfileApiServiceProtocol {
             return data
         }
         .decode(type: User.self, decoder: JSONDecoder())
+        .eraseToAnyPublisher()
+    }
+    
+    func changeProfile(form: ChangeUserForm) -> AnyPublisher<Data, Error> {
+        let endpoint = Endpoint.changeProfile
+        
+        return networker.put(
+            url: endpoint.url,
+            headers: endpoint.authHeaders,
+            params: form,
+            encoder: JSONEncoder()
+        )
+        .tryMap { (data,response) -> Data in
+            guard
+                let response = response as? HTTPURLResponse,
+                response.statusCode >= 200 && response.statusCode < 300 else {
+                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                throw errorResponse
+            }
+            return data
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func changePassword(form: ChangePasswordForm) -> AnyPublisher<Data, Error> {
+        let endpoint = Endpoint.changePassword
+        
+        return networker.put(
+            url: endpoint.url,
+            headers: endpoint.authHeaders,
+            params: form,
+            encoder: JSONEncoder()
+        )
+        .tryMap { (data,response) -> Data in
+            guard
+                let response = response as? HTTPURLResponse,
+                response.statusCode >= 200 && response.statusCode < 300 else {
+                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                throw errorResponse
+            }
+            return data
+        }
         .eraseToAnyPublisher()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileTabView: View {
+struct ProfileTabScreen: View {
     @EnvironmentObject var loginViewModel: LoginViewModel
     @StateObject var viewModel: ProfileViewModel = ProfileViewModel()
     
@@ -19,6 +19,19 @@ struct ProfileTabView: View {
                         Text(user.email)
                         Text(user.firstName)
                         Text(user.lastName)
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .automatic) {
+                            NavigationLink(destination: {
+                                EditProfileScreen(
+                                    viewModal: EditProfileViewModel(
+                                        user: user
+                                    )
+                                )
+                            }, label: {
+                                Text("Edit")
+                            })
+                        }
                     }
                 }
                 else {
@@ -35,14 +48,8 @@ struct ProfileTabView: View {
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    NavigationLink(destination: {
-                        EditProfileView()
-                    }, label: {
-                        Text("Edit")
-                    })
-                }
+            .refreshable {
+                viewModel.getCurrentUser()
             }
         }
     }
@@ -50,6 +57,6 @@ struct ProfileTabView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileTabView()
+        ProfileTabScreen()
     }
 }

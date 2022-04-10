@@ -17,7 +17,10 @@ struct MyError: Error, Decodable {
              EMAIL_EXIST,
              EMAIL_NOT_FOUND,
              EVENT_NOT_FOUND,
+             FORBIDDEN,
              INVALID_CREDENTIALS,
+             INVALID_DATES,
+             MEMBER_ALREADY_EXIST,
              MEMBER_NOT_FOUND,
              TASK_NOT_FOUND,
              VALIDATION_ERROR

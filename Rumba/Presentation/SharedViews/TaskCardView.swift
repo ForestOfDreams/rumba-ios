@@ -23,8 +23,8 @@ struct TaskCardView: View {
                 Spacer()
                 if manageMode {
                     NavigationLink(
-                        destination: TaskEditView(
-                            viewModel: TaskEditViewModel(
+                        destination: TaskEditScreen(
+                            viewModal: TaskEditViewModel(
                                 relatedEvent: event,
                                 editingTask: task
                             )
