@@ -49,7 +49,6 @@ struct CreatorEventDetailScreen: View {
         
         let activityViewController = UIActivityViewController(activityItems: [urlShare, viewModel.image], applicationActivities: nil)
         
-        // present the view controller
         UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
     }
 }

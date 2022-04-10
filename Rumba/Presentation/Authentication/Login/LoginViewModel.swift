@@ -33,7 +33,7 @@ class LoginViewModel : ObservableObject {
                 self.showProgressView = false
                 switch completion {
                 case .failure(let error):
-                    if let myErrorResult = error as? MyError {
+                    if let myErrorResult = error as? ApiError {
                         self.alertMessage = myErrorResult.messages[0]
                         self.showAlert = true
                     }

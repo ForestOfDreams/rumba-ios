@@ -52,14 +52,13 @@ final class TaskAPIService: TaskApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data
         }
         .eraseToAnyPublisher()
     }
-
     
     func updateTask(taskId: Int, task form: TaskForm) -> AnyPublisher<Data, Error> {
         let endpoint = Endpoint.updateTask(id: taskId)
@@ -74,7 +73,7 @@ final class TaskAPIService: TaskApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data
@@ -93,7 +92,7 @@ final class TaskAPIService: TaskApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data
@@ -101,7 +100,6 @@ final class TaskAPIService: TaskApiServiceProtocol {
         .eraseToAnyPublisher()
     }
     
-    // TODO TODO TODO TODO REMOVE ARRAY
     func getMyTask(eventId: Int) -> AnyPublisher<Task, Error> {
         let endpoint = Endpoint.getMyTask(eventID: eventId)
         
@@ -113,7 +111,7 @@ final class TaskAPIService: TaskApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data

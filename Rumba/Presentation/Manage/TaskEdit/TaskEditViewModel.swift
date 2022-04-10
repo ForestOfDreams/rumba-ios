@@ -69,7 +69,7 @@ class TaskEditViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    if let myErrorResult = error as? MyError {
+                    if let myErrorResult = error as? ApiError {
                         self.alertMessages = myErrorResult.messages
                         self.showAlert = true
                     }
@@ -91,7 +91,7 @@ class TaskEditViewModel: ObservableObject {
         .sink(receiveCompletion: { completion in
             switch completion {
             case .failure(let error):
-                if let myErrorResult = error as? MyError {
+                if let myErrorResult = error as? ApiError {
                     self.alertMessages = myErrorResult.messages
                     self.showAlert = true
                 }
@@ -110,7 +110,7 @@ class TaskEditViewModel: ObservableObject {
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .failure(let error):
-                        if let myErrorResult = error as? MyError {
+                        if let myErrorResult = error as? ApiError {
                             self.alertMessages = myErrorResult.messages
                             self.showAlert = true
                         }

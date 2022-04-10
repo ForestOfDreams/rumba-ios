@@ -15,7 +15,6 @@ struct RumbaApp: App {
             if authentication.isAuth {
                 TabBarView()
                     .environmentObject(authentication)
-
             }
             else {
                 LoginScreen()

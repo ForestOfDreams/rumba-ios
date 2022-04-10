@@ -25,7 +25,6 @@ class MemberApiService: MemberApiServiceProtocol {
         encoder.dateEncodingStrategy = .iso8601
         return encoder
     }
-
     
     func tryAssignMemberToTask(taskID: Int, form: AssignMemberToTaskForm) -> AnyPublisher<Bool, Error> {
         let endpoint = Endpoint.tryAssignMemberToTask(id: taskID)
@@ -40,7 +39,7 @@ class MemberApiService: MemberApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data
@@ -62,7 +61,7 @@ class MemberApiService: MemberApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data
@@ -81,7 +80,7 @@ class MemberApiService: MemberApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data
@@ -100,7 +99,7 @@ class MemberApiService: MemberApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data
@@ -111,5 +110,4 @@ class MemberApiService: MemberApiServiceProtocol {
     init(networker: NetworkerProtocol = Networker()) {
         self.networker = networker
     }
-    
 }

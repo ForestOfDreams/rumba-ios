@@ -18,5 +18,4 @@ struct EventForm: Codable {
     var placeName: String?
     var startDate: Date
     var endDate: Date
-//    var tasks: [TaskForm]
 }

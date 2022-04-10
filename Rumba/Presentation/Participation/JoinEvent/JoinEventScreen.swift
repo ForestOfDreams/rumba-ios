@@ -16,7 +16,10 @@ struct JoinEventScreen: View {
         NavigationView {
             if let event = viewModel.event {
                 ZStack {
-                    JoinEventView(event: event, onJoinEvent: viewModel.joinEvent)
+                    JoinEventView(
+                        event: event,
+                        onJoinEvent: viewModel.joinEvent
+                    )
                 }
                 .navigationTitle("Join Event")
                 .onChange(of: viewModel.shouldCloseView) { newValue in

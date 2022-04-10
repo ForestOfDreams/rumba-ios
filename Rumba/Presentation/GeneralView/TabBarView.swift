@@ -11,7 +11,7 @@ struct TabBarView: View {
     @EnvironmentObject var loginViewModel: LoginViewModel
     
     var body: some View {
-    
+        
         TabView {
             ParticipationTabScreen()
                 .tabItem {

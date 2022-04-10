@@ -16,7 +16,8 @@ struct DummyData {
         membersCount: 3,
         startDate: Date(),
         endDate: Date(),
-        members: [Member(
+        members: [
+            Member(
             memberId: 1,
             member: User(
                 accountId: 1,
@@ -48,6 +49,7 @@ struct DummyData {
             accountId: 1,
             firstName: "Петр",
             lastName: "Енотов",
-            email: "touch@gmail.com")
+            email: "touch@gmail.com"
+        )
     )
 }

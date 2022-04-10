@@ -26,7 +26,7 @@ class ChangePasswordViewModel: ObservableObject {
     private var profileService: ProfileApiServiceProtocol
     private var userPublishers: UserPublishers
     private var cancellableSet: [AnyCancellable] = []
-
+    
     init() {
         profileService = ProfileApiService()
         userPublishers = UserPublishers()
@@ -120,7 +120,7 @@ class ChangePasswordViewModel: ObservableObject {
         .sink(receiveCompletion: { completion in
             switch completion {
             case .failure(let error):
-                if let myErrorResult = error as? MyError {
+                if let myErrorResult = error as? ApiError {
                     self.alertMessages = myErrorResult.messages
                     self.showAlert = true
                 }

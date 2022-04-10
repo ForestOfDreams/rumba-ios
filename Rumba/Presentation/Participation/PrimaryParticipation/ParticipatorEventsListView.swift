@@ -12,7 +12,7 @@ struct ParticipatorEventsListView: View {
     let onRefresh: () -> ()
     let searchText: Binding<String>
     var filterType: Binding<FilterType>
-
+    
     var body: some View {
         VStack {
             Picker("Event type", selection: filterType) {

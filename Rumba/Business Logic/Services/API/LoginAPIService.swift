@@ -35,7 +35,7 @@ final class LoginApiService:LoginApiServiceProtocol {
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode >= 200 && response.statusCode < 300 else {
-                let errorResponse = try JSONDecoder().decode(MyError.self, from: data)
+                let errorResponse = try JSONDecoder().decode(ApiError.self, from: data)
                 throw errorResponse
             }
             return data

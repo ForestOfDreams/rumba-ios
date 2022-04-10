@@ -25,7 +25,6 @@ struct ChangePasswordScreen: View {
                 }
                 Button {
                     viewModal.onChangePassword(action:  loginViewModel.logOut)
-//                    loginViewModel.isAuth = false
                 } label: {
                     Text("Save password")
                 }

@@ -19,7 +19,6 @@ class KeychainStorage {
         return nil
     }
     
-//    @discardableResult
     func saveToken(_ token: LoginResponse) -> Bool {
         KeychainWrapper.standard.set(encode(data: token), forKey: key)
     }

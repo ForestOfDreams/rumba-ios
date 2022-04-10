@@ -8,7 +8,6 @@
 import SwiftUI
 import CodeScanner
 
-
 struct ParticipationTabScreen: View {
     @StateObject var viewModel: ParticipationViewModel = ParticipationViewModel()
     
@@ -51,7 +50,6 @@ struct ParticipationTabScreen: View {
         }
     }
 }
-
 
 struct ParticipationView_Previews: PreviewProvider {
     static var previews: some View {

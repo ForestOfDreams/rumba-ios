@@ -10,9 +10,9 @@ import SwiftUI
 struct BaseQRCodeView: View {
     var image: Image
     
-//    var qr: Image {
-//        return Image(uiImage: image)
-//    }
+    //    var qr: Image {
+    //        return Image(uiImage: image)
+    //    }
     
     var body: some View {
         image

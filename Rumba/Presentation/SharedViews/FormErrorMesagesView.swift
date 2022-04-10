@@ -13,10 +13,10 @@ struct FormErrorMesagesView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ForEach(messages.sorted() {
-                    $0 > $1 }, id: \.self) { message in
-                        Text(message)
-                            .foregroundColor(.red)
-                    }
+                $0 > $1 }, id: \.self) { message in
+                    Text(message)
+                        .foregroundColor(.red)
+                }
         }
     }
 }

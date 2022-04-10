@@ -19,7 +19,6 @@ struct QRCodeView: View {
                 }
             }
     }
-    
 }
 
 //struct QRCodeView_Previews: PreviewProvider {

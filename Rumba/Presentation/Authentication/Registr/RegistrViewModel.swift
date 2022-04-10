@@ -42,7 +42,7 @@ class RegistrViewModel : ObservableObject {
             .sink( receiveCompletion: {[weak self] completion in
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as! MyError
+                    let myErrorResult = error as! ApiError
                     self?.alertMessage = myErrorResult.messages[0]
                     self?.showAlert = true
                 case .finished:

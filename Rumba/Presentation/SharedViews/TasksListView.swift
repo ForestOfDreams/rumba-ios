@@ -15,8 +15,13 @@ struct TasksListView: View {
     
     var body: some View {
         ForEach(tasks, id: \.taskId) { task in
-            TaskCardView(task: task, event: event, manageMode: showEdit, showAssignButton: showAssignButton)
-                .padding(.bottom)
+            TaskCardView(
+                task: task,
+                event: event,
+                manageMode: showEdit,
+                showAssignButton: showAssignButton
+            )
+            .padding(.bottom)
         }
     }
 }

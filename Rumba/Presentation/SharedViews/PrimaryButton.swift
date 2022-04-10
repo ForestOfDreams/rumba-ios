@@ -11,7 +11,7 @@ import SwiftUI
 struct PrimaryButton: ButtonStyle {
     let color: Color
     @Environment(\.isEnabled) private var isEnabled
-
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label

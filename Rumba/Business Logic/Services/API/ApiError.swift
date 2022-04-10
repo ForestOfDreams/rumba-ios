@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct MyError: Error, Decodable {
+struct ApiError: Error, Decodable {
     enum ErrorType: String, Decodable {
         case ACCOUNT_NOT_CONFIRMED,
              CONFIRM_TOKEN_EXPIRED,
