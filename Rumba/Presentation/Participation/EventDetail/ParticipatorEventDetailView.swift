@@ -10,7 +10,7 @@ import SwiftUI
 struct ParticipatorEventDetailView: View {
     let event: Event
     let myTask: Task?
-    let image: UIImage
+    let QRImage: UIImage
     let onShare: () -> ()
     let onLeaveEvent: () -> ()
     
@@ -19,34 +19,13 @@ struct ParticipatorEventDetailView: View {
             VStack {
                 EventDetailView(
                     event: event,
-                    image: image,
+                    image: QRImage,
                     shareAction: onShare
                 )
-                TitleView(text: "My task")
-                if let myTask = myTask {
-                    TaskCardView(
-                        task: myTask,
-                        event: event,
-                        manageMode: false,
-                        showAssignButton: false
-                    )
-                }
-                else {
-                    Text("You need to select a task.")
-                        .foregroundColor(.yellow)
-                        .frame(
-                            maxWidth: .infinity,
-                            alignment: .topLeading
-                        )
-                }
-                TitleView(text: "All tasks")
-                TasksListView(
-                    tasks: event.tasks ?? [],
-                    event: event,
-                    showEdit: false,
-                    showAssignButton: true
-                )
-                Button("Leave event") {
+                OrganizerSectionView(organizer: event.creator!)
+                MyTaskSectionView(myTask: myTask, event: event)
+                AllTasksSectionView(event: event)
+                Button("leave-event-btn") {
                     onLeaveEvent()
                 }
                 .buttonStyle(PrimaryButton(color: .red))
@@ -56,14 +35,70 @@ struct ParticipatorEventDetailView: View {
     }
 }
 
+
 struct ParticipatorEventDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ParticipatorEventDetailView(
             event: DummyData.event,
             myTask: DummyData.task,
-            image: UIImage(systemName: "qrcode")!,
+            QRImage: UIImage(systemName: "qrcode")!,
             onShare: {},
             onLeaveEvent: {}
         )
+    }
+}
+
+struct MyTaskSectionView: View {
+    let myTask: Task?
+    let event: Event
+    
+    var body: some View {
+        VStack {
+            TitleView(text: "event-my-task-title")
+            if let myTask = myTask {
+                TaskDetailView(
+                    task: myTask,
+                    event: event,
+                    manageMode: false,
+                    showAssignButton: false
+                )
+            }
+            else {
+                Text("You need to choose a task.")
+                    .foregroundColor(.yellow)
+                    .frame(
+                        maxWidth: .infinity,
+                        alignment: .topLeading
+                    )
+            }
+        }
+    }
+}
+
+struct AllTasksSectionView: View {
+    let event: Event
+    
+    var body: some View {
+        VStack {
+            TitleView(text: "all-tasks-title")
+            TasksListView(
+                tasks: event.tasks ?? [],
+                event: event,
+                showEdit: false,
+                showAssignButton: true
+            )
+            
+        }
+    }
+}
+
+struct OrganizerSectionView: View {
+    let organizer: Creator
+    
+    var body: some View {
+        VStack {
+            TitleView(text: "event-organizer-title")
+            OrganizerDetailView(organizer: organizer)
+        }
     }
 }

@@ -21,13 +21,12 @@ struct EventEditView: View {
                 footer: FormErrorMesagesView(messages: viewModel.mainErrorMessages)
             ) {
                 TextField("Title", text: $viewModel.title)
-
                 ZStack(alignment: .topLeading) {
                     TextEditor(text: $viewModel.description)
                         .padding(.horizontal, -5)
                         .padding(.vertical, -5)
                         .frame(minHeight: 120)
-                    Text("Description")
+                    Text("description-title")
                         .foregroundColor(Color(.init(gray: 0.5, alpha: 0.5)))
                         .padding(.top, 3)
                         .opacity(viewModel.description.isEmpty ? 1 : 0)
@@ -45,7 +44,7 @@ struct EventEditView: View {
                 .pickerStyle(.segmented)
             }
             Section(
-                header: Text("Period"),
+                header: Text("event-period-title"),
                 footer: FormErrorMesagesView(messages: viewModel.dateErrorMessages)
             ) {
                 DatePicker(
@@ -59,14 +58,24 @@ struct EventEditView: View {
             }
             if viewModel.type == .offline {
                 Section(
-                    header: Text("Location"),
+                    header: Text("location-title"),
                     footer: FormErrorMesagesView(messages: viewModel.locationErrorMessages)
                 ) {
                     PlacePickerField(viewModel: viewModel)
                 }
             }
+            if viewModel.isEditMode {
+                Section(
+                    header: Text("STATUS"),
+                    footer: FormErrorMesagesView(messages: viewModel.locationErrorMessages)
+                ) {
+                    Toggle("Cancel event", isOn: $viewModel.isCancelled)
+                        .toggleStyle(SwitchToggleStyle(tint: .red))
+                }
+            }
         }
-        .navigationTitle(viewModel.isEditMode ? "Edit event" : "Create event")
+        .navigationTitle(viewModel.isEditMode ? "edit-event-title" : "create-event-title")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {

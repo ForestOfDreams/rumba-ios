@@ -17,9 +17,10 @@
 		8F1F8D1E27E9133F00BE9F44 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 8F1F8D1D27E9133F00BE9F44 /* CodeScanner */; };
 		8F47BAE027F6125300C6BAA7 /* TaskEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F47BADF27F6125300C6BAA7 /* TaskEditViewModel.swift */; };
 		8F47BAE327F632E000C6BAA7 /* CreatorEventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F47BAE227F632DF00C6BAA7 /* CreatorEventCardView.swift */; };
+		8F497B6D2805DF8D00CFA4C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F497B6F2805DF8D00CFA4C2 /* Localizable.strings */; };
 		8F4CEF9D27F63C9E00C24F7F /* CreatorEventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEF9C27F63C9E00C24F7F /* CreatorEventsListView.swift */; };
 		8F4CEFA027F66B5D00C24F7F /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEF9F27F66B5D00C24F7F /* TasksListView.swift */; };
-		8F4CEFA227F66D2C00C24F7F /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFA127F66D2C00C24F7F /* TaskCardView.swift */; };
+		8F4CEFA227F66D2C00C24F7F /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFA127F66D2C00C24F7F /* TaskDetailView.swift */; };
 		8F4CEFA427F66E0000C24F7F /* TaskAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFA327F66E0000C24F7F /* TaskAPIService.swift */; };
 		8F4CEFA727F6787A00C24F7F /* CreatorEventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFA627F6787A00C24F7F /* CreatorEventDetailViewModel.swift */; };
 		8F4CEFAE27F7A5D500C24F7F /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CEFAD27F7A5D500C24F7F /* EventDetailView.swift */; };
@@ -31,6 +32,8 @@
 		8F5258FB280378AD00F1D657 /* ChangePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5258FA280378AD00F1D657 /* ChangePasswordScreen.swift */; };
 		8F5258FD280382A500F1D657 /* ChangePasswordForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5258FC280382A500F1D657 /* ChangePasswordForm.swift */; };
 		8F5259002803835A00F1D657 /* ChangeUserForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5258FF2803835A00F1D657 /* ChangeUserForm.swift */; };
+		8F525902280465E100F1D657 /* OrganizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F525901280465E100F1D657 /* OrganizerDetailView.swift */; };
+		8F525904280578DA00F1D657 /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F525903280578DA00F1D657 /* MyDateFormatter.swift */; };
 		8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */; };
 		8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91C27A9C23D004B18DE /* Endpoint.swift */; };
 		8F5AB91F27A9C2A6004B18DE /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5AB91E27A9C2A6004B18DE /* Networker.swift */; };
@@ -47,7 +50,6 @@
 		8FD03F2F27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2E27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift */; };
 		8FD03F3127EB3EAE00EF6CD8 /* JoinEventScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3027EB3EAE00EF6CD8 /* JoinEventScreen.swift */; };
 		8FD03F3527EB9C4F00EF6CD8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */; };
-		8FD03F3927EBA8CB00EF6CD8 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */; };
 		8FD03F3B27EBB79600EF6CD8 /* ParticipatorEventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3A27EBB79600EF6CD8 /* ParticipatorEventsListView.swift */; };
 		8FD03F3D27ECAD2B00EF6CD8 /* LinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3C27ECAD2B00EF6CD8 /* LinkService.swift */; };
 		8FD03F3F27ECB09D00EF6CD8 /* ManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F3E27ECB09D00EF6CD8 /* ManageViewModel.swift */; };
@@ -122,9 +124,11 @@
 		8F1F8D1F27E91D7F00BE9F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8F47BADF27F6125300C6BAA7 /* TaskEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewModel.swift; sourceTree = "<group>"; };
 		8F47BAE227F632DF00C6BAA7 /* CreatorEventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventCardView.swift; sourceTree = "<group>"; };
+		8F497B6E2805DF8D00CFA4C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8F497B702805DF9000CFA4C2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F4CEF9C27F63C9E00C24F7F /* CreatorEventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventsListView.swift; sourceTree = "<group>"; };
 		8F4CEF9F27F66B5D00C24F7F /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
-		8F4CEFA127F66D2C00C24F7F /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		8F4CEFA127F66D2C00C24F7F /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		8F4CEFA327F66E0000C24F7F /* TaskAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAPIService.swift; sourceTree = "<group>"; };
 		8F4CEFA627F6787A00C24F7F /* CreatorEventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventDetailViewModel.swift; sourceTree = "<group>"; };
 		8F4CEFAD27F7A5D500C24F7F /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		8F5258FA280378AD00F1D657 /* ChangePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScreen.swift; sourceTree = "<group>"; };
 		8F5258FC280382A500F1D657 /* ChangePasswordForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordForm.swift; sourceTree = "<group>"; };
 		8F5258FF2803835A00F1D657 /* ChangeUserForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserForm.swift; sourceTree = "<group>"; };
+		8F525901280465E100F1D657 /* OrganizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizerDetailView.swift; sourceTree = "<group>"; };
+		8F525903280578DA00F1D657 /* MyDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
 		8F5AB91327A84A3B004B18DE /* RegistrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrViewModel.swift; sourceTree = "<group>"; };
 		8F5AB91C27A9C23D004B18DE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8F5AB91E27A9C2A6004B18DE /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
@@ -152,7 +158,6 @@
 		8FD03F2E27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatorEventDetailScreen.swift; sourceTree = "<group>"; };
 		8FD03F3027EB3EAE00EF6CD8 /* JoinEventScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventScreen.swift; sourceTree = "<group>"; };
 		8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		8FD03F3A27EBB79600EF6CD8 /* ParticipatorEventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatorEventsListView.swift; sourceTree = "<group>"; };
 		8FD03F3C27ECAD2B00EF6CD8 /* LinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkService.swift; sourceTree = "<group>"; };
 		8FD03F3E27ECB09D00EF6CD8 /* ManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewModel.swift; sourceTree = "<group>"; };
@@ -331,8 +336,8 @@
 		8F5258F72803788400F1D657 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
-				8F5258F82803789C00F1D657 /* ChangePasswordViewModel.swift */,
 				8F5258FA280378AD00F1D657 /* ChangePasswordScreen.swift */,
+				8F5258F82803789C00F1D657 /* ChangePasswordViewModel.swift */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				8F1F8D0B27E80B7E00BE9F44 /* Profile */,
 				8FDDCF9027C6D7240045CA52 /* GeneralView */,
 				8F5258F028030EA400F1D657 /* Authentication */,
+				8F525903280578DA00F1D657 /* MyDateFormatter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -422,10 +428,10 @@
 			isa = PBXGroup;
 			children = (
 				8F4CEF9F27F66B5D00C24F7F /* TasksListView.swift */,
-				8F4CEFA127F66D2C00C24F7F /* TaskCardView.swift */,
+				8F525901280465E100F1D657 /* OrganizerDetailView.swift */,
+				8F4CEFA127F66D2C00C24F7F /* TaskDetailView.swift */,
 				8F4CEFAD27F7A5D500C24F7F /* EventDetailView.swift */,
 				8FD03F3427EB9C4F00EF6CD8 /* MapView.swift */,
-				8FD03F3827EBA8CB00EF6CD8 /* EventCardView.swift */,
 				8FD03F4027ECD0FB00EF6CD8 /* QRCodeView.swift */,
 				8FD03F4427ED1C4500EF6CD8 /* BaseQRCodeView.swift */,
 				8FFAF0A627FB021300130236 /* PrimaryButton.swift */,
@@ -542,8 +548,8 @@
 			children = (
 				8F1F8D1827E80C8D00BE9F44 /* ManageTabScreen.swift */,
 				8FD03F3E27ECB09D00EF6CD8 /* ManageViewModel.swift */,
-				8F47BAE227F632DF00C6BAA7 /* CreatorEventCardView.swift */,
 				8F4CEF9C27F63C9E00C24F7F /* CreatorEventsListView.swift */,
+				8F47BAE227F632DF00C6BAA7 /* CreatorEventCardView.swift */,
 			);
 			path = PrimaryManage;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 		8FD81F23277D1E040078AB1A = {
 			isa = PBXGroup;
 			children = (
+				8F497B6F2805DF8D00CFA4C2 /* Localizable.strings */,
 				8FD81F2E277D1E040078AB1A /* Rumba */,
 				8FD81F3F277D1E060078AB1A /* RumbaTests */,
 				8FD81F49277D1E060078AB1A /* RumbaUITests */,
@@ -734,6 +741,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 8FD81F23277D1E040078AB1A;
 			packageReferences = (
@@ -758,6 +766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FD81F37277D1E060078AB1A /* Preview Assets.xcassets in Resources */,
+				8F497B6D2805DF8D00CFA4C2 /* Localizable.strings in Resources */,
 				8FD81F34277D1E060078AB1A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,9 +805,10 @@
 				8FD03F6427EF76D600EF6CD8 /* EventEditViewModel.swift in Sources */,
 				8FFAF0AE27FB5D7900130236 /* CreatorEventDetailView.swift in Sources */,
 				8F4CEFA027F66B5D00C24F7F /* TasksListView.swift in Sources */,
-				8F4CEFA227F66D2C00C24F7F /* TaskCardView.swift in Sources */,
+				8F4CEFA227F66D2C00C24F7F /* TaskDetailView.swift in Sources */,
 				8F097B4C27AA702800E4D791 /* RegistrAPIService.swift in Sources */,
 				8FD81F32277D1E040078AB1A /* RegistrScreen.swift in Sources */,
+				8F525904280578DA00F1D657 /* MyDateFormatter.swift in Sources */,
 				8FD03F5027ED367C00EF6CD8 /* ProfileAPIService.swift in Sources */,
 				8FD03F3527EB9C4F00EF6CD8 /* MapView.swift in Sources */,
 				8FFAF0A727FB021300130236 /* PrimaryButton.swift in Sources */,
@@ -811,7 +821,6 @@
 				8FD03F6D27F0653B00EF6CD8 /* EventForm.swift in Sources */,
 				8F5258F92803789C00F1D657 /* ChangePasswordViewModel.swift in Sources */,
 				8F47BAE027F6125300C6BAA7 /* TaskEditViewModel.swift in Sources */,
-				8FD03F3927EBA8CB00EF6CD8 /* EventCardView.swift in Sources */,
 				8F5AB91427A84A3B004B18DE /* RegistrViewModel.swift in Sources */,
 				8FD03F6B27F0651600EF6CD8 /* TaskForm.swift in Sources */,
 				8F5258F228030F5100F1D657 /* UserPublishers.swift in Sources */,
@@ -846,6 +855,7 @@
 				8FD03F4527ED1C4500EF6CD8 /* BaseQRCodeView.swift in Sources */,
 				8FFAF0B227FB8B6200130236 /* ParticipatorEventCardView.swift in Sources */,
 				8FD1D42227F3CB3900A588BE /* User.swift in Sources */,
+				8F525902280465E100F1D657 /* OrganizerDetailView.swift in Sources */,
 				8FDDCF9727C6F0F80045CA52 /* LoginForm.swift in Sources */,
 				8F4CEF9D27F63C9E00C24F7F /* CreatorEventsListView.swift in Sources */,
 				8FD03F3D27ECAD2B00EF6CD8 /* LinkService.swift in Sources */,
@@ -895,6 +905,18 @@
 			targetProxy = 8FD81F47277D1E060078AB1A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F497B6F2805DF8D00CFA4C2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F497B6E2805DF8D00CFA4C2 /* en */,
+				8F497B702805DF9000CFA4C2 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8FD81F4E277D1E060078AB1A /* Debug */ = {

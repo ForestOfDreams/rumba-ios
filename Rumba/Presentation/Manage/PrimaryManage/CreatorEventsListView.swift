@@ -16,12 +16,13 @@ struct CreatorEventsListView: View {
     var body: some View {
         VStack {
             Picker("Event type", selection: filterType) {
-                ForEach([FilterType.all, FilterType.past, FilterType.future], id: \.self) {
-                    Text($0.rawValue)
+                ForEach(FilterType.allCases, id: \.self) {
+                    Text(LocalizedStringKey($0.rawValue))
                 }
             }
             .padding(.horizontal)
             .pickerStyle(.segmented)
+            ZStack {
             List {
                 ForEach(events, id: \.eventId) { event in
                     NavigationLink(
@@ -31,17 +32,16 @@ struct CreatorEventsListView: View {
                                     eventId: event.eventId
                                 )
                         )
-//                        .onDisappear(perform: onEventDisappear)
                     ) {
                         CreatorEventCardView(event: event)
                     }
                 }
-            }
+            }}
             .refreshable {
                 onRefresh()
             }
         }
-        .searchable(text: searchText, prompt: "Filter events")
+        .searchable(text: searchText, prompt: "search-placeholder")
     }
 }
 

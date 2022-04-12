@@ -16,8 +16,8 @@ struct ParticipatorEventsListView: View {
     var body: some View {
         VStack {
             Picker("Event type", selection: filterType) {
-                ForEach([FilterType.all, FilterType.past, FilterType.future], id: \.self) {
-                    Text($0.rawValue)
+                ForEach(FilterType.allCases, id: \.self) {
+                    Text(LocalizedStringKey($0.rawValue))
                 }
             }
             .padding(.horizontal)
@@ -39,7 +39,7 @@ struct ParticipatorEventsListView: View {
                 onRefresh()
             }
         }
-        .searchable(text: searchText, prompt: "Filter events")
+        .searchable(text: searchText, prompt: "search-placeholder")
     }
 }
 

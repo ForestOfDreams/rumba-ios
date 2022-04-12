@@ -17,22 +17,34 @@ struct ChangePasswordScreen: View {
                 Form {
                     Section {
                         TextField("Old password", text: $viewModal.oldPassword)
+                    } footer: {
+                        VStack {
+                            Text("edit-password-old-footer")
+                            FormErrorMesagesView(messages: viewModal.oldPasswordErrorMessages)
+                        }
                     }
                     Section {
                         TextField("New password", text: $viewModal.password)
                         TextField("Confirm password", text: $viewModal.confirmPassword)
+                    } footer: {
+                        VStack(alignment: .leading) {
+                            PasswordStrengthBarView(passwordStrength: viewModal.passwordStrength)
+                            Text("edit-password-new-footer")
+                            FormErrorMesagesView(messages: viewModal.passwordErrorMessages)
+                        }
                     }
                 }
                 Button {
                     viewModal.onChangePassword(action:  loginViewModel.logOut)
                 } label: {
-                    Text("Save password")
+                    Text("save-profile-btn")
                 }
                 .disabled(!viewModal.formIsValid)
                 .buttonStyle(PrimaryButton(color: .green))
                 .padding()
             }
-            .navigationTitle("Change Password")
+            .navigationTitle("change-password-title")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

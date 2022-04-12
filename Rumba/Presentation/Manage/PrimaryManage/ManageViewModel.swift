@@ -71,4 +71,9 @@ class ManageViewModel : ObservableObject {
             }
             .store(in: &cancellableSet)
     }
+    
+    func refreshFilters() {
+        filterType = .all
+        searchText = ""
+    }
 }

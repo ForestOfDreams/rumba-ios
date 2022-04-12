@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginScreen: View {
     @EnvironmentObject var viewModel: LoginViewModel
+    
     @State var selection: Int? = nil
     
     var body: some View {
@@ -19,15 +20,15 @@ struct LoginScreen: View {
                         footer:
                             FormErrorMesagesView(messages: viewModel.loginErrorMessages)
                     ) {
-                        TextField("Email", text:$viewModel.email)
-                        SecureField("Password", text:$viewModel.password)
+                        TextField("email-placeholder", text:$viewModel.email)
+                        SecureField("password-placeholder", text:$viewModel.password)
                     }
                 }
                 if viewModel.showProgressView {
                     ProgressView()
                         .padding(20)
                 } else {
-                    Button("Log in") {
+                    Button("login-btn") {
                         viewModel.loginUser()
                     }
                     .buttonStyle(PrimaryButton(color: .blue))
@@ -35,24 +36,25 @@ struct LoginScreen: View {
                     .disabled(!viewModel.isFormValid)
                 }
                 HStack {
-                    Text("Don't have an account?")
+                    Text("switch-to-signup-title")
                     NavigationLink(destination: {
                         RegistrScreen()
                     }, label: {
-                        Text("Sign up")
+                        Text("signup-title")
                     }
                     )
                 }
                 .padding(.bottom)
             }
-            .navigationTitle("Log in")
+            .navigationTitle("login-title")
             .alert(isPresented: self.$viewModel.showAlert, content: {
                 Alert(
                     title: Text("Error"),
                     message: Text(viewModel.alertMessage),
-                    dismissButton: .default(Text("OK!"),
-                                            action: {}
-                                           )
+                    dismissButton: .default(
+                        Text("OK!"),
+                        action: {}
+                    )
                 )
             })
         }

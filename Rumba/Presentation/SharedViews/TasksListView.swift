@@ -15,7 +15,7 @@ struct TasksListView: View {
     
     var body: some View {
         ForEach(tasks, id: \.taskId) { task in
-            TaskCardView(
+            TaskDetailView(
                 task: task,
                 event: event,
                 manageMode: showEdit,

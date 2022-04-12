@@ -12,7 +12,7 @@ struct TitleView: View {
     
     var body: some View {
         VStack {
-            Text(text)
+            Text(LocalizedStringKey(text))
                 .font(.title)
                 .padding(.top, 10)
         }

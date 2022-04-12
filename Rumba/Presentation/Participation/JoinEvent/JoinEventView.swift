@@ -40,6 +40,9 @@ struct JoinEventView: View {
 
 struct JoinEventView_Previews: PreviewProvider {
     static var previews: some View {
-        JoinEventView(event: DummyData.event, onJoinEvent: {})
+        JoinEventView(
+            event: DummyData.event,
+            onJoinEvent: {}
+        )
     }
 }

@@ -14,10 +14,11 @@ class ChangePasswordViewModel: ObservableObject {
     @Published var confirmPassword = ""
     @Published var passwordStrength: UserPublishers.PasswordStrenght = .bad
     
-    @Published var formIsValid: Bool = true
+    @Published var formIsValid: Bool = false
     
     @Published var shouldCloseView: Bool = false
     
+    @Published var oldPasswordErrorMessages: Set<String> = Set<String>()
     @Published var passwordErrorMessages: Set<String> = Set<String>()
     
     @Published var alertMessages: [String] = []
@@ -47,6 +48,19 @@ class ChangePasswordViewModel: ObservableObject {
     }
     
     func setUpValidationSubscribers() {
+        userPublishers.isPasswordEmptyPublisher(password: $oldPassword)
+            .dropFirst()
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] isEmpty in
+                if isEmpty {
+                    self?.oldPasswordErrorMessages.insert(UserPasswordErrorMessage.passwordEmpty.rawValue)
+                }
+                else {
+                    self?.oldPasswordErrorMessages.remove(UserPasswordErrorMessage.passwordEmpty.rawValue)
+                }
+            })
+            .store(in: &cancellableSet)
+        
         userPublishers.isPasswordEmptyPublisher(password: $password)
             .dropFirst()
             .receive(on: RunLoop.main)

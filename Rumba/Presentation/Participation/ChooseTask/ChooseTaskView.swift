@@ -10,6 +10,8 @@ import SwiftUI
 struct ChooseTaskView: View {
     var startDate: Binding<Date>
     var endDate: Binding<Date>
+    let localizedTaskStartDate: String
+    let localizedTaskEndDate: String
     var isFormValid: Binding<Bool>
     var message: String
     var onSubmit: () -> ()
@@ -17,11 +19,13 @@ struct ChooseTaskView: View {
     var body: some View {
         VStack {
             Form {
-                Section(
-                    footer: Text(message)
-                ) {
+                Section {
                     DatePicker("Start date", selection: startDate)
                     DatePicker("End date", selection: endDate)
+                } footer: {
+                    VStack {
+                        Text("You need to select time interval between \(localizedTaskStartDate) and \(localizedTaskEndDate).")
+                    }
                 }
             }
             Button("Submit") {
@@ -43,6 +47,8 @@ struct ChooseTaskView_Previews: PreviewProvider {
         ChooseTaskView(
             startDate: $startDate,
             endDate: $endDate,
+            localizedTaskStartDate: "12/25/19 7:00 AM",
+            localizedTaskEndDate: "12/25/19 9:00 AM",
             isFormValid: $isFormValid,
             message: "Unfortunately, the required number of participants for this time has already joined",
             onSubmit: {}

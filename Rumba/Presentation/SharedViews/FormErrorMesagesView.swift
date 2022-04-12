@@ -14,7 +14,7 @@ struct FormErrorMesagesView: View {
         VStack(alignment: .leading) {
             ForEach(messages.sorted() {
                 $0 > $1 }, id: \.self) { message in
-                    Text(message)
+                    Text(LocalizedStringKey(message))
                         .foregroundColor(.red)
                 }
         }

@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  Rumba
+  Created by Vladislav Shchukin on 12.04.2022.
+  
+*/
+
+"login-title" = "Вход";
+"signup-title" = "Регистрация";
+"email-placeholder" = "Электронная почта";
+"password-placeholder" = "Пароль";
+"login-btn" = "Войти";
+"signup-btn" = "Создать аккаунт";
+"switch-to-signup-title" = "Нет аккаунта?";
+"first-name-placeholder" = "Имя";
+"last-name-placeholder" = "Фамилия";
+"confirm-password-placeholder" = "Повторите пароль";
+"password-strength-title" = "Сложность Пароля";
+"poor-password" = "Недостаточный";
+"average-password" = "Средний";
+"strong-password" = "Сильный";
+"great-password" = "Отличный";
+
+"participation-title" = "Участие";
+"search-placeholder" = "Поиск";
+"filter-all-button" = "Все";
+"filter-past-button" = "Прошедшие";
+"filter-future-button" = "Предстоящее";
+
+"edit-button" = "Изменить";
+
+"event-period-title" = "Время";
+"task-period-title" = "Время";
+"description-title" = "Описание";
+"location-title" = "Местоположение";
+"event-organizer-title" = "Организатор";
+"event-contact-title" = "Контакты";
+"event-my-task-title" = "Моя Задача";
+"all-tasks-title" = "Все Задачи";
+"members-title" = "Участники";
+"choose-task-btn" = "Выбрать задачу";
+"show-map-btn" = "показать карту";
+"hide-map-btn" = "скрыть карту";
+"show-members-btn" = "показать участников";
+"hide-members-btn" = "скрыть участников";
+"leave-event-btn" = "Покинуть Меропритие";
+"share-invation-btn" = "Поделиться мероприятием";
+"add-task-btn" = "Добавить Задачу";
+"save-profile-btn" = "Сохранить Профиль";
+"change-password-btn" = "Сменить пароль";
+"change-password-title" = "Сменить Пароль";
+"create-event-title" = "Создать Мероприятие";
+"edit-event-title" = "Изменить Мероприятие";
+"edit-task-title" = "Изменить Задачу";
+"create-task-title" = "Создать Задачу";
+
+"manage-title" = "Управление";
+
+"profile-title" = "Профиль";
+"edit-profile-title" = "Изменить Профиль";
+"edit-name-footer" = "Введите новое имя или оставьте без изменения.";
+"edit-email-footer" = "Введите новую электронную почту или оставьте как есть. Для сохранения нового адреса вам необходимо подтвердить его переходом по ссылке из письма.";
+"edit-password-old-footer" = "Введите ваш старый пароль.";
+"edit-password-new-footer" = "После смены пароля необходимо заново войти в приложение.";
+"save-profile-btn" = "Сохранить пароль";
+
+"restore-button" = "Восстановить";
+
+"first-name-too-short" = "Имя должно содержать как минимум 2 символа.";
+"last-name-too-short" = "Фамилия должна содержать как минимум 2 символа.";
+"email-not-valid" = "Вам необходимо ввести корректный адрес электронной почты.";
+"password-empty" = "Пароль не может быть пустым.";
+"password-not-strong" = "Пароль не достаточно сложный.";
+"passwords-not-match" = "Пароли не совпадают.";

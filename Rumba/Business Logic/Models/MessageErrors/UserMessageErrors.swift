@@ -8,13 +8,13 @@
 import Foundation
 
 enum UserMainErrorMessage: String {
-    case firstNameTooShort = "First name must contain at least 2 characters."
-    case lastNameTooShort = "Last name must contain at least 2 characters."
-    case emailNotValid = "You must enter a valid email."
+    case firstNameTooShort = "first-name-too-short"
+    case lastNameTooShort = "last-name-too-short"
+    case emailNotValid = "email-not-valid"
 }
 
 enum UserPasswordErrorMessage: String {
-    case passwordEmpty = "Password cannot be empty."
-    case passwordNotStrong = "Password is not strong enough."
-    case passwordsNotMatch = "Password do not match."
+    case passwordEmpty = "password-empty."
+    case passwordNotStrong = "password-not-strong"
+    case passwordsNotMatch = "passwords-not-match"
 }

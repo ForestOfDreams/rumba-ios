@@ -18,7 +18,7 @@ struct PlacePickerField: View {
                 Button {
                     showingPicker = true
                 } label: {
-                    Text("Location")
+                    Text("location-title")
                 }
                 .mapItemPicker(isPresented: $showingPicker) { [weak viewModel] item in
                     if let place = item {

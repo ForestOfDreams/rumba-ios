@@ -15,16 +15,16 @@ struct TabBarView: View {
         TabView {
             ParticipationTabScreen()
                 .tabItem {
-                    Label("Events", systemImage: "globe.europe.africa")
+                    Label("participation-title", systemImage: "globe.europe.africa")
                 }
             
             ManageTabScreen()
                 .tabItem {
-                    Label("Manage", systemImage: "list.bullet.rectangle")
+                    Label("manage-title", systemImage: "list.bullet.rectangle")
                 }
             ProfileTabScreen()
                 .tabItem {
-                    Label("Profile", systemImage: "person.crop.circle")
+                    Label("profile-title", systemImage: "person.crop.circle")
                 }
         }
     }

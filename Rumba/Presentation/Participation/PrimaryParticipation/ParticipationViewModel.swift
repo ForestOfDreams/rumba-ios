@@ -94,6 +94,11 @@ class ParticipationViewModel: ObservableObject {
             .store(in: &cancellableSet)
     }
     
+    func refreshFilters() {
+        filterType = .all
+        searchText = ""
+    }
+    
     func openDeepLink(url: URL) {
         if let id = linkService.parseUrl(url: url) {
             joinEventId = id
@@ -102,8 +107,8 @@ class ParticipationViewModel: ObservableObject {
     }
 }
 
-enum FilterType: String {
-    case all = "All"
-    case past = "Past"
-    case future = "Future"
+enum FilterType: String, CaseIterable {
+    case all = "filter-all-button"
+    case past = "filter-past-button"
+    case future = "filter-future-button"
 }

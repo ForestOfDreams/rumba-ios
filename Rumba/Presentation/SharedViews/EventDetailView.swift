@@ -9,9 +9,10 @@ import SwiftUI
 import MapKit
 
 struct EventDetailView: View {
-    var event: Event
-    var image: UIImage
-    var shareAction : () -> Void
+    @Environment(\.colorScheme) var colorScheme
+    let event: Event
+    let image: UIImage
+    let shareAction : () -> Void
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,15 +22,27 @@ struct EventDetailView: View {
                 shareAction: shareAction
             )
             Divider()
-            DescriptionSectionView(event: event)
+            EventTimeSectionView(event: event)
             Divider()
-            LocationSectionView(event: event)
+            EventDescriptionSectionView(event: event)
+            if let latitude = event.latitude,
+               let longitude = event.longitude,
+               let placeName = event.placeName
+            {
+                Divider()
+                LocationSectionView(
+                    latitude: latitude,
+                    longitude: longitude,
+                    placeName: placeName
+                )
+            }
         }
         .padding()
         .background(
-            Color.white
-                .cornerRadius(5)
-                .shadow(radius: 4)
+            (colorScheme == .light ?
+             Color.white : Color(red: 40/255, green: 40/255, blue: 40/255))
+            .cornerRadius(10)
+            .shadow(radius: 4)
         )
     }
 }
@@ -41,6 +54,7 @@ struct EventDetailView_Previews: PreviewProvider {
             image: UIImage(systemName: "qrcode")!,
             shareAction: {}
         )
+        .padding()
         .preferredColorScheme(.light)
         .previewDevice("iPhone 13 Pro Max")
     }
@@ -54,16 +68,30 @@ struct MainSectionView: View {
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
+                if event.isCancelled {
+                    HStack{
+                        Image(systemName: "exclamationmark.square.fill")
+                        Text("Cancelled")
+                    }
+                    .foregroundColor(.red)
+                }
+                if event.isRescheduled {
+                    HStack{
+                        Image(systemName: "exclamationmark.square.fill")
+                        Text("Rescheduled")
+                    }
+                    .foregroundColor(.red)
+                }
                 if event.isOnline {
                     HStack{
                         Image(systemName: "desktopcomputer")
-                        Text("Online event")
+                        Text("Online")
                     }
                 }
                 else {
                     HStack{
                         Image(systemName: "leaf.fill")
-                        Text("Offline event")
+                        Text("Offline")
                     }
                 }
                 HStack{
@@ -72,7 +100,7 @@ struct MainSectionView: View {
                 }
                 HStack{
                     Image(systemName: "calendar")
-                    Text("\(Calendar.current.dateComponents([.day], from: Date(), to: event.startDate).day ?? 0) days before start")
+                    Text("\(Calendar.current.dateComponents([.day], from: Date(), to: event.startDate).day ?? 0) days to start")
                 }
             }
             Spacer()
@@ -84,14 +112,32 @@ struct MainSectionView: View {
     }
 }
 
-struct DescriptionSectionView: View {
-    @State var showDescription: Bool = false
+struct EventTimeSectionView: View {
     var event: Event
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Description")
+                Text("event-period-title")
+                    .font(.title2)
+            }
+            Text("Start time:  \(MyDateFormatter().localizedDate(event.startDate))")
+            Text("End time:  \(MyDateFormatter().localizedDate(event.endDate))")
+        }
+        .frame(
+            maxWidth: .infinity,
+            alignment: .topLeading
+        )
+    }
+}
+
+struct EventDescriptionSectionView: View {
+    var event: Event
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text("description-title")
                     .font(.title2)
             }
             Text(event.description)
@@ -105,45 +151,42 @@ struct DescriptionSectionView: View {
 
 struct LocationSectionView: View {
     @State var showLocation: Bool = false
-    var event: Event
+    let latitude: Double
+    let longitude: Double
+    let placeName: String
     
     var body: some View {
+        
         VStack(alignment: .leading) {
             HStack {
-                Text("Location")
+                Text("location-title")
                     .font(.title2)
             }
-            
-            if let latitude = event.latitude,
-               let longitude = event.longitude,
-               let placeName = event.placeName
-            {
-                HStack {
-                    Text(placeName)
-                    Button {
-                        withAnimation {
-                            showLocation.toggle()
-                        }
-                    } label: {
-                        showLocation ?
-                        Text("hide map") :
-                        Text("show map")
+            HStack {
+                Text(placeName)
+                Button {
+                    withAnimation {
+                        showLocation.toggle()
                     }
+                } label: {
+                    showLocation ?
+                    Text("hide map") :
+                    Text("show-map-btn")
                 }
-                if showLocation {
-                    MapView(
-                        region: MKCoordinateRegion(
-                            center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),
-                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)),
-                        annotationItems: [
-                            EventPlace(
-                                name: event.title,
-                                coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                            )
-                        ]
-                    )
-                    .aspectRatio(1.5, contentMode: .fit)
-                }
+            }
+            if showLocation {
+                MapView(
+                    region: MKCoordinateRegion(
+                        center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),
+                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)),
+                    annotationItems: [
+                        EventPlace(
+                            name: placeName,
+                            coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                        )
+                    ]
+                )
+                .aspectRatio(1.5, contentMode: .fit)
             }
         }
         .frame(

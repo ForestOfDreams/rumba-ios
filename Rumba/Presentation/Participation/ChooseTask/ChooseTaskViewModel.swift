@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class ChooseTaskViewModel: ObservableObject {
-    var taskId: Int
+    var task: Task
     
     @Published var startDate: Date = Date()
     @Published var endDate: Date = Date()
@@ -25,9 +25,24 @@ class ChooseTaskViewModel: ObservableObject {
     
     private var memberService: MemberApiServiceProtocol
     
-    init(taskId:Int) {
+    var localizedStartDate: String {
+        dateFormater.string(from: task.startDate)
+    }
+    
+    var localizedEndDate: String {
+        dateFormater.string(from: task.endDate)
+    }
+    
+    private var dateFormater: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }
+    
+    init(task: Task) {
         memberService = MemberApiService()
-        self.taskId = taskId
+        self.task = task
         
         Publishers.CombineLatest($startDate, $endDate)
             .receive(on: RunLoop.main)
@@ -48,7 +63,7 @@ class ChooseTaskViewModel: ObservableObject {
     
     func tryAssign() {
         memberService.tryAssignMemberToTask(
-            taskID: taskId,
+            taskID: task.taskId,
             form: AssignMemberToTaskForm(
                 startDate: startDate,
                 endDate: endDate
@@ -72,7 +87,7 @@ class ChooseTaskViewModel: ObservableObject {
     
     func assign() {
         memberService.assignMemberToTask(
-            taskID: taskId,
+            taskID: task.taskId,
             form: AssignMemberToTaskForm(
                 startDate: startDate,
                 endDate: endDate

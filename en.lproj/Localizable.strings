@@ -1,0 +1,76 @@
+/* 
+  Localizable.strings
+  Rumba
+
+  Created by Vladislav Shchukin on 12.04.2022.
+  
+*/
+
+"login-title" = "Login";
+"email-placeholder" = "Email";
+"password-placeholder" = "Password";
+"signup-title" = "Create Account";
+"login-btn" = "Login";
+"signup-btn" = "Create account";
+"switch-to-signup-title" = "Don't have an account?";
+"first-name-placeholder" = "First name";
+"last-name-placeholder" = "Last name";
+"confirm-password-placeholder" = "Confirm password";
+"password-strength-title" = "Password Strength";
+"poor-password" = "Poor";
+"average-password" = "Average";
+"strong-password" = "Strong";
+"great-password" = "Great";
+
+
+"participation-title" = "Participation";
+"search-placeholder" = "Search";
+"filter-all-btn" = "All";
+"filter-past-btn" = "Past";
+"filter-future-btn" = "Coming";
+
+"edit-button" = "Edit";
+
+"event-period-title" = "Period";
+"task-period-title" = "Period";
+"description-title" = "Description";
+"location-title" = "Location";
+"all-tasks-title" = "All Tasks";
+"event-organizer-title" = "Organizer";
+"event-contact-title" = "Contacts";
+"event-my-task-title" = "My task";
+"members-title" = "Members";
+"choose-task-btn" = "Choose Task";
+"show-map-btn" = "show map";
+"hide-map-btn" = "hide map";
+"show-members-btn" = "show members";
+"hide-members-btn" = "hide members";
+"leave-event-btn" = "Leave event";
+"share-invation-btn" = "Share invation";
+"add-task-btn" = "Add New Task";
+"save-profile-btn" = "Safe Profile";
+"change-password-btn" = "Change password";
+"change-password-title" = "Change Password";
+"create-event-title" = "Create Event";
+"edit-event-title" = "Edit Event";
+"edit-task-title" = "Edit Task";
+"create-task-title" = "Create Task";
+
+"manage-title" = "Created Events";
+
+"profile-title" = "Profile";
+"edit-profile-title" = "Edit Profile";
+"edit-name-footer" = "Enter a new name or leave as is.";
+"edit-email-footer" = "Enter a new email or leave as is. To save a new email, you must confirm it using the link from the letter.";
+"edit-password-old-footer" = "Enter your old account password.";
+"edit-password-new-footer" = "After changing your password, you need to re-login to the application.";
+"save-profile-btn" = "Save password";
+
+"restore-btn" = "Restore";
+
+"first-name-too-short" = "First name must contain at least 2 characters.";
+"last-name-too-short" = "Last name must contain at least 2 characters.";
+"email-not-valid" = "You should enter a valid email.";
+"password-empty" = "Password cannot be empty.";
+"password-not-strong" = "Password is not strong enough.";
+"passwords-not-match" = "Password do not match.";

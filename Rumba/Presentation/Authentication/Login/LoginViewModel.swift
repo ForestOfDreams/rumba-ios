@@ -29,17 +29,18 @@ class LoginViewModel : ObservableObject {
         showProgressView = true
         loginService.loginUser(LoginForm(email: self.email, password: self.password))
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { completion in
-                self.showProgressView = false
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.showProgressView = false
                 switch completion {
                 case .failure(let error):
                     if let myErrorResult = error as? ApiError {
-                        self.alertMessage = myErrorResult.messages[0]
-                        self.showAlert = true
+                        self?.alertMessage = myErrorResult.messages[0]
+                        self?.showAlert = true
                     }
                 default: break
                 }
             }, receiveValue: { [weak self] response in
+                KeychainStorage.shared.saveToken(response)
                 self?.setUpTimer()
             })
             .store(in: &cancellableSet)

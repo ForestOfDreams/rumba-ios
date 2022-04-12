@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ChooseTaskScreen: View {
     @StateObject var viewModel: ChooseTaskViewModel
-    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -17,11 +16,13 @@ struct ChooseTaskScreen: View {
             ChooseTaskView(
                 startDate: $viewModel.startDate,
                 endDate: $viewModel.endDate,
+                localizedTaskStartDate: viewModel.localizedStartDate,
+                localizedTaskEndDate: viewModel.localizedEndDate,
                 isFormValid: $viewModel.isFormValid,
                 message: viewModel.resultMessage,
                 onSubmit: viewModel.assign
             )
-            .navigationTitle("Choose Task")
+            .navigationTitle("choose-task-btn")
             .onChange(of: viewModel.shouldCloseView) { newValue in
                 if newValue {
                     presentationMode.wrappedValue.dismiss()

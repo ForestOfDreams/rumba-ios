@@ -10,14 +10,14 @@ import Combine
 
 struct TaskEditScreen: View {
     @StateObject var viewModal: TaskEditViewModel
-    
     @Environment(\.presentationMode) var presentationMode
+    
+    let editMode: Bool
     
     var body: some View {
         VStack {
             Form {
                 Section(
-                    header: Text("You need to select time interval between \(viewModal.relatedEvent.startDate.ISO8601Format()) and \(viewModal.relatedEvent.endDate.ISO8601Format())"),
                     footer: FormErrorMesagesView(messages: viewModal.mainErrorMessages)
                 ){
                     TextField("Title", text: $viewModal.title)
@@ -26,7 +26,7 @@ struct TaskEditScreen: View {
                             .padding(.horizontal, -5)
                             .padding(.vertical, -5)
                             .frame(minHeight: 120)
-                        Text("Description")
+                        Text("description-title")
                             .foregroundColor(Color(.init(gray: 0.5, alpha: 0.5)))
                             .padding(.top, 3)
                             .opacity(viewModal.description.isEmpty ? 1 : 0)
@@ -36,9 +36,7 @@ struct TaskEditScreen: View {
                     Stepper("Member count", value: $viewModal.membersCount, in: 1...Int.max)
                     Text("Selected number of members: \(viewModal.membersCount)")
                 }
-                Section(
-                    footer: FormErrorMesagesView(messages: viewModal.dateErrorMessages)
-                ) {
+                Section {
                     DatePicker(
                         "Start date",
                         selection: $viewModal.startDate,
@@ -46,16 +44,25 @@ struct TaskEditScreen: View {
                     DatePicker(
                         "End date",
                         selection: $viewModal.endDate,
-                        displayedComponents: [.date, .hourAndMinute])
+                        displayedComponents: [.date, .hourAndMinute]
+                    )
+                } footer: {
+                    VStack(alignment: .leading) {
+                        Text("You need to select time interval between \(viewModal.localizedStartDate) and \(viewModal.localizedEndDate).")
+                        FormErrorMesagesView(messages: viewModal.dateErrorMessages)
+                    }
                 }
             }
-            Button("Remove task") {
-                viewModal.deleteTask()
+            if editMode {
+                Button("Remove task") {
+                    viewModal.deleteTask()
+                }
+                .buttonStyle(PrimaryButton(color: .red))
+                .padding()
             }
-            .buttonStyle(PrimaryButton(color: .red))
-            .padding()
         }
-        .navigationTitle(viewModal.isEditMode ? "Task Editor" : "Create Task")
+        .navigationTitle(viewModal.isEditMode ? "edit-task-title" : "create-task-title")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {

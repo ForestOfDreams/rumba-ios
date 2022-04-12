@@ -15,14 +15,16 @@ struct ParticipationTabScreen: View {
         NavigationView {
             ParticipatorEventsListView(
                 events: viewModel.filteredEvents,
-                onRefresh: viewModel.fetchParticipatedEvents,
+                onRefresh: { viewModel.fetchParticipatedEvents()
+                    viewModel.refreshFilters()
+                },
                 searchText: $viewModel.searchText,
                 filterType: $viewModel.filterType
             )
             .onAppear(perform: {
                 viewModel.fetchParticipatedEvents()
             })
-            .navigationTitle("Participation")
+            .navigationBarTitle("participation-title", displayMode: .large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {

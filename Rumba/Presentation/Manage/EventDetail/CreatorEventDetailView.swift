@@ -33,12 +33,12 @@ struct CreatorEventDetailView: View {
                     destination: TaskEditScreen(
                         viewModal: TaskEditViewModel(
                             relatedEvent: event
-                        )
+                        ), editMode: false
                     ),
                     tag: 1,
                     selection: $selection
                 ) {
-                    Button("Add new task") {
+                    Button("add-task-btn") {
                         self.selection = 1
                     }
                     .buttonStyle(PrimaryButton(color: .green))

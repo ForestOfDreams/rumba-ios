@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct ProfileTabScreen: View {
-    @EnvironmentObject var loginViewModel: LoginViewModel
     @StateObject var viewModel: ProfileViewModel = ProfileViewModel()
+    @EnvironmentObject var loginViewModel: LoginViewModel
     
     var body: some View {
         NavigationView {
             VStack {
                 if let user = viewModel.user {
-                    Form {
-                        Text(user.email)
-                        Text(user.firstName)
-                        Text(user.lastName)
+                    AsyncImage(url: URL(string: "https://i0.wp.com/3.bp.blogspot.com/-xp5VzwYRB3E/XDmHGpWlBFI/AAAAAAAAEsY/IkRPJbHMDyc2wJsOcYiaccbqIUlfc_H5wCHMYCw/s1600/ian-ramnarine-thinglink.jpg")) {
+                        $0
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                            .overlay(Circle().stroke(Color.red, lineWidth: 5))
+                    } placeholder: {
+                        ProgressView()
                     }
+                    Text("\(user.firstName) \(user.lastName)")
+                        .font(.largeTitle)
+                    Text(user.email)
+                        .font(.footnote)
+                    Spacer()
                     .toolbar {
                         ToolbarItem(placement: .automatic) {
                             NavigationLink(destination: {
@@ -29,7 +39,7 @@ struct ProfileTabScreen: View {
                                     )
                                 )
                             }, label: {
-                                Text("Edit")
+                                Text("edit-button")
                             })
                         }
                     }
@@ -38,7 +48,8 @@ struct ProfileTabScreen: View {
                     ProgressView()
                 }
             }
-            .navigationTitle("Profile")
+            .onAppear(perform: viewModel.getCurrentUser)
+            .navigationTitle("profile-title")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
@@ -47,9 +58,6 @@ struct ProfileTabScreen: View {
                         Image(systemName: "rectangle.portrait.and.arrow.right")
                     }
                 }
-            }
-            .refreshable {
-                viewModel.getCurrentUser()
             }
         }
     }

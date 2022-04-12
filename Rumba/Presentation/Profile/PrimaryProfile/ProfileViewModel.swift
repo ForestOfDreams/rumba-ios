@@ -19,7 +19,6 @@ class ProfileViewModel: ObservableObject {
     
     init() {
         profileService = ProfileApiService()
-        getCurrentUser()
     }
     
     func getCurrentUser() {

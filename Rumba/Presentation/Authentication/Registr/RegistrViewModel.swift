@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class RegistrViewModel : ObservableObject {
     
@@ -25,9 +26,9 @@ class RegistrViewModel : ObservableObject {
     
     @Published var showProgressView = false
     @Published var showAlert = false
-    @Published var alertMessage = ""
+    @Published var alertMessages = []
     
-    @Published var shouldCloseView: Bool = false
+    @Published var showMailAlert = false
     
     private var registrService: RegistrApiServiceProtocol
     
@@ -40,16 +41,17 @@ class RegistrViewModel : ObservableObject {
         registrService.registrUser(RegistrForm(firstName: firstName, lastName: lastName, email: email, password: password))
             .receive(on: RunLoop.main)
             .sink( receiveCompletion: {[weak self] completion in
+                self?.showProgressView = false
                 switch completion {
                 case .failure(let error):
-                    let myErrorResult = error as! ApiError
-                    self?.alertMessage = myErrorResult.messages[0]
-                    self?.showAlert = true
-                case .finished:
-                    self?.showProgressView = false
+                    if let myErrorResult = error as? ApiError {
+                        self?.alertMessages = myErrorResult.messages
+                        self?.showAlert = true
+                    }
+                default: break
                 }
             }, receiveValue: { [weak self] response in
-                self?.shouldCloseView = true
+                self?.showMailAlert = true
             })
             .store(in: &cancellableSet)
     }
@@ -95,7 +97,7 @@ class RegistrViewModel : ObservableObject {
             })
             .store(in: &cancellableSet)
         
-        userPublishers.isLastNameValidPublisher(lastName: $firstName)
+        userPublishers.isLastNameValidPublisher(lastName: $lastName)
             .dropFirst()
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] isValid in
@@ -134,18 +136,18 @@ class RegistrViewModel : ObservableObject {
             })
             .store(in: &cancellableSet)
         
-        userPublishers.isPasswordStrongEnoughPublisher(password: $password)
-            .dropFirst()
-            .receive(on: RunLoop.main)
-            .sink(receiveValue: { [weak self] isStrong in
-                if !isStrong {
-                    self?.passwordErrorMessages.insert(UserPasswordErrorMessage.passwordNotStrong.rawValue)
-                }
-                else {
-                    self?.passwordErrorMessages.remove(UserPasswordErrorMessage.passwordNotStrong.rawValue)
-                }
-            })
-            .store(in: &cancellableSet)
+//        userPublishers.isPasswordStrongEnoughPublisher(password: $password)
+//            .dropFirst()
+//            .receive(on: RunLoop.main)
+//            .sink(receiveValue: { [weak self] isStrong in
+//                if !isStrong {
+//                    self?.passwordErrorMessages.insert(UserPasswordErrorMessage.passwordNotStrong.rawValue)
+//                }
+//                else {
+//                    self?.passwordErrorMessages.remove(UserPasswordErrorMessage.passwordNotStrong.rawValue)
+//                }
+//            })
+//            .store(in: &cancellableSet)
         
         userPublishers.arePasswordsEqualPublisher(first: $password, second: $confirmPassword)
             .dropFirst()

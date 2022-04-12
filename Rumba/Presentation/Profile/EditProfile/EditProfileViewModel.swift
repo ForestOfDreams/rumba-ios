@@ -63,7 +63,7 @@ class EditProfileViewModel: ObservableObject {
             })
             .store(in: &cancellableSet)
         
-        userPublishers.isLastNameValidPublisher(lastName: $firstName)
+        userPublishers.isLastNameValidPublisher(lastName: $lastName)
             .dropFirst()
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] isValid in

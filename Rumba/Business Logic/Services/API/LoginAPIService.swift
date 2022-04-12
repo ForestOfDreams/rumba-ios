@@ -27,7 +27,7 @@ final class LoginApiService:LoginApiServiceProtocol {
         
         return networker.post(
             url: endpoint.url,
-            headers: endpoint.headers,
+            headers: endpoint.authHeaders,
             params: form,
             encoder: JSONEncoder()
         )

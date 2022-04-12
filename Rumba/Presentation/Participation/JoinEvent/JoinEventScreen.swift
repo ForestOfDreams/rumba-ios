@@ -9,7 +9,6 @@ import SwiftUI
 
 struct JoinEventScreen: View {
     @StateObject var viewModel: JoinEventViewModel
-    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -22,6 +21,16 @@ struct JoinEventScreen: View {
                     )
                 }
                 .navigationTitle("Join Event")
+                .alert(isPresented: self.$viewModel.showAlert, content: {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(viewModel.alertMessages.joined(separator: " ")),
+                        dismissButton: .default(
+                            Text("OK!"),
+                            action: {}
+                        )
+                    )
+                })
                 .onChange(of: viewModel.shouldCloseView) { newValue in
                     if newValue {
                         presentationMode.wrappedValue.dismiss()

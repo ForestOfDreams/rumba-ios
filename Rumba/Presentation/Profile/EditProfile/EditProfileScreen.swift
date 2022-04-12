@@ -9,9 +9,9 @@ import SwiftUI
 
 struct EditProfileScreen: View {
     @StateObject var viewModal: EditProfileViewModel
-    @State var showChangePasswordScreen: Bool = false
-    
     @Environment(\.presentationMode) var presentationMode
+    
+    @State var showChangePasswordScreen: Bool = false
     
     var body: some View {
         VStack {
@@ -19,35 +19,46 @@ struct EditProfileScreen: View {
                 Section {
                     TextField("First name", text: $viewModal.firstName)
                     TextField("Last name", text: $viewModal.lastName)
+                } footer: {
+                    VStack(alignment: .leading) {
+                        Text("edit-name-footer")
+                        FormErrorMesagesView(messages: viewModal.namesErrorMessages)
+                    }
                 }
                 Section {
                     TextField("Email", text: $viewModal.email)
+                } footer: {
+                    VStack(alignment: .leading) {
+                        Text("edit-email-footer")
+                        FormErrorMesagesView(messages: viewModal.emailErrorMessages)
+                    }
                 }
                 
                 Section {
                     Button {
                         showChangePasswordScreen = true
                     } label: {
-                        Text("Change password")
+                        Text("change-password-btn")
                     }
                 }
             }
             Button {
                 viewModal.onChangeUser()
             } label: {
-                Text("Save profile")
+                Text("save-profile-btn")
             }
             .disabled(!viewModal.formIsValid)
             .buttonStyle(PrimaryButton(color: .green))
             .padding()
         }
-        .navigationTitle("Edit Profile")
+        .navigationTitle("edit-profile-title")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     viewModal.onClear()
                 } label: {
-                    Text("Clear")
+                    Text("restore-button")
                 }
             }
         }

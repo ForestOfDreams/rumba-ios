@@ -23,8 +23,8 @@ class EventEditViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var description: String = ""
     @Published var type: EventType = .offline
-    @Published var isCancelled: Bool?
-    @Published var isRescheduled: Bool?
+    @Published var isCancelled: Bool = false
+    @Published var isRescheduled: Bool = false
     @Published var latitude: Double?
     @Published var longitude: Double?
     @Published var placeName: String?

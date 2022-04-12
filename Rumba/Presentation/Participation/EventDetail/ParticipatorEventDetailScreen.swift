@@ -24,7 +24,7 @@ struct ParticipatorEventDetailScreen: View {
                 ParticipatorEventDetailView(
                     event: event,
                     myTask: viewModel.myTask,
-                    image: viewModel.image,
+                    QRImage: viewModel.image,
                     onShare: {},
                     onLeaveEvent: viewModel.leaveEvent
                 )
