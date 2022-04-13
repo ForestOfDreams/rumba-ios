@@ -10,16 +10,15 @@ import SwiftUI
 struct BaseQRCodeView: View {
     var image: Image
     
-    //    var qr: Image {
-    //        return Image(uiImage: image)
-    //    }
-    
     var body: some View {
         image
             .resizable()
             .interpolation(.none)
             .scaledToFit()
-            .frame(width: 150, height: 150)
+            .frame(
+                width: UIScreen.main.bounds.size.width * 0.3,
+                height: UIScreen.main.bounds.size.width * 0.3
+            )
     }
 }
 

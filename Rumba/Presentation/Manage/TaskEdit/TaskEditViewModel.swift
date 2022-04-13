@@ -33,18 +33,11 @@ class TaskEditViewModel: ObservableObject {
     @Published var shouldCloseView: Bool = false
     
     var localizedStartDate: String {
-        dateFormater.string(from: relatedEvent.startDate)
+        MyDateFormatter().localizedDate(relatedEvent.startDate)
     }
     
     var localizedEndDate: String {
-        dateFormater.string(from: relatedEvent.startDate)
-    }
-    
-    private var dateFormater: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        return formatter
+        MyDateFormatter().localizedDate(relatedEvent.endDate)
     }
     
     private var task: TaskForm {

@@ -8,7 +8,7 @@
 import SwiftUI
 import MapItemPicker
 
-struct EventEditView: View {
+struct EventEditScreen: View {
     typealias EventType = EventEditViewModel.EventType
     @StateObject var viewModel: EventEditViewModel
     @Environment(\.presentationMode) var presentationMode
@@ -20,7 +20,7 @@ struct EventEditView: View {
             Section(
                 footer: FormErrorMesagesView(messages: viewModel.mainErrorMessages)
             ) {
-                TextField("Title", text: $viewModel.title)
+                TextField("event-title-placeholder", text: $viewModel.title)
                 ZStack(alignment: .topLeading) {
                     TextEditor(text: $viewModel.description)
                         .padding(.horizontal, -5)
@@ -33,12 +33,12 @@ struct EventEditView: View {
                 }
             }
             Section(
-                header: Text("Event type"),
-                footer: Text("Select the type of event, for an online event you will not be able to select a location.")
+                header: Text("event-type-title"),
+                footer: Text("event-type-footer")
             ) {
-                Picker("Event type", selection: $viewModel.type) {
-                    ForEach([EventType.online,EventType.offline], id: \.self) {
-                        Text($0.rawValue)
+                Picker("event-type-title", selection: $viewModel.type) {
+                    ForEach(EventType.allCases, id: \.self) {
+                        Text(LocalizedStringKey($0.rawValue))
                     }
                 }
                 .pickerStyle(.segmented)
@@ -48,11 +48,11 @@ struct EventEditView: View {
                 footer: FormErrorMesagesView(messages: viewModel.dateErrorMessages)
             ) {
                 DatePicker(
-                    "Start date",
+                    "event-start-time-title",
                     selection: $viewModel.startDate,
                     displayedComponents: [.date, .hourAndMinute])
                 DatePicker(
-                    "End date",
+                    "event-start-end-title",
                     selection: $viewModel.endDate,
                     displayedComponents: [.date, .hourAndMinute])
             }
@@ -66,10 +66,10 @@ struct EventEditView: View {
             }
             if viewModel.isEditMode {
                 Section(
-                    header: Text("STATUS"),
+                    header: Text("event-status-title"),
                     footer: FormErrorMesagesView(messages: viewModel.locationErrorMessages)
                 ) {
-                    Toggle("Cancel event", isOn: $viewModel.isCancelled)
+                    Toggle("event-cancel-btn", isOn: $viewModel.isCancelled)
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
             }

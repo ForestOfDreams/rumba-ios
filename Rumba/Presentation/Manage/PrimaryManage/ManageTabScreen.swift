@@ -30,7 +30,7 @@ struct ManageTabScreen: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
-                        EventEditView(viewModel: EventEditViewModel())
+                        EventEditScreen(viewModel: EventEditViewModel())
                     } label: {
                         Image(systemName: "plus.square")
                     }

@@ -16,7 +16,7 @@ struct JoinEventView: View {
             VStack {
                 EventDetailView(
                     event: event,
-                    image: UIImage(systemName: "qrcode")!,
+                    image: nil,
                     shareAction: {}
                 )
                 TitleView(text: "Tasks")
@@ -29,7 +29,7 @@ struct JoinEventView: View {
                 Button {
                     onJoinEvent()
                 } label: {
-                    Text("Join")
+                    Text("join-event-btn")
                 }
                 .buttonStyle(PrimaryButton(color: .blue))
             }

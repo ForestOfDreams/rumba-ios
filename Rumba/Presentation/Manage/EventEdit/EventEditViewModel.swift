@@ -334,12 +334,11 @@ extension EventEditViewModel {
 }
 
 extension EventEditViewModel {
-    enum EventType: String {
-        case online = "Online"
-        case offline = "Offline"
+    enum EventType: String, CaseIterable {
+        case online = "event-type-online-title"
+        case offline = "event-type-offline-title"
     }
 }
-
 
 extension EventEditViewModel {
     enum EventDateErrorMessage: String {

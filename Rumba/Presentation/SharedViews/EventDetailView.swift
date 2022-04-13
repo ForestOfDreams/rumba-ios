@@ -11,7 +11,7 @@ import MapKit
 struct EventDetailView: View {
     @Environment(\.colorScheme) var colorScheme
     let event: Event
-    let image: UIImage
+    let image: UIImage?
     let shareAction : () -> Void
     
     var body: some View {
@@ -62,37 +62,37 @@ struct EventDetailView_Previews: PreviewProvider {
 
 struct MainSectionView: View {
     var event: Event
-    var image: UIImage
+    var image: UIImage?
     var shareAction : () -> Void
     
     var body: some View {
-        HStack(alignment: .center) {
+        HStack() {
             VStack(alignment: .leading) {
                 if event.isCancelled {
-                    HStack{
-                        Image(systemName: "exclamationmark.square.fill")
-                        Text("Cancelled")
-                    }
+                    EventMainSectionRow(
+                        imageName: "exclamationmark.square.fill",
+                        text: "Cancelled"
+                    )
                     .foregroundColor(.red)
                 }
                 if event.isRescheduled {
-                    HStack{
-                        Image(systemName: "exclamationmark.square.fill")
-                        Text("Rescheduled")
-                    }
+                    EventMainSectionRow(
+                        imageName: "exclamationmark.square.fill",
+                        text: "Rescheduled"
+                    )
                     .foregroundColor(.red)
                 }
                 if event.isOnline {
-                    HStack{
-                        Image(systemName: "desktopcomputer")
-                        Text("Online")
-                    }
+                    EventMainSectionRow(
+                        imageName: "desktopcomputer",
+                        text: "Online"
+                    )
                 }
                 else {
-                    HStack{
-                        Image(systemName: "leaf.fill")
-                        Text("Offline")
-                    }
+                    EventMainSectionRow(
+                        imageName: "leaf.fill",
+                        text: "Offline"
+                    )
                 }
                 HStack{
                     Image(systemName: "person.3.sequence.fill")
@@ -103,11 +103,25 @@ struct MainSectionView: View {
                     Text("\(Calendar.current.dateComponents([.day], from: Date(), to: event.startDate).day ?? 0) days to start")
                 }
             }
-            Spacer()
-            QRCodeView(
-                image: image,
-                shareAction: shareAction
-            )
+            if let image = image {
+                Spacer()
+                QRCodeView(
+                    image: image,
+                    shareAction: shareAction
+                )
+            }
+        }
+    }
+}
+
+struct EventMainSectionRow: View {
+    let imageName: String
+    let text: String
+    
+    var body: some View {
+        HStack{
+            Image(systemName: imageName)
+            Text(text)
         }
     }
 }
@@ -170,7 +184,7 @@ struct LocationSectionView: View {
                     }
                 } label: {
                     showLocation ?
-                    Text("hide map") :
+                    Text("hide-map-btn") :
                     Text("show-map-btn")
                 }
             }

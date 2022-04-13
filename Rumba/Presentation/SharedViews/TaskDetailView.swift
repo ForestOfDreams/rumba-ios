@@ -136,8 +136,8 @@ struct TaskMembersSectionView: View {
                             }
                         } label: {
                             showMembers ?
-                            Text("show-members-btn") :
-                            Text("hide-members-btn")
+                            Text("hide-members-btn") :
+                            Text("show-members-btn")
                         }
                     }
                 }

@@ -44,11 +44,36 @@ class CreatorEventDetailViewModel : ObservableObject {
         self.image = linkService.generateQRCode(from: link) ?? UIImage(systemName: "xmark")!
     }
     
+    func onShareInvitation() {
+        guard let urlShare = URL(string: "rumba-app.herokuapp.com://join?id=1") else { return }
+        
+        let activityViewController = UIActivityViewController(activityItems: [urlShare, image], applicationActivities: nil)
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+    }
+
+    
     init(eventId: Int) {
         linkService = LinkService()
         eventService = EventApiService()
         self.eventId = eventId
         //        fetchEvent()
         generateQR(link: "rumba-app.herokuapp.com://join?id=\(eventId)")
+    }
+}
+
+
+public extension UIApplication {
+    var keyWindow: UIWindow? {
+        // Get connected scenes
+        return UIApplication.shared.connectedScenes
+        // Keep only active scenes, onscreen and visible to the user
+            .filter { $0.activationState == .foregroundActive }
+        // Keep only the first `UIWindowScene`
+            .first(where: { $0 is UIWindowScene })
+        // Get its associated windows
+            .flatMap({ $0 as? UIWindowScene })?.windows
+        // Finally, keep only the key window
+            .first(where: \.isKeyWindow)
     }
 }

@@ -20,7 +20,7 @@ struct TaskEditScreen: View {
                 Section(
                     footer: FormErrorMesagesView(messages: viewModal.mainErrorMessages)
                 ){
-                    TextField("Title", text: $viewModal.title)
+                    TextField("task-title-placeholder", text: $viewModal.title)
                     ZStack(alignment: .topLeading) {
                         TextEditor(text: $viewModal.description)
                             .padding(.horizontal, -5)
@@ -33,28 +33,32 @@ struct TaskEditScreen: View {
                     }
                 }
                 Section {
-                    Stepper("Member count", value: $viewModal.membersCount, in: 1...Int.max)
-                    Text("Selected number of members: \(viewModal.membersCount)")
+                    Stepper("task-members-count-title", value: $viewModal.membersCount, in: 1...Int.max)
+                    Text("task-selected-members-count-title: \(viewModal.membersCount)")
                 }
                 Section {
                     DatePicker(
-                        "Start date",
+                        "task-start-time-title",
                         selection: $viewModal.startDate,
                         displayedComponents: [.date, .hourAndMinute])
                     DatePicker(
-                        "End date",
+                        "task-start-end-title",
                         selection: $viewModal.endDate,
                         displayedComponents: [.date, .hourAndMinute]
                     )
-                } footer: {
-                    VStack(alignment: .leading) {
-                        Text("You need to select time interval between \(viewModal.localizedStartDate) and \(viewModal.localizedEndDate).")
-                        FormErrorMesagesView(messages: viewModal.dateErrorMessages)
-                    }
+                }
+            header: {
+                Text("task-period-title")
+            }
+            footer: {
+                VStack(alignment: .leading) {
+                    Text("task-time-footer \(viewModal.localizedStartDate) \(viewModal.localizedEndDate)")
+                    FormErrorMesagesView(messages: viewModal.dateErrorMessages)
                 }
             }
+            }
             if editMode {
-                Button("Remove task") {
+                Button("task-remove-btn") {
                     viewModal.deleteTask()
                 }
                 .buttonStyle(PrimaryButton(color: .red))

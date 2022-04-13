@@ -16,7 +16,7 @@ struct ChangePasswordScreen: View {
             VStack {
                 Form {
                     Section {
-                        TextField("Old password", text: $viewModal.oldPassword)
+                        TextField("old-password-placeholder", text: $viewModal.oldPassword)
                     } footer: {
                         VStack {
                             Text("edit-password-old-footer")
@@ -24,8 +24,8 @@ struct ChangePasswordScreen: View {
                         }
                     }
                     Section {
-                        TextField("New password", text: $viewModal.password)
-                        TextField("Confirm password", text: $viewModal.confirmPassword)
+                        TextField("new-password-placeholder", text: $viewModal.password)
+                        TextField("confirm-password-placeholder", text: $viewModal.confirmPassword)
                     } footer: {
                         VStack(alignment: .leading) {
                             PasswordStrengthBarView(passwordStrength: viewModal.passwordStrength)

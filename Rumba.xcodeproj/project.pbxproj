@@ -57,7 +57,7 @@
 		8FD03F4527ED1C4500EF6CD8 /* BaseQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4427ED1C4500EF6CD8 /* BaseQRCodeView.swift */; };
 		8FD03F4727ED29E300EF6CD8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4627ED29E300EF6CD8 /* ProfileViewModel.swift */; };
 		8FD03F4927ED2E3100EF6CD8 /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4827ED2E3100EF6CD8 /* EditProfileScreen.swift */; };
-		8FD03F4B27ED2ED200EF6CD8 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4A27ED2ED200EF6CD8 /* EventEditView.swift */; };
+		8FD03F4B27ED2ED200EF6CD8 /* EventEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4A27ED2ED200EF6CD8 /* EventEditScreen.swift */; };
 		8FD03F5027ED367C00EF6CD8 /* ProfileAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F4F27ED367C00EF6CD8 /* ProfileAPIService.swift */; };
 		8FD03F5327EE1E1B00EF6CD8 /* PlacePickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F5227EE1E1B00EF6CD8 /* PlacePickerField.swift */; };
 		8FD03F5F27EE2E8A00EF6CD8 /* MapItemPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8FD03F5E27EE2E8A00EF6CD8 /* MapItemPicker */; };
@@ -165,7 +165,7 @@
 		8FD03F4427ED1C4500EF6CD8 /* BaseQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseQRCodeView.swift; sourceTree = "<group>"; };
 		8FD03F4627ED29E300EF6CD8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8FD03F4827ED2E3100EF6CD8 /* EditProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
-		8FD03F4A27ED2ED200EF6CD8 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		8FD03F4A27ED2ED200EF6CD8 /* EventEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditScreen.swift; sourceTree = "<group>"; };
 		8FD03F4F27ED367C00EF6CD8 /* ProfileAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAPIService.swift; sourceTree = "<group>"; };
 		8FD03F5227EE1E1B00EF6CD8 /* PlacePickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerField.swift; sourceTree = "<group>"; };
 		8FD03F6027EF6CD900EF6CD8 /* TaskEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditScreen.swift; sourceTree = "<group>"; };
@@ -458,7 +458,7 @@
 		8FD03F6227EF76A200EF6CD8 /* EventEdit */ = {
 			isa = PBXGroup;
 			children = (
-				8FD03F4A27ED2ED200EF6CD8 /* EventEditView.swift */,
+				8FD03F4A27ED2ED200EF6CD8 /* EventEditScreen.swift */,
 				8FD03F6327EF76D600EF6CD8 /* EventEditViewModel.swift */,
 				8FD03F5227EE1E1B00EF6CD8 /* PlacePickerField.swift */,
 			);
@@ -838,7 +838,7 @@
 				8FDDCF9527C6DBE90045CA52 /* LoginViewModel.swift in Sources */,
 				8FDDCF9F27C70FA30045CA52 /* TabBarView.swift in Sources */,
 				8FD03F3127EB3EAE00EF6CD8 /* JoinEventScreen.swift in Sources */,
-				8FD03F4B27ED2ED200EF6CD8 /* EventEditView.swift in Sources */,
+				8FD03F4B27ED2ED200EF6CD8 /* EventEditScreen.swift in Sources */,
 				8F1F8D1727E80C6400BE9F44 /* ParticipationTabScreen.swift in Sources */,
 				8F5258EB2802F90300F1D657 /* JoinEventView.swift in Sources */,
 				8F6CB2C027E50E1800C3A995 /* Endpoint+Events.swift in Sources */,
@@ -1052,6 +1052,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1084,6 +1085,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

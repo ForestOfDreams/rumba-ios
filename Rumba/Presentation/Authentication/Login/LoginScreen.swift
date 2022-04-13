@@ -49,7 +49,7 @@ struct LoginScreen: View {
             .navigationTitle("login-title")
             .alert(isPresented: self.$viewModel.showAlert, content: {
                 Alert(
-                    title: Text("Error"),
+                    title: Text("error-title"),
                     message: Text(viewModel.alertMessage),
                     dismissButton: .default(
                         Text("OK!"),

@@ -15,19 +15,44 @@
 "first-name-placeholder" = "Имя";
 "last-name-placeholder" = "Фамилия";
 "confirm-password-placeholder" = "Повторите пароль";
+"old-password-placeholder" = "Старый пароль";
+"new-password-placeholder" = "Новый пароль";
 "password-strength-title" = "Сложность Пароля";
 "poor-password" = "Недостаточный";
 "average-password" = "Средний";
 "strong-password" = "Сильный";
 "great-password" = "Отличный";
 
+"join-event-title" = "Присоединиться";
+"join-event-btn" = "Присоединиться";
+
 "participation-title" = "Участие";
 "search-placeholder" = "Поиск";
-"filter-all-button" = "Все";
-"filter-past-button" = "Прошедшие";
-"filter-future-button" = "Предстоящее";
+"filter-all-btn" = "Все";
+"filter-past-btn" = "Прошедшие";
+"filter-future-btn" = "Предстоящие";
 
 "edit-button" = "Изменить";
+"error-title" = "Ошибка";
+
+"event-title-placeholder" = "Название";
+"task-title-placeholder" = "Название";
+
+"task-members-count-title" = "Число участников";
+"task-selected-members-count-title" = "Выбранное число участников";
+"task-start-time-title" = "Начало";
+"task-start-end-title" = "Окончание";
+"task-time-footer %@ %@" = "Вам можете выбрать временной интервал между %@ и %@.";
+"task-remove-btn" = "Удалить задачу";
+
+"event-type-title" = "Тип Мероприятия";
+"event-type-footer" = "Выберите тип мероприятия, для онлайн меропрятия у вас не будет возможности ввести местоположение.";
+"event-type-offline-title" = "Офлайн";
+"event-type-online-title" = "Онлайн";
+"event-start-time-title" = "Начало";
+"event-start-end-title" = "Окончание";
+"event-status-title" = "Статус";
+"event-cancel-btn" = "Отменить мероприятие";
 
 "event-period-title" = "Время";
 "task-period-title" = "Время";

@@ -27,6 +27,7 @@ struct TabBarView: View {
                     Label("profile-title", systemImage: "person.crop.circle")
                 }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

@@ -20,16 +20,18 @@ struct JoinEventScreen: View {
                         onJoinEvent: viewModel.joinEvent
                     )
                 }
-                .navigationTitle("Join Event")
+                .navigationTitle("join-event-title")
+                .navigationBarTitleDisplayMode(.inline)
                 .alert(isPresented: self.$viewModel.showAlert, content: {
                     Alert(
-                        title: Text("Error"),
+                        title: Text("error-title"),
                         message: Text(viewModel.alertMessages.joined(separator: " ")),
                         dismissButton: .default(
                             Text("OK!"),
                             action: {}
                         )
                     )
+
                 })
                 .onChange(of: viewModel.shouldCloseView) { newValue in
                     if newValue {

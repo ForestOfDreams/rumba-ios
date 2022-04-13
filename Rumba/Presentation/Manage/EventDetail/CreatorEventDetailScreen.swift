@@ -18,19 +18,19 @@ struct CreatorEventDetailScreen: View {
                 CreatorEventDetailView(
                     event: event,
                     image: viewModel.image,
-                    onShare: actionSheet
+                    onShare: viewModel.onShareInvitation
                 )
                 .navigationTitle(event.title)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink {
-                            EventEditView(
+                            EventEditScreen(
                                 viewModel: EventEditViewModel(
                                     editingEventId: event.eventId
                                 )
                             )
                         } label: {
-                            Image(systemName: "slider.horizontal.3")
+                            Text("edit-button")
                         }
                     }
                 }
@@ -42,13 +42,5 @@ struct CreatorEventDetailScreen: View {
         .onAppear {
             viewModel.fetchEvent()
         }
-    }
-    
-    func actionSheet() {
-        guard let urlShare = URL(string: "rumba-app.herokuapp.com://join?id=1") else { return }
-        
-        let activityViewController = UIActivityViewController(activityItems: [urlShare, viewModel.image], applicationActivities: nil)
-        
-        UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
     }
 }

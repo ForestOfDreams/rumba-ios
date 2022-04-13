@@ -41,8 +41,8 @@ class ParticipationViewModel: ObservableObject {
             .sink {[weak self] searchText, filterType  in
                 guard let self = self else { return }
                 if !searchText.isEmpty {
-                    self.filteredEvents = self.events.filter({ event in
-                        return event.title.contains(searchText.lowercased())
+                    self.filteredEvents = self.events.filter({
+                       $0.title.lowercased().contains(searchText.lowercased())
                     })
                 }
                 else {
@@ -108,7 +108,7 @@ class ParticipationViewModel: ObservableObject {
 }
 
 enum FilterType: String, CaseIterable {
-    case all = "filter-all-button"
-    case past = "filter-past-button"
-    case future = "filter-future-button"
+    case all = "filter-all-btn"
+    case past = "filter-past-btn"
+    case future = "filter-future-btn"
 }

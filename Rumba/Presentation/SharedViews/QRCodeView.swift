@@ -15,7 +15,10 @@ struct QRCodeView: View {
         BaseQRCodeView(image: Image(uiImage: image))
             .contextMenu {
                 Button(action: shareAction) {
-                    Label("share-invation-btn", systemImage: "square.and.arrow.up")
+                    Label(
+                        "share-invation-btn",
+                        systemImage: "square.and.arrow.up"
+                    )
                 }
             }
     }
