@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct RumbaApp: App {
-    @StateObject var authentication = LoginViewModel()
+    @StateObject var authentication = AuthenticatinViewModel()
     var body: some Scene {
         WindowGroup {
             if authentication.isAuth {
@@ -17,8 +17,12 @@ struct RumbaApp: App {
                     .environmentObject(authentication)
             }
             else {
-                LoginScreen()
-                    .environmentObject(authentication)
+                LoginScreen(
+                    viewModel: LoginViewModel(
+                        login: authentication.login,
+                        logout: authentication.logOut
+                    )
+                )
             }
         }
     }

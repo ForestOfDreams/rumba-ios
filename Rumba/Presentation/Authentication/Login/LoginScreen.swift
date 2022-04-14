@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct LoginScreen: View {
-    @EnvironmentObject var viewModel: LoginViewModel
+//    @EnvironmentObject var viewModel: LoginViewModel
+    @StateObject var viewModel: LoginViewModel
     
     @State var selection: Int? = nil
     

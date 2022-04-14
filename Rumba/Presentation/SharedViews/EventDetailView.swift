@@ -71,36 +71,36 @@ struct MainSectionView: View {
                 if event.isCancelled {
                     EventMainSectionRow(
                         imageName: "exclamationmark.square.fill",
-                        text: "Cancelled"
+                        text: "event-сancelled-title"
                     )
                     .foregroundColor(.red)
                 }
                 if event.isRescheduled {
                     EventMainSectionRow(
                         imageName: "exclamationmark.square.fill",
-                        text: "Rescheduled"
+                        text: "event-rescheduled-title"
                     )
                     .foregroundColor(.red)
                 }
                 if event.isOnline {
                     EventMainSectionRow(
                         imageName: "desktopcomputer",
-                        text: "Online"
+                        text: "event-type-online-title"
                     )
                 }
                 else {
                     EventMainSectionRow(
                         imageName: "leaf.fill",
-                        text: "Offline"
+                        text: "event-type-offline-title"
                     )
                 }
                 HStack{
                     Image(systemName: "person.3.sequence.fill")
-                    Text("\(event.members?.count ?? 0) members")
+                    Text("event-members-count \(event.members?.count ?? 0)")
                 }
                 HStack{
                     Image(systemName: "calendar")
-                    Text("\(Calendar.current.dateComponents([.day], from: Date(), to: event.startDate).day ?? 0) days to start")
+                    Text("event-day-left-count \(Calendar.current.dateComponents([.day], from: Date(), to: event.startDate).day ?? 0)")
                 }
             }
             if let image = image {
@@ -121,7 +121,7 @@ struct EventMainSectionRow: View {
     var body: some View {
         HStack{
             Image(systemName: imageName)
-            Text(text)
+            Text(LocalizedStringKey(text))
         }
     }
 }
@@ -135,8 +135,8 @@ struct EventTimeSectionView: View {
                 Text("event-period-title")
                     .font(.title2)
             }
-            Text("Start time:  \(MyDateFormatter().localizedDate(event.startDate))")
-            Text("End time:  \(MyDateFormatter().localizedDate(event.endDate))")
+            Text("event-start-time \(MyDateFormatter().localizedDate(event.startDate))")
+            Text("event-end-time \(MyDateFormatter().localizedDate(event.endDate))")
         }
         .frame(
             maxWidth: .infinity,

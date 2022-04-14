@@ -376,15 +376,15 @@ extension TaskEditViewModel {
 }
 
 enum TaskDateErrorMessage: String {
-    case startDateInPast = "The start time cannot be in the past."
-    case endDateInPast = "The end time cannot be in the past."
-    case endDateEarlierThanStartDate = "The end time cannot be earlier than the start time."
-    case startDateEarlierThanEventStartDate = "The start time cannot be earlier than the start time of the event."
-    case endDateLaterThanEventEndDate = "The end time cannot be later than the end time of the event."
+    case startDateInPast = "task-start-date-in-past"
+    case endDateInPast = "task-end-date-in-past"
+    case endDateEarlierThanStartDate = "task-end-date-earlier-than-start-date"
+    case startDateEarlierThanEventStartDate = "task-start-date-earlier-than-event-start-date"
+    case endDateLaterThanEventEndDate = "task-end-date-later-than-event-end-date"
 }
 
 enum TaskMainErrorMessage: String {
-    case titleTooShort = "Title must contain at least 4 characters."
-    case titleTooLong = "Title must be less than 40 characters."
-    case descriptionTooShort = "Description must contain at least 4 characters."
+    case titleTooShort = "task-title-too-short"
+    case titleTooLong = "task-title-too-long"
+    case descriptionTooShort = "task-description-too-short"
 }

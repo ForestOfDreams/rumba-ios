@@ -11,6 +11,7 @@ import MapItemPicker
 struct EventEditScreen: View {
     typealias EventType = EventEditViewModel.EventType
     @StateObject var viewModel: EventEditViewModel
+    @FocusState private var showKeaboard: Bool
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showingPicker = false
@@ -23,6 +24,7 @@ struct EventEditScreen: View {
                 TextField("event-title-placeholder", text: $viewModel.title)
                 ZStack(alignment: .topLeading) {
                     TextEditor(text: $viewModel.description)
+                        .focused($showKeaboard)
                         .padding(.horizontal, -5)
                         .padding(.vertical, -5)
                         .frame(minHeight: 120)
@@ -50,11 +52,14 @@ struct EventEditScreen: View {
                 DatePicker(
                     "event-start-time-title",
                     selection: $viewModel.startDate,
-                    displayedComponents: [.date, .hourAndMinute])
+                    displayedComponents: [.date, .hourAndMinute]
+                )
                 DatePicker(
                     "event-start-end-title",
                     selection: $viewModel.endDate,
-                    displayedComponents: [.date, .hourAndMinute])
+                    displayedComponents: [.date, .hourAndMinute]
+                )
+                
             }
             if viewModel.type == .offline {
                 Section(
@@ -71,6 +76,14 @@ struct EventEditScreen: View {
                 ) {
                     Toggle("event-cancel-btn", isOn: $viewModel.isCancelled)
                         .toggleStyle(SwitchToggleStyle(tint: .red))
+                }
+            }
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("done-btn") {
+                    showKeaboard = false
                 }
             }
         }

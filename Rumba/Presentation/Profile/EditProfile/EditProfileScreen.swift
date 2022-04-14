@@ -33,7 +33,6 @@ struct EditProfileScreen: View {
                         FormErrorMesagesView(messages: viewModal.emailErrorMessages)
                     }
                 }
-                
                 Section {
                     Button {
                         showChangePasswordScreen = true

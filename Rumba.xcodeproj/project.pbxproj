@@ -45,6 +45,7 @@
 		8F6CB2C027E50E1800C3A995 /* Endpoint+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */; };
 		8F6CB2C227E50E3F00C3A995 /* Endpoint+Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */; };
 		8F6CB2C627E50E6F00C3A995 /* Endpoint+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */; };
+		8FA034DA2807A75B00478C22 /* AuthenitcationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA034D92807A75B00478C22 /* AuthenitcationViewModel.swift */; };
 		8FD03F1E27E9D7A200EF6CD8 /* MemberAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F1D27E9D7A200EF6CD8 /* MemberAPIService.swift */; };
 		8FD03F2C27E9DD2300EF6CD8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2B27E9DD2300EF6CD8 /* Event.swift */; };
 		8FD03F2F27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD03F2E27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift */; };
@@ -153,6 +154,7 @@
 		8F6CB2BF27E50E1800C3A995 /* Endpoint+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Events.swift"; sourceTree = "<group>"; };
 		8F6CB2C127E50E3F00C3A995 /* Endpoint+Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Member.swift"; sourceTree = "<group>"; };
 		8F6CB2C527E50E6F00C3A995 /* Endpoint+Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Tasks.swift"; sourceTree = "<group>"; };
+		8FA034D92807A75B00478C22 /* AuthenitcationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenitcationViewModel.swift; sourceTree = "<group>"; };
 		8FD03F1D27E9D7A200EF6CD8 /* MemberAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAPIService.swift; sourceTree = "<group>"; };
 		8FD03F2B27E9DD2300EF6CD8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8FD03F2E27EA676000EF6CD8 /* ParticipatorEventDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatorEventDetailScreen.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				8FD81F2F277D1E040078AB1A /* RumbaApp.swift */,
+				8FA034D92807A75B00478C22 /* AuthenitcationViewModel.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -860,6 +863,7 @@
 				8F4CEF9D27F63C9E00C24F7F /* CreatorEventsListView.swift in Sources */,
 				8FD03F3D27ECAD2B00EF6CD8 /* LinkService.swift in Sources */,
 				8F5AB91D27A9C23D004B18DE /* Endpoint.swift in Sources */,
+				8FA034DA2807A75B00478C22 /* AuthenitcationViewModel.swift in Sources */,
 				8FDDCF9327C6DBA50045CA52 /* LoginScreen.swift in Sources */,
 				8F47BAE327F632E000C6BAA7 /* CreatorEventCardView.swift in Sources */,
 				8FD03F7327F0976C00EF6CD8 /* JoinEventViewModel.swift in Sources */,

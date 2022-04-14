@@ -14,7 +14,7 @@ enum UserMainErrorMessage: String {
 }
 
 enum UserPasswordErrorMessage: String {
-    case passwordEmpty = "password-empty."
+    case passwordEmpty = "password-empty"
     case passwordNotStrong = "password-not-strong"
     case passwordsNotMatch = "passwords-not-match"
 }

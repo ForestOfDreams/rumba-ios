@@ -342,18 +342,18 @@ extension EventEditViewModel {
 
 extension EventEditViewModel {
     enum EventDateErrorMessage: String {
-        case startDateInPast = "Start time cannot be in the past."
-        case endDateInPast = "End time cannot be in the past."
-        case endDateEarlierThanStartDate = "The end time cannot be earlier than the start time."
+        case startDateInPast = "event-start-date-in-past"
+        case endDateInPast = "event-end-date-in-past"
+        case endDateEarlierThanStartDate = "event-end-date-earlier-than-start-date"
     }
 
     enum EventMainErrorMessage: String {
-        case titleTooShort = "Title must contain at least 4 characters."
-        case titleTooLong = "Title must be less than 40 characters."
-        case descriptionTooShort = "Description must contain at least 4 characters."
+        case titleTooShort = "event-title-too-short"
+        case titleTooLong = "event-title-too-long"
+        case descriptionTooShort = "event-description-too-short"
     }
 
     enum EventLocationErrorMessage: String {
-        case locationIsEmpty = "Location must not be empty for offline event."
+        case locationIsEmpty = "event-location-is-empty"
     }
 }

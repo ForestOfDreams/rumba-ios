@@ -36,7 +36,7 @@
 
 "edit-button" = "Edit";
 "error-title" = "Error";
-
+"done-btn" = "Done";
 
 "event-title-placeholder" = "Title";
 "task-title-placeholder" = "Title";
@@ -52,10 +52,22 @@
 "event-type-footer" = "Select the type of event, for an online event you will not be able to select a location.";
 "event-type-offline-title" = "Offline";
 "event-type-online-title" = "Online";
+"event-сancelled-title" = "Cancelled";
+"event-rescheduled-title" = "Rescheduled";
+"event-members-count %lld" = "%lld members";
+"event-day-left-count %lld" = "%lld days to start";
+"event-start-time %@" = "Start %@";
+"event-end-time %@" = "End %@";
 "event-start-time-title" = "Start";
 "event-start-end-title" = "End";
 "event-status-title" = "Status";
 "event-cancel-btn" = "Cancel event";
+
+"task-required-member-counts %lld" = "required %lld members";
+"task-start-time %@" = "Start %@";
+"task-end-time %@" = "End %@";
+"task-contact-email %@" = "Email: %@";
+"task-contact-activity-time %@ %@" = "Activity from %@ to %@";
 
 "event-period-title" = "Period";
 "task-period-title" = "Period";
@@ -100,3 +112,24 @@
 "password-empty" = "Password cannot be empty.";
 "password-not-strong" = "Password is not strong enough.";
 "passwords-not-match" = "Password do not match.";
+
+"task-start-date-in-past" = "The start time cannot be in the past.";
+"task-end-date-in-past" = "The end time cannot be in the past.";
+"task-end-date-earlier-than-start-date" = "The end time cannot be earlier than the start time.";
+"task-start-date-earlier-than-event-start-date" = "The start time cannot be earlier than the start time of the event.";
+"task-end-date-later-than-event-end-date" = "The end time cannot be later than the end time of the event.";
+
+"task-title-too-short" = "Title must contain at least 4 characters.";
+"task-title-too-long" = "Title must be less than 40 characters.";
+"task-description-too-short" = "Description must contain at least 4 characters.";
+
+"event-start-date-in-past" = "Start time cannot be in the past.";
+"event-end-date-in-past" = "End time cannot be in the past.";
+"event-end-date-earlier-than-start-date" = "The end time cannot be earlier than the start time.";
+
+
+"event-title-too-short" = "Title must contain at least 4 characters.";
+"event-title-too-long" = "Title must be less than 40 characters.";
+"event-description-too-short" = "Description must contain at least 4 characters.";
+
+"event-location-is-empty" = "Location must not be empty for offline event.";

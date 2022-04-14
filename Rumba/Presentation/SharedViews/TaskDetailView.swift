@@ -23,7 +23,7 @@ struct TaskDetailView: View {
                 VStack(alignment: .leading) {
                     Text(task.title)
                         .font(.title)
-                    Text("required \(task.membersCount) members")
+                    Text("task-required-member-counts \(task.membersCount)")
                 }
                 Spacer()
                 if manageMode {
@@ -104,8 +104,8 @@ struct TaskTimeSectionView: View {
                 Text("task-period-title")
                     .font(.title2)
             }
-            Text("Start time:  \(MyDateFormatter().localizedDate(event.startDate))")
-            Text("End time:  \(MyDateFormatter().localizedDate(event.endDate))")
+            Text("task-start-time \(MyDateFormatter().localizedDate(event.startDate))")
+            Text("task-end-time \(MyDateFormatter().localizedDate(event.endDate))")
         }
         .frame(
             maxWidth: .infinity,
@@ -146,8 +146,8 @@ struct TaskMembersSectionView: View {
                 ForEach(task.members, id: \.memberId) { member in
                     Divider()
                     Text("\(member.member.firstName) \(member.member.lastName)")
-                    Text("Email: \(member.member.email)")
-                    Text("Activity from: \(MyDateFormatter().localizedDate(member.startDate)) to \(MyDateFormatter().localizedDate(member.endDate))")
+                    Text("task-contact-email \(member.member.email)")
+                    Text("task-contact-activity-time \(MyDateFormatter().localizedDate(member.startDate)) \(MyDateFormatter().localizedDate(member.endDate))")
                 }
                 .padding(.leading)
             }

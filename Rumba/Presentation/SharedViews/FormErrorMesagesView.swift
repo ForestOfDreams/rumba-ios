@@ -18,6 +18,7 @@ struct FormErrorMesagesView: View {
                         .foregroundColor(.red)
                 }
         }
+        .frame(minHeight: 10)
     }
 }
 

@@ -9,6 +9,9 @@ import SwiftUI
 import Combine
 
 class LoginViewModel : ObservableObject {
+    let login: (LoginResponse) -> ()
+    let logout: () -> ()
+    
     @Published var email = ""
     @Published var password = ""
     @Published var isAuth = false
@@ -40,37 +43,17 @@ class LoginViewModel : ObservableObject {
                 default: break
                 }
             }, receiveValue: { [weak self] response in
-                KeychainStorage.shared.saveToken(response)
-                self?.setUpTimer()
+                self?.login(response)
             })
             .store(in: &cancellableSet)
     }
     
-    func logOut() {
-        isAuth = false
-        KeychainStorage.shared.removeToken()
-    }
-    
-    init() {
+    init(login: @escaping (LoginResponse) -> (), logout: @escaping () -> ()) {
+        self.login = login
+        self.logout = logout
         loginService = LoginApiService()
         userPublishers = UserPublishers()
-        setUpTimer()
         setUpValidationSubscribers()
-    }
-    
-    private func setUpTimer() {
-        if let token = KeychainStorage.shared.getToken(), token.expires_at > Date.now {
-            isAuth = true
-            let timer = Timer(
-                fire: token.expires_at,
-                interval: 0,
-                repeats: false
-            ) { [weak self] _ in
-                self?.isAuth = false
-                KeychainStorage.shared.removeToken()
-            }
-            RunLoop.main.add(timer, forMode: .common)
-        }
     }
 }
 

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileTabScreen: View {
     @StateObject var viewModel: ProfileViewModel = ProfileViewModel()
-    @EnvironmentObject var loginViewModel: LoginViewModel
+//    @EnvironmentObject var loginViewModel: LoginViewModel
+    @EnvironmentObject var authenticatiomViewModel: AuthenticatinViewModel
     
     var body: some View {
         NavigationView {
@@ -53,7 +54,7 @@ struct ProfileTabScreen: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
-                        loginViewModel.logOut()
+                        authenticatiomViewModel.logOut()
                     } label: {
                         Image(systemName: "rectangle.portrait.and.arrow.right")
                     }

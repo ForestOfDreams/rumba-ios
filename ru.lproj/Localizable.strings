@@ -34,6 +34,7 @@
 
 "edit-button" = "Изменить";
 "error-title" = "Ошибка";
+"done-btn" = "Скрыть";
 
 "event-title-placeholder" = "Название";
 "task-title-placeholder" = "Название";
@@ -49,10 +50,23 @@
 "event-type-footer" = "Выберите тип мероприятия, для онлайн меропрятия у вас не будет возможности ввести местоположение.";
 "event-type-offline-title" = "Офлайн";
 "event-type-online-title" = "Онлайн";
+"event-сancelled-title" = "Отменено";
+"event-rescheduled-title" = "Перенесено";
+"event-members-count %lld" = "%lld участников";
+"event-day-left-count %lld" = "%lld дней до начала";
+"event-start-time %@" = "Начало %@";
+"event-end-time %@" = "Окончание %@";
+"event-day-left-count %lld" = "%lld дней до начала";
 "event-start-time-title" = "Начало";
 "event-start-end-title" = "Окончание";
 "event-status-title" = "Статус";
 "event-cancel-btn" = "Отменить мероприятие";
+
+"task-required-member-counts %lld" = "Необходимо %lld участников";
+"task-start-time %@" = "Начало %@";
+"task-end-time %@" = "Окончание %@";
+"task-contact-email %@" = "Email: %@";
+"task-contact-activity-time %@ %@" = "Участие с %@ до %@";
 
 "event-period-title" = "Время";
 "task-period-title" = "Время";
@@ -68,8 +82,8 @@
 "hide-map-btn" = "скрыть карту";
 "show-members-btn" = "показать участников";
 "hide-members-btn" = "скрыть участников";
-"leave-event-btn" = "Покинуть Меропритие";
-"share-invation-btn" = "Поделиться мероприятием";
+"leave-event-btn" = "Покинуть меропритие";
+"share-invation-btn" = "Поделиться приглашением";
 "add-task-btn" = "Добавить Задачу";
 "save-profile-btn" = "Сохранить Профиль";
 "change-password-btn" = "Сменить пароль";
@@ -87,7 +101,7 @@
 "edit-email-footer" = "Введите новую электронную почту или оставьте как есть. Для сохранения нового адреса вам необходимо подтвердить его переходом по ссылке из письма.";
 "edit-password-old-footer" = "Введите ваш старый пароль.";
 "edit-password-new-footer" = "После смены пароля необходимо заново войти в приложение.";
-"save-profile-btn" = "Сохранить пароль";
+"save-profile-btn" = "Сохранить профиль";
 
 "restore-button" = "Восстановить";
 
@@ -97,3 +111,23 @@
 "password-empty" = "Пароль не может быть пустым.";
 "password-not-strong" = "Пароль не достаточно сложный.";
 "passwords-not-match" = "Пароли не совпадают.";
+
+"task-start-date-in-past" = "Время начала не может быть в прошлом.";
+"task-end-date-in-past" = "Время окончания не может быть в прошлом.";
+"task-end-date-earlier-than-start-date" = "Время окончания не может быть раньше времени начала.";
+"task-start-date-earlier-than-event-start-date" = "Время начала не может быть раньше времени начала мероприятия.";
+"task-end-date-later-than-event-end-date" = "Время окончания не может быть раньше времени окончания мероприятия.";
+
+"task-title-too-short" = "Название должно содержать как минимум 4 символа.";
+"task-title-too-long" = "Название должно быть короче 40 символов.";
+"task-description-too-short" = "Описание должно содержать как минимум 4 символа.";
+
+"event-start-date-in-past" = "Время начала не может быть в прошлом.";
+"event-end-date-in-past" = "Время окончания не может быть в прошлом.";
+"event-end-date-earlier-than-start-date" = "Время окончания не может быть раньше времени начала.";
+
+"event-title-too-short" = "Название должно содержать как минимум 4 символа.";
+"event-title-too-long" = "TНазвание должно быть короче 40 символов.";
+"event-description-too-short" = "Описание должно содержать как минимум 4 символа.";
+
+"event-location-is-empty" = "Местоположение не может быть пусто для офлайн мероприятия.";

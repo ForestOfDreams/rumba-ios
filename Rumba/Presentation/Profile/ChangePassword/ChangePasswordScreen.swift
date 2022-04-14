@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ChangePasswordScreen: View {
     @StateObject var viewModal: ChangePasswordViewModel = ChangePasswordViewModel()
-    @EnvironmentObject var loginViewModel: LoginViewModel
+//    @EnvironmentObject var loginViewModel: LoginViewModel
+    @EnvironmentObject var authentication: AuthenticatinViewModel
     
     var body: some View {
         NavigationView {
@@ -35,7 +36,7 @@ struct ChangePasswordScreen: View {
                     }
                 }
                 Button {
-                    viewModal.onChangePassword(action:  loginViewModel.logOut)
+                    viewModal.onChangePassword(action: authentication.logOut)
                 } label: {
                     Text("save-profile-btn")
                 }

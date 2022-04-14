@@ -10,6 +10,7 @@ import Combine
 
 struct TaskEditScreen: View {
     @StateObject var viewModal: TaskEditViewModel
+    @FocusState private var showKeaboard: Bool
     @Environment(\.presentationMode) var presentationMode
     
     let editMode: Bool
@@ -23,6 +24,7 @@ struct TaskEditScreen: View {
                     TextField("task-title-placeholder", text: $viewModal.title)
                     ZStack(alignment: .topLeading) {
                         TextEditor(text: $viewModal.description)
+                            .focused($showKeaboard)
                             .padding(.horizontal, -5)
                             .padding(.vertical, -5)
                             .frame(minHeight: 120)
@@ -63,6 +65,14 @@ struct TaskEditScreen: View {
                 }
                 .buttonStyle(PrimaryButton(color: .red))
                 .padding()
+            }
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("done-btn") {
+                    showKeaboard = false
+                }
             }
         }
         .navigationTitle(viewModal.isEditMode ? "edit-task-title" : "create-task-title")
