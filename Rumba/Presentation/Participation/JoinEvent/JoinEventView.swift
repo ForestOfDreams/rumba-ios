@@ -19,7 +19,7 @@ struct JoinEventView: View {
                     image: nil,
                     shareAction: {}
                 )
-                TitleView(text: "Tasks")
+                TitleView(text: "all-tasks-title")
                 TasksListView(
                     tasks: event.tasks ?? [],
                     event: event,

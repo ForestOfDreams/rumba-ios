@@ -42,11 +42,14 @@
 "task-title-placeholder" = "Title";
 
 "task-members-count-title" = "Member count";
-"task-selected-members-count-title" = "Selected number of members";
+"task-selected-members-count-title %lld" = "Selected number of members: %lld";
 "task-start-time-title" = "Start";
 "task-start-end-title" = "End";
-"task-time-footer %@" = "You need to select time interval between %@";
+"task-time-footer %@ %@" = "You need to select time interval between %@ %@";
 "task-remove-btn" = "Remove task";
+"task-members-count-zero" = "No members yet";
+"task-members-count-one %lld" = "1 member";
+"task-members-count-lot %lld" = "%lld members";
 
 "event-type-title" = "Event Type";
 "event-type-footer" = "Select the type of event, for an online event you will not be able to select a location.";
@@ -78,7 +81,9 @@
 "event-contact-title" = "Contacts";
 "event-my-task-title" = "My task";
 "members-title" = "Members";
-"choose-task-btn" = "Choose Task";
+"choose-task-btn" = "Choose task";
+"choose-task-success-status" = "You can choose these task.";
+"choose-task-success-status" = "Unfortunately, the required number of participants for this time has already joined.";
 "show-map-btn" = "show map";
 "hide-map-btn" = "hide map";
 "show-members-btn" = "show members";

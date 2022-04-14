@@ -55,8 +55,8 @@ class ChooseTaskViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .dropFirst()
             .sink { [weak self] isFormValid in
-                self?.resultMessage = isFormValid ? "You can choose these task" :
-                "Unfortunately, the required number of participants for this time has already joined"
+                self?.resultMessage = isFormValid ? "choose-task-success-status" :
+                "choose-task-success-status"
             }
             .store(in: &cancellableSet)
     }

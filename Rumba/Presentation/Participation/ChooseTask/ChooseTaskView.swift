@@ -20,15 +20,15 @@ struct ChooseTaskView: View {
         VStack {
             Form {
                 Section {
-                    DatePicker("Start date", selection: startDate)
-                    DatePicker("End date", selection: endDate)
+                    DatePicker("task-start-time-title", selection: startDate)
+                    DatePicker("task-start-end-title", selection: endDate)
                 } footer: {
                     VStack {
-                        Text("You need to select time interval between \(localizedTaskStartDate) and \(localizedTaskEndDate).")
+                        Text("task-time-footer \(localizedTaskStartDate) \(localizedTaskEndDate)")
                     }
                 }
             }
-            Button("Submit") {
+            Button("choose-task-btn") {
                 onSubmit()
             }
             .buttonStyle(PrimaryButton(color: .green))

@@ -125,9 +125,9 @@ struct TaskMembersSectionView: View {
                     .font(.title2)
                 HStack {
                     switch task.members.count {
-                    case 0: Text("No members yet")
-                    case 1: Text("\(task.members.count) member")
-                    default: Text("\(task.members.count) members")
+                    case 0: Text("task-members-count-zero")
+                    case 1: Text("task-members-count-one")
+                    default: Text("task-members-count-lot \(task.members.count)")
                     }
                     if !task.members.isEmpty {
                         Button {

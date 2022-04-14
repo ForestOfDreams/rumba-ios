@@ -40,11 +40,14 @@
 "task-title-placeholder" = "Название";
 
 "task-members-count-title" = "Число участников";
-"task-selected-members-count-title" = "Выбранное число участников";
+"task-selected-members-count-title %lld" = "Выбранное число участников: %lld";
 "task-start-time-title" = "Начало";
 "task-start-end-title" = "Окончание";
-"task-time-footer %@ %@" = "Вам можете выбрать временной интервал между %@ и %@.";
+"task-time-footer %@ %@" = "Вы можете выбрать временной интервал между %@ и %@.";
 "task-remove-btn" = "Удалить задачу";
+"task-members-count-zero" = "Сейчас участников нет";
+"task-members-count-one" = "1 участник";
+"task-members-count-lot %lld" = "%lld участников";
 
 "event-type-title" = "Тип Мероприятия";
 "event-type-footer" = "Выберите тип мероприятия, для онлайн меропрятия у вас не будет возможности ввести местоположение.";
@@ -75,9 +78,11 @@
 "event-organizer-title" = "Организатор";
 "event-contact-title" = "Контакты";
 "event-my-task-title" = "Моя Задача";
-"all-tasks-title" = "Все Задачи";
+"all-tasks-title" = "Все задачи";
 "members-title" = "Участники";
 "choose-task-btn" = "Выбрать задачу";
+"choose-task-success-status" = "Вы можете выбрать этот интервал.";
+"choose-task-success-status" = "К сожалению, необходимое число участников на это время уже набрано, попробуйте выбрать другой интервал.";
 "show-map-btn" = "показать карту";
 "hide-map-btn" = "скрыть карту";
 "show-members-btn" = "показать участников";

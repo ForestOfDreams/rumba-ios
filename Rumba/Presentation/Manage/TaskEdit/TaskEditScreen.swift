@@ -36,7 +36,7 @@ struct TaskEditScreen: View {
                 }
                 Section {
                     Stepper("task-members-count-title", value: $viewModal.membersCount, in: 1...Int.max)
-                    Text("task-selected-members-count-title: \(viewModal.membersCount)")
+                    Text("task-selected-members-count-title \(viewModal.membersCount)")
                 }
                 Section {
                     DatePicker(
