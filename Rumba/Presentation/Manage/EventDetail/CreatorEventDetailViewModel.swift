@@ -47,7 +47,7 @@ class CreatorEventDetailViewModel : ObservableObject {
     func onShareInvitation() {
         guard let urlShare = URL(string: "rumba-app.herokuapp.com://join?id=1") else { return }
         
-        let activityViewController = UIActivityViewController(activityItems: [urlShare, image], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [image as AnyObject, urlShare as AnyObject], applicationActivities: nil)
         
         UIApplication.shared.keyWindow?.rootViewController?.present(activityViewController, animated: true, completion: nil)
     }

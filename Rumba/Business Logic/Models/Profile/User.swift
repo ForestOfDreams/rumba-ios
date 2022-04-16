@@ -8,8 +8,8 @@
 import Foundation
 
 struct User: Decodable {
-    let accountId: Int
+    let email: String
     let firstName: String
     let lastName: String
-    let email: String
+    let hoursInEvents: Int
 }

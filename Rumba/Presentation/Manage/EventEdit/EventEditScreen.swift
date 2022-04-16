@@ -22,6 +22,7 @@ struct EventEditScreen: View {
                 footer: FormErrorMesagesView(messages: viewModel.mainErrorMessages)
             ) {
                 TextField("event-title-placeholder", text: $viewModel.title)
+                    .focused($showKeaboard)
                 ZStack(alignment: .topLeading) {
                     TextEditor(text: $viewModel.description)
                         .focused($showKeaboard)

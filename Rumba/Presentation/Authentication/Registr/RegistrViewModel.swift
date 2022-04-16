@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import UIKit
 
-class RegistrViewModel : ObservableObject {
+class RegistrViewModel: ObservableObject {
     
     @Published var firstName = ""
     @Published var lastName = ""
@@ -38,7 +38,14 @@ class RegistrViewModel : ObservableObject {
     
     func registrUser() {
         showProgressView = true
-        registrService.registrUser(RegistrForm(firstName: firstName, lastName: lastName, email: email, password: password))
+        registrService.registrUser(
+            RegistrForm(
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password
+            )
+        )
             .receive(on: RunLoop.main)
             .sink( receiveCompletion: {[weak self] completion in
                 self?.showProgressView = false
@@ -80,8 +87,8 @@ class RegistrViewModel : ObservableObject {
         .eraseToAnyPublisher()
     }
     
-    init(registrService: RegistrApiServiceProtocol = RegistrApiService()) {
-        self.registrService = registrService
+    init() {
+        self.registrService = RegistrApiService()
         self.userPublishers = UserPublishers()
         
         userPublishers.isFirstNameValidPublisher(firstName: $firstName)
@@ -135,19 +142,6 @@ class RegistrViewModel : ObservableObject {
                 }
             })
             .store(in: &cancellableSet)
-        
-//        userPublishers.isPasswordStrongEnoughPublisher(password: $password)
-//            .dropFirst()
-//            .receive(on: RunLoop.main)
-//            .sink(receiveValue: { [weak self] isStrong in
-//                if !isStrong {
-//                    self?.passwordErrorMessages.insert(UserPasswordErrorMessage.passwordNotStrong.rawValue)
-//                }
-//                else {
-//                    self?.passwordErrorMessages.remove(UserPasswordErrorMessage.passwordNotStrong.rawValue)
-//                }
-//            })
-//            .store(in: &cancellableSet)
         
         userPublishers.arePasswordsEqualPublisher(first: $password, second: $confirmPassword)
             .dropFirst()

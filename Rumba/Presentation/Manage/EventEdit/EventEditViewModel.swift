@@ -274,7 +274,7 @@ extension EventEditViewModel {
         $startDate
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { startDate in
-                return startDate > Date.now
+                return startDate >= Date.now
             }
             .eraseToAnyPublisher()
     }
@@ -283,7 +283,7 @@ extension EventEditViewModel {
         $endDate
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { endDate in
-                return endDate > Date.now
+                return endDate >= Date.now
             }
             .eraseToAnyPublisher()
     }
@@ -292,7 +292,7 @@ extension EventEditViewModel {
         Publishers.CombineLatest($endDate, $startDate)
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { endDate, startDate in
-                return endDate > startDate
+                return endDate >= startDate
             }
             .eraseToAnyPublisher()
     }

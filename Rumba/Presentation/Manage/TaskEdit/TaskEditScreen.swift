@@ -20,8 +20,12 @@ struct TaskEditScreen: View {
             Form {
                 Section(
                     footer: FormErrorMesagesView(messages: viewModal.mainErrorMessages)
-                ){
-                    TextField("task-title-placeholder", text: $viewModal.title)
+                ) {
+                    TextField(
+                        "task-title-placeholder",
+                        text: $viewModal.title
+                    )
+                    .focused($showKeaboard)
                     ZStack(alignment: .topLeading) {
                         TextEditor(text: $viewModal.description)
                             .focused($showKeaboard)

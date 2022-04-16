@@ -22,7 +22,7 @@ struct CreatorEventDetailView: View {
                     image: image,
                     shareAction: onShare
                 )
-                TitleView(text: "Tasks")
+                TitleView(text: "all-tasks-title")
                 TasksListView(
                     tasks: event.tasks ?? [],
                     event: event,

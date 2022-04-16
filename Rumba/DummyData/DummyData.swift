@@ -20,10 +20,10 @@ struct DummyData {
             Member(
             memberId: 1,
             member: User(
-                accountId: 1,
+                email: "vlad@gmail.com",
                 firstName: "Vladislav",
                 lastName: "Shchukin",
-                email: "vlad@gmail.com"
+                hoursInEvents: 5
             ),
             startDate: Date(),
             endDate: Date()

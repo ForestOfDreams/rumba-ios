@@ -13,7 +13,7 @@ struct RegistrScreen: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.openURL) var openURL
     
-    @State var presentAlert = false
+//    @State var presentAlert = false
     
     var body: some View {
         VStack {
@@ -50,30 +50,27 @@ struct RegistrScreen: View {
                 .disabled(!viewModel.formIsValid)
             }
         }
-        .alert("Success", isPresented: $viewModel.showMailAlert) {
-            Button("Ok") {
+        .alert("success-title", isPresented: $viewModel.showMailAlert) {
+            Button("confirm-btn") {
                 presentationMode.wrappedValue.dismiss()
             }
-            Button("Open mail app") {
+            Button("open-mail-btn") {
                 openURL(URL(string: "message://")!)
                 presentationMode.wrappedValue.dismiss()
             }
         } message: {
-            Text("You need to verify your address using the link in the email sent to you.")
+            Text("open-mail-app-title")
         }
         .navigationTitle("signup-title")
-    }
-    func signUp() {
-        viewModel.registrUser()
-        self.presentAlert = true
+        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegistrScreen()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegistrScreen()
+//    }
+//}
 
 struct PasswordStrengthBarView: View {
     let passwordStrength: UserPublishers.PasswordStrenght

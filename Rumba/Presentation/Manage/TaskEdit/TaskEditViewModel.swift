@@ -172,7 +172,7 @@ extension TaskEditViewModel {
         $startDate
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { startDate in
-                return startDate > Date.now
+                return startDate >= Date.now
             }
             .eraseToAnyPublisher()
     }
@@ -181,7 +181,7 @@ extension TaskEditViewModel {
         $endDate
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { endDate in
-                return endDate > Date.now
+                return endDate >= Date.now
             }
             .eraseToAnyPublisher()
     }
@@ -190,25 +190,25 @@ extension TaskEditViewModel {
         Publishers.CombineLatest($endDate, $startDate)
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { endDate, startDate in
-                return endDate > startDate
+                return endDate >= startDate
             }
             .eraseToAnyPublisher()
     }
-    // ???
+
     private var isStartDateNotEarlierEventStartDatePublisher: AnyPublisher<Bool, Never> {
         $startDate
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { startDate in
-                return startDate > self.relatedEvent.startDate
+                return startDate >= self.relatedEvent.startDate
             }
             .eraseToAnyPublisher()
     }
-    // ???
+ 
     private var isEndDateNotAfterEventEndDatePublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest($endDate, $relatedEvent)
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { endDate, relatedEvent in
-                return endDate < relatedEvent.endDate
+                return endDate <= relatedEvent.endDate
             }
             .eraseToAnyPublisher()
     }
@@ -355,7 +355,7 @@ extension TaskEditViewModel {
                     self.dateErrorMessages.insert(TaskDateErrorMessage.startDateEarlierThanEventStartDate.rawValue)
                 }
                 else {
-                    self.dateErrorMessages.remove(TaskDateErrorMessage.startDateInPast.rawValue)
+                    self.dateErrorMessages.remove(TaskDateErrorMessage.startDateEarlierThanEventStartDate.rawValue)
                 }
             })
             .store(in: &cancellableSet)

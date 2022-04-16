@@ -18,6 +18,7 @@ class AuthenticatinViewModel: ObservableObject {
     func login(token: LoginResponse) {
         self.isAuth = true
         KeychainStorage.shared.saveToken(token)
+        setUpTimer()
     }
     
     private func setUpTimer() {

@@ -30,6 +30,8 @@ struct ProfileTabScreen: View {
                         .font(.largeTitle)
                     Text(user.email)
                         .font(.footnote)
+                    Text("volunteer-hours-title \(user.hoursInEvents)")
+                        .font(.footnote)
                     Spacer()
                     .toolbar {
                         ToolbarItem(placement: .automatic) {

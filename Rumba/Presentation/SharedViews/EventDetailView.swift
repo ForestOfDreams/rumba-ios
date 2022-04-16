@@ -95,7 +95,7 @@ struct MainSectionView: View {
                     )
                 }
                 HStack{
-                    Image(systemName: "person.3.sequence.fill")
+                    Image(systemName: "person.2.crop.square.stack")
                     Text("event-members-count \(event.members?.count ?? 0)")
                 }
                 HStack{

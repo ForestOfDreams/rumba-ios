@@ -17,11 +17,16 @@
 "confirm-password-placeholder" = "Повторите пароль";
 "old-password-placeholder" = "Старый пароль";
 "new-password-placeholder" = "Новый пароль";
-"password-strength-title" = "Сложность Пароля";
+"password-strength-title" = "Сложность пароля";
 "poor-password" = "Недостаточный";
 "average-password" = "Средний";
 "strong-password" = "Сильный";
 "great-password" = "Отличный";
+
+"success-title" = "Успешно";
+"confirm-btn" = "Закрыть";
+"open-mail-btn" = "Открыть почтовый клиент";
+"open-mail-app-title" = "Вам необходимо подтвердить аккаунт с помощью ссылки из письма, отправленному по указанному адресу.";
 
 "join-event-title" = "Присоединиться";
 "join-event-btn" = "Присоединиться";
@@ -77,7 +82,7 @@
 "location-title" = "Местоположение";
 "event-organizer-title" = "Организатор";
 "event-contact-title" = "Контакты";
-"event-my-task-title" = "Моя Задача";
+"event-my-task-title" = "Моя задача";
 "all-tasks-title" = "Все задачи";
 "members-title" = "Участники";
 "choose-task-btn" = "Выбрать задачу";
@@ -102,6 +107,7 @@
 
 "profile-title" = "Профиль";
 "edit-profile-title" = "Изменить Профиль";
+"volunteer-hours-title %lld" = "волонтерские часы: %lld";
 "edit-name-footer" = "Введите новое имя или оставьте без изменения.";
 "edit-email-footer" = "Введите новую электронную почту или оставьте как есть. Для сохранения нового адреса вам необходимо подтвердить его переходом по ссылке из письма.";
 "edit-password-old-footer" = "Введите ваш старый пароль.";
@@ -121,7 +127,7 @@
 "task-end-date-in-past" = "Время окончания не может быть в прошлом.";
 "task-end-date-earlier-than-start-date" = "Время окончания не может быть раньше времени начала.";
 "task-start-date-earlier-than-event-start-date" = "Время начала не может быть раньше времени начала мероприятия.";
-"task-end-date-later-than-event-end-date" = "Время окончания не может быть раньше времени окончания мероприятия.";
+"task-end-date-later-than-event-end-date" = "Время окончания не может быть позже времени окончания мероприятия.";
 
 "task-title-too-short" = "Название должно содержать как минимум 4 символа.";
 "task-title-too-long" = "Название должно быть короче 40 символов.";

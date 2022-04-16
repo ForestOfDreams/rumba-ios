@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class LoginViewModel : ObservableObject {
+class LoginViewModel: ObservableObject {
     let login: (LoginResponse) -> ()
     let logout: () -> ()
     
@@ -30,7 +30,12 @@ class LoginViewModel : ObservableObject {
     
     func loginUser() {
         showProgressView = true
-        loginService.loginUser(LoginForm(email: self.email, password: self.password))
+        loginService.loginUser(
+            LoginForm(
+                email: self.email,
+                password: self.password
+            )
+        )
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] completion in
                 self?.showProgressView = false

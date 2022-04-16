@@ -18,11 +18,16 @@
 "confirm-password-placeholder" = "Confirm password";
 "old-password-placeholder" = "Old password";
 "new-password-placeholder" = "New password";
-"password-strength-title" = "Password Strength";
+"password-strength-title" = "Password strength";
 "poor-password" = "Poor";
 "average-password" = "Average";
 "strong-password" = "Strong";
 "great-password" = "Great";
+
+"success-title" = "Success";
+"confirm-btn" = "OK";
+"open-mail-btn" = "Open mail app";
+"open-mail-app-title" = "You need to verify your address using the link in the email sent to you.";
 
 
 "join-event-title" = "Join Event";
@@ -76,7 +81,7 @@
 "task-period-title" = "Period";
 "description-title" = "Description";
 "location-title" = "Location";
-"all-tasks-title" = "All Tasks";
+"all-tasks-title" = "All tasks";
 "event-organizer-title" = "Organizer";
 "event-contact-title" = "Contacts";
 "event-my-task-title" = "My task";
@@ -102,6 +107,7 @@
 "manage-title" = "Created Events";
 
 "profile-title" = "Profile";
+"volunteer-hours-title %lld" = "volunteer hours: %lld";
 "edit-profile-title" = "Edit Profile";
 "edit-name-footer" = "Enter a new name or leave as is.";
 "edit-email-footer" = "Enter a new email or leave as is. To save a new email, you must confirm it using the link from the letter.";
