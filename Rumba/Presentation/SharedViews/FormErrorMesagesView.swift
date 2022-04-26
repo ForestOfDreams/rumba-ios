@@ -12,8 +12,7 @@ struct FormErrorMesagesView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            ForEach(messages.sorted() {
-                $0 > $1 }, id: \.self) { message in
+            ForEach(messages.sorted() { $0 > $1 }, id: \.self) { message in
                     Text(LocalizedStringKey(message))
                         .foregroundColor(.red)
                 }
@@ -22,8 +21,8 @@ struct FormErrorMesagesView: View {
     }
 }
 
-//struct FormErrorMesagesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FormErrorMesagesView(messages: <#Set<String>#>)
-//    }
-//}
+struct FormErrorMesagesView_Previews: PreviewProvider {
+    static var previews: some View {
+        FormErrorMesagesView(messages: ["error1", "error2"])
+    }
+}

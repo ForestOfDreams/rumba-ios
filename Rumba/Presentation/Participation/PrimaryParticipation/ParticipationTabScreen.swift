@@ -44,8 +44,9 @@ struct ParticipationTabScreen: View {
             )
         }
         .sheet(isPresented: $viewModel.isPresentingJoin) {
-            JoinEventScreen(viewModel: JoinEventViewModel(eventId: viewModel.joinEventId!))
-            
+            if let joinEventId = viewModel.joinEventId {
+                JoinEventScreen(viewModel: JoinEventViewModel(eventId: joinEventId), dismiss: $viewModel.isPresentingJoin)
+            }
         }
         .onOpenURL { url in
             viewModel.openDeepLink(url: url)

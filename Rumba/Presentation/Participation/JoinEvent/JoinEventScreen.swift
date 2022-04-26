@@ -9,7 +9,7 @@ import SwiftUI
 
 struct JoinEventScreen: View {
     @StateObject var viewModel: JoinEventViewModel
-    @Environment(\.presentationMode) var presentationMode
+    var dismiss: Binding<Bool>
     
     var body: some View {
         NavigationView {
@@ -31,13 +31,16 @@ struct JoinEventScreen: View {
                             action: {}
                         )
                     )
-
+                    
                 })
                 .onChange(of: viewModel.shouldCloseView) { newValue in
                     if newValue {
-                        presentationMode.wrappedValue.dismiss()
+                        dismiss.wrappedValue = false 
                     }
                 }
+            }
+            if viewModel.showAlert {
+                Text("invition-link-incorrect")
             }
         }
     }

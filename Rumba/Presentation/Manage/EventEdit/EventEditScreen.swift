@@ -107,9 +107,3 @@ struct EventEditScreen: View {
         }
     }
 }
-
-//struct CreateEventView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EventEditView(viewModel: EventEditViewModel())
-//    }
-//}

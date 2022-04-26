@@ -52,7 +52,7 @@ struct CreatorEventDetailView: View {
 struct CreatorEventDetailView_Previews: PreviewProvider {
     static var previews: some View {
         CreatorEventDetailView(
-            event: DummyData.event,
+            event: DummyData().event,
             image: UIImage(systemName: "qrcode")!,
             onShare: {}
         )

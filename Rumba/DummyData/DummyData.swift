@@ -7,9 +7,8 @@
 
 import Foundation
 
-
 struct DummyData {
-    static let task: Task = Task(
+    let task: Task = Task(
         taskId: 1,
         title: "Очистка дна",
         description: "Очистка дна",
@@ -30,7 +29,7 @@ struct DummyData {
         )]
     )
     
-    static let event: Event = Event(
+    let event: Event = Event(
         eventId: 1,
         title: "Уборка пляжа",
         description: "Необходимо очистить от мусора пляж лазурного озера",

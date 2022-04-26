@@ -22,8 +22,8 @@ struct BaseQRCodeView: View {
     }
 }
 
-//struct BaseQRCodeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BaseQRCodeView(image: UIImage(systemName: "xmark.octagon")!)
-//    }
-//}
+struct BaseQRCodeView_Previews: PreviewProvider {
+    static var previews: some View {
+        BaseQRCodeView(image: Image(systemName: "xmark.octagon"))
+    }
+}

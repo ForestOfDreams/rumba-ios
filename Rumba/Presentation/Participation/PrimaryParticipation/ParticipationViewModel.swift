@@ -42,7 +42,7 @@ class ParticipationViewModel: ObservableObject {
                 guard let self = self else { return }
                 if !searchText.isEmpty {
                     self.filteredEvents = self.events.filter({
-                       $0.title.lowercased().contains(searchText.lowercased())
+                        $0.title.lowercased().contains(searchText.lowercased())
                     })
                 }
                 else {

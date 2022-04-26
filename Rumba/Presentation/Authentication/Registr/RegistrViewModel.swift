@@ -46,21 +46,21 @@ class RegistrViewModel: ObservableObject {
                 password: password
             )
         )
-            .receive(on: RunLoop.main)
-            .sink( receiveCompletion: {[weak self] completion in
-                self?.showProgressView = false
-                switch completion {
-                case .failure(let error):
-                    if let myErrorResult = error as? ApiError {
-                        self?.alertMessages = myErrorResult.messages
-                        self?.showAlert = true
-                    }
-                default: break
+        .receive(on: RunLoop.main)
+        .sink( receiveCompletion: {[weak self] completion in
+            self?.showProgressView = false
+            switch completion {
+            case .failure(let error):
+                if let myErrorResult = error as? ApiError {
+                    self?.alertMessages = myErrorResult.messages
+                    self?.showAlert = true
                 }
-            }, receiveValue: { [weak self] response in
-                self?.showMailAlert = true
-            })
-            .store(in: &cancellableSet)
+            default: break
+            }
+        }, receiveValue: { [weak self] response in
+            self?.showMailAlert = true
+        })
+        .store(in: &cancellableSet)
     }
     
     private var isFormValidPublisher: AnyPublisher<Bool, Never> {

@@ -13,8 +13,6 @@ struct RegistrScreen: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.openURL) var openURL
     
-//    @State var presentAlert = false
-    
     var body: some View {
         VStack {
             Form {

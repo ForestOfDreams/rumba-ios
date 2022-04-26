@@ -30,6 +30,8 @@
 "open-mail-app-title" = "You need to verify your address using the link in the email sent to you.";
 
 
+
+
 "join-event-title" = "Join Event";
 "join-event-btn" = "Join";
 
@@ -53,7 +55,7 @@
 "task-time-footer %@ %@" = "You need to select time interval between %@ %@";
 "task-remove-btn" = "Remove task";
 "task-members-count-zero" = "No members yet";
-"task-members-count-one %lld" = "1 member";
+"task-members-count-one" = "1 member";
 "task-members-count-lot %lld" = "%lld members";
 
 "event-type-title" = "Event Type";
@@ -64,6 +66,7 @@
 "event-rescheduled-title" = "Rescheduled";
 "event-members-count %lld" = "%lld members";
 "event-day-left-count %lld" = "%lld days to start";
+"event-day-left-count-negative" = "The event ended";
 "event-start-time %@" = "Start %@";
 "event-end-time %@" = "End %@";
 "event-start-time-title" = "Start";
@@ -81,6 +84,7 @@
 "task-period-title" = "Period";
 "description-title" = "Description";
 "location-title" = "Location";
+"location-btn" = "Select location";
 "all-tasks-title" = "All tasks";
 "event-organizer-title" = "Organizer";
 "event-contact-title" = "Contacts";
@@ -94,7 +98,7 @@
 "show-members-btn" = "show members";
 "hide-members-btn" = "hide members";
 "leave-event-btn" = "Leave event";
-"share-invitation-btn" = "Share invitation";
+"share-invation-btn" = "Share invitation";
 "add-task-btn" = "Add New Task";
 "save-profile-btn" = "Safe Profile";
 "change-password-btn" = "Change password";
@@ -110,12 +114,12 @@
 "volunteer-hours-title %lld" = "volunteer hours: %lld";
 "edit-profile-title" = "Edit Profile";
 "edit-name-footer" = "Enter a new name or leave as is.";
-"edit-email-footer" = "Enter a new email or leave as is. To save a new email, you must confirm it using the link from the letter.";
+"edit-email-footer" = "Enter a new email or leave as is. To save a new email address, you must confirm it using a link from an email sent to you.";
 "edit-password-old-footer" = "Enter your old account password.";
 "edit-password-new-footer" = "After changing your password, you need to re-login to the application.";
-"save-profile-btn" = "Save password";
+"save-profile-btn" = "Save profile";
 
-"restore-btn" = "Restore";
+"restore-button" = "Restore";
 
 "first-name-too-short" = "First name must contain at least 2 characters.";
 "last-name-too-short" = "Last name must contain at least 2 characters.";
@@ -144,3 +148,8 @@
 "event-description-too-short" = "Description must contain at least 4 characters.";
 
 "event-location-is-empty" = "Location must not be empty for offline event.";
+
+"tasks-empty" = "The organizer hasn't added any tasks for this event yet.";
+"task-choose-required" = "You need to choose a task for the event from the section below.";
+
+"invition-link-incorrect" = "Invitation link is invalid";

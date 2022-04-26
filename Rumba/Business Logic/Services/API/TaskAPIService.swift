@@ -62,7 +62,6 @@ final class TaskAPIService: TaskApiServiceProtocol {
     
     func updateTask(taskId: Int, task form: TaskForm) -> AnyPublisher<Data, Error> {
         let endpoint = Endpoint.updateTask(id: taskId)
-        
         return networker.put(
             url: endpoint.url,
             headers: endpoint.authHeaders,

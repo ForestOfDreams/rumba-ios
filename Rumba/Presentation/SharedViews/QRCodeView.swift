@@ -24,8 +24,8 @@ struct QRCodeView: View {
     }
 }
 
-//struct QRCodeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        QRCodeView(image: UIImage(systemName: "qrcode")!, shareAction: {})
-//    }
-//}
+struct QRCodeView_Previews: PreviewProvider {
+    static var previews: some View {
+        QRCodeView(image: UIImage(systemName: "qrcode")!, shareAction: {})
+    }
+}

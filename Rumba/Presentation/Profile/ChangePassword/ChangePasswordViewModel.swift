@@ -140,8 +140,9 @@ class ChangePasswordViewModel: ObservableObject {
                 }
             default: break
             }
-        }, receiveValue: { _ in
+        }, receiveValue: { [weak self] _ in
             action()
+            self?.shouldCloseView = true
         })
         .store(in: &cancellableSet)
     }

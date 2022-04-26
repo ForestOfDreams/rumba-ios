@@ -11,5 +11,5 @@ struct User: Decodable {
     let email: String
     let firstName: String
     let lastName: String
-    let hoursInEvents: Int
+    let hoursInEvents: Int?
 }

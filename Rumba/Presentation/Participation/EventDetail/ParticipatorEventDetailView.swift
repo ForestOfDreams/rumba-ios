@@ -39,8 +39,8 @@ struct ParticipatorEventDetailView: View {
 struct ParticipatorEventDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ParticipatorEventDetailView(
-            event: DummyData.event,
-            myTask: DummyData.task,
+            event: DummyData().event,
+            myTask: DummyData().task,
             QRImage: UIImage(systemName: "qrcode")!,
             onShare: {},
             onLeaveEvent: {}
@@ -64,7 +64,7 @@ struct MyTaskSectionView: View {
                 )
             }
             else {
-                Text("You need to choose a task.")
+                Text("task-choose-required")
                     .foregroundColor(.yellow)
                     .frame(
                         maxWidth: .infinity,
@@ -81,13 +81,22 @@ struct AllTasksSectionView: View {
     var body: some View {
         VStack {
             TitleView(text: "all-tasks-title")
-            TasksListView(
-                tasks: event.tasks ?? [],
-                event: event,
-                showEdit: false,
-                showAssignButton: true
-            )
-            
+            if let tasks = event.tasks, tasks.count > 0 {
+                TasksListView(
+                    tasks: tasks,
+                    event: event,
+                    showEdit: false,
+                    showAssignButton: true
+                )
+            }
+            else {
+                HStack {
+                    Text("tasks-empty")
+                        .foregroundColor(.yellow)
+                    Spacer()
+                }
+                
+            }
         }
     }
 }

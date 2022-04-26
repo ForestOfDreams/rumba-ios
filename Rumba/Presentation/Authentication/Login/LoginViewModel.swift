@@ -10,7 +10,6 @@ import Combine
 
 class LoginViewModel: ObservableObject {
     let login: (LoginResponse) -> ()
-    let logout: () -> ()
     
     @Published var email = ""
     @Published var password = ""
@@ -55,7 +54,6 @@ class LoginViewModel: ObservableObject {
     
     init(login: @escaping (LoginResponse) -> (), logout: @escaping () -> ()) {
         self.login = login
-        self.logout = logout
         loginService = LoginApiService()
         userPublishers = UserPublishers()
         setUpValidationSubscribers()

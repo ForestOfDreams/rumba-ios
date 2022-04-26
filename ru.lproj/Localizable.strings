@@ -61,10 +61,10 @@
 "event-сancelled-title" = "Отменено";
 "event-rescheduled-title" = "Перенесено";
 "event-members-count %lld" = "%lld участников";
-"event-day-left-count %lld" = "%lld дней до начала";
 "event-start-time %@" = "Начало %@";
 "event-end-time %@" = "Окончание %@";
 "event-day-left-count %lld" = "%lld дней до начала";
+"event-day-left-count-negative" = "Мероприятие завершилось";
 "event-start-time-title" = "Начало";
 "event-start-end-title" = "Окончание";
 "event-status-title" = "Статус";
@@ -80,6 +80,7 @@
 "task-period-title" = "Время";
 "description-title" = "Описание";
 "location-title" = "Местоположение";
+"location-btn" = "Выбрать местоположение";
 "event-organizer-title" = "Организатор";
 "event-contact-title" = "Контакты";
 "event-my-task-title" = "Моя задача";
@@ -138,7 +139,12 @@
 "event-end-date-earlier-than-start-date" = "Время окончания не может быть раньше времени начала.";
 
 "event-title-too-short" = "Название должно содержать как минимум 4 символа.";
-"event-title-too-long" = "TНазвание должно быть короче 40 символов.";
+"event-title-too-long" = "Название должно быть короче 40 символов.";
 "event-description-too-short" = "Описание должно содержать как минимум 4 символа.";
 
 "event-location-is-empty" = "Местоположение не может быть пусто для офлайн мероприятия.";
+
+"tasks-empty" = "Организатор пока не добавил задач для этого мероприятия.";
+"task-choose-required" = "Вам необходимо выбрать задачу из секции ниже.";
+
+"invition-link-incorrect" = "Invitation link is invalid";

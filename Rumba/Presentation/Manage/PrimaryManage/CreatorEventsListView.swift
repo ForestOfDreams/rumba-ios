@@ -23,20 +23,20 @@ struct CreatorEventsListView: View {
             .padding(.horizontal)
             .pickerStyle(.segmented)
             ZStack {
-            List {
-                ForEach(events, id: \.eventId) { event in
-                    NavigationLink(
-                        destination: CreatorEventDetailScreen(
-                            viewModel:
-                                CreatorEventDetailViewModel(
-                                    eventId: event.eventId
-                                )
-                        )
-                    ) {
-                        CreatorEventCardView(event: event)
+                List {
+                    ForEach(events, id: \.eventId) { event in
+                        NavigationLink(
+                            destination: CreatorEventDetailScreen(
+                                viewModel:
+                                    CreatorEventDetailViewModel(
+                                        eventId: event.eventId
+                                    )
+                            )
+                        ) {
+                            CreatorEventCardView(event: event)
+                        }
                     }
-                }
-            }}
+                }}
             .refreshable {
                 onRefresh()
             }
@@ -44,9 +44,3 @@ struct CreatorEventsListView: View {
         .searchable(text: searchText, prompt: "search-placeholder")
     }
 }
-
-//struct CreatorEventsListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CreatorEventsListView()
-//    }
-//}

@@ -11,7 +11,6 @@ struct LoginScreen: View {
     @StateObject var viewModel: LoginViewModel
     
     @State var selection: Int? = nil
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -60,9 +59,3 @@ struct LoginScreen: View {
         }
     }
 }
-
-//struct LoginView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoginView()
-//    }
-//}

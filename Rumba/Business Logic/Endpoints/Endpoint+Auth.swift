@@ -16,4 +16,3 @@ extension Endpoint {
         return Endpoint(path: "/auth/login")
     }
 }
-

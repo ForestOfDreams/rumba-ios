@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MyDateFormatter {
+struct HumanReadableDateFormatter {
     func localizedDate(_ date: Date) -> String {
         dateFormater.string(from: date)
     }

@@ -28,16 +28,16 @@ class TaskEditViewModel: ObservableObject {
     @Published var alertMessages: [String] = []
     @Published var showAlert: Bool = false
     
-    var editingTask: Task?
-    
     @Published var shouldCloseView: Bool = false
     
+    var editingTask: Task?
+    
     var localizedStartDate: String {
-        MyDateFormatter().localizedDate(relatedEvent.startDate)
+        HumanReadableDateFormatter().localizedDate(relatedEvent.startDate)
     }
     
     var localizedEndDate: String {
-        MyDateFormatter().localizedDate(relatedEvent.endDate)
+        HumanReadableDateFormatter().localizedDate(relatedEvent.endDate)
     }
     
     private var task: TaskForm {
@@ -190,11 +190,11 @@ extension TaskEditViewModel {
         Publishers.CombineLatest($endDate, $startDate)
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { endDate, startDate in
-                return endDate >= startDate
+                return endDate > startDate
             }
             .eraseToAnyPublisher()
     }
-
+    
     private var isStartDateNotEarlierEventStartDatePublisher: AnyPublisher<Bool, Never> {
         $startDate
             .debounce(for: 0.8, scheduler: RunLoop.main)
@@ -203,7 +203,7 @@ extension TaskEditViewModel {
             }
             .eraseToAnyPublisher()
     }
- 
+    
     private var isEndDateNotAfterEventEndDatePublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest($endDate, $relatedEvent)
             .debounce(for: 0.8, scheduler: RunLoop.main)

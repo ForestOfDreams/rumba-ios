@@ -48,9 +48,9 @@ struct TaskDetailView: View {
                 }
             }
             Divider()
-            TaskDescriptionSectionView(description: event.description)
+            TaskDescriptionSectionView(description: task.description)
             Divider()
-            TaskTimeSectionView(event: event)
+            TaskTimeSectionView(task: task)
             Divider()
             TaskMembersSectionView(task: task)
         }
@@ -70,7 +70,7 @@ struct TaskDetailView: View {
 struct TaskCardView_Previews: PreviewProvider {
     static var previews: some View {
         TaskDetailView(
-            task: DummyData.task, event: DummyData.event,
+            task: DummyData().task, event: DummyData().event,
             manageMode: false, showAssignButton: true
         )
         .padding()
@@ -96,7 +96,7 @@ struct TaskDescriptionSectionView: View {
 }
 
 struct TaskTimeSectionView: View {
-    var event: Event
+    var task: Task
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -104,8 +104,8 @@ struct TaskTimeSectionView: View {
                 Text("task-period-title")
                     .font(.title2)
             }
-            Text("task-start-time \(MyDateFormatter().localizedDate(event.startDate))")
-            Text("task-end-time \(MyDateFormatter().localizedDate(event.endDate))")
+            Text("task-start-time \(HumanReadableDateFormatter().localizedDate(task.startDate))")
+            Text("task-end-time \(HumanReadableDateFormatter().localizedDate(task.endDate))")
         }
         .frame(
             maxWidth: .infinity,
@@ -147,7 +147,7 @@ struct TaskMembersSectionView: View {
                     Divider()
                     Text("\(member.member.firstName) \(member.member.lastName)")
                     Text("task-contact-email \(member.member.email)")
-                    Text("task-contact-activity-time \(MyDateFormatter().localizedDate(member.startDate)) \(MyDateFormatter().localizedDate(member.endDate))")
+                    Text("task-contact-activity-time \(HumanReadableDateFormatter().localizedDate(member.startDate)) \(HumanReadableDateFormatter().localizedDate(member.endDate))")
                 }
                 .padding(.leading)
             }

@@ -17,9 +17,13 @@ protocol LinkServiceProtocol: AnyObject {
 }
 
 class LinkService: LinkServiceProtocol {
-    let context = CIContext()
-    let qrGen = CIFilter.qrCodeGenerator()
+    private let context = CIContext()
+    private let qrGen = CIFilter.qrCodeGenerator()
     
+    
+    /// Get event id from url
+    /// - Parameter url: url
+    /// - Returns: event id
     func parseUrl(url: URL) -> Int? {
         var parameters: [String: String] = [:]
         URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
@@ -31,6 +35,10 @@ class LinkService: LinkServiceProtocol {
         return nil
     }
     
+    
+    /// Create qr code from string
+    /// - Parameter string: coding string
+    /// - Returns: Optional QR image
     func generateQRCode(from string: String) -> UIImage? {
         qrGen.message = Data(string.utf8)
         

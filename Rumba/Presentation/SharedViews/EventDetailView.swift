@@ -50,7 +50,7 @@ struct EventDetailView: View {
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
         EventDetailView(
-            event: DummyData.event,
+            event: DummyData().event,
             image: UIImage(systemName: "qrcode")!,
             shareAction: {}
         )
@@ -100,7 +100,11 @@ struct MainSectionView: View {
                 }
                 HStack{
                     Image(systemName: "calendar")
-                    Text("event-day-left-count \(Calendar.current.dateComponents([.day], from: Date(), to: event.startDate).day ?? 0)")
+                    if let days = Calendar.current.dateComponents([.day], from: Date(), to: event.startDate).day, days >= 0 {
+                        Text("event-day-left-count \(days)")
+                    } else {
+                        Text("event-day-left-count-negative")
+                    }
                 }
             }
             if let image = image {
@@ -135,8 +139,8 @@ struct EventTimeSectionView: View {
                 Text("event-period-title")
                     .font(.title2)
             }
-            Text("event-start-time \(MyDateFormatter().localizedDate(event.startDate))")
-            Text("event-end-time \(MyDateFormatter().localizedDate(event.endDate))")
+            Text("event-start-time \(HumanReadableDateFormatter().localizedDate(event.startDate))")
+            Text("event-end-time \(HumanReadableDateFormatter().localizedDate(event.endDate))")
         }
         .frame(
             maxWidth: .infinity,

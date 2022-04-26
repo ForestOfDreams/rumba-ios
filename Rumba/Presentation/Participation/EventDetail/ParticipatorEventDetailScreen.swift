@@ -31,6 +31,16 @@ struct ParticipatorEventDetailScreen: View {
             }
         }
         .navigationTitle(viewModel.event?.title ?? "")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    viewModel.fetchEvent()
+                    viewModel.fetchMyTask()
+                } label: {
+                    Image(systemName: "arrow.clockwise.circle")
+                }
+            }
+        }
         .onChange(of: viewModel.shouldCloseView) { newValue in
             if newValue {
                 presentationMode.wrappedValue.dismiss()

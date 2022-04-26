@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ProfileTabScreen: View {
     @StateObject var viewModel: ProfileViewModel = ProfileViewModel()
-//    @EnvironmentObject var loginViewModel: LoginViewModel
     @EnvironmentObject var authenticatiomViewModel: AuthenticatinViewModel
     
     var body: some View {
         NavigationView {
             VStack {
                 if let user = viewModel.user {
-                    AsyncImage(url: URL(string: "https://i0.wp.com/3.bp.blogspot.com/-xp5VzwYRB3E/XDmHGpWlBFI/AAAAAAAAEsY/IkRPJbHMDyc2wJsOcYiaccbqIUlfc_H5wCHMYCw/s1600/ian-ramnarine-thinglink.jpg")) {
+                    AsyncImage(url: URL(string: "https://i.ibb.co/fYdw5p7/Screenshot-2022-04-26-at-03-04-04.png")) {
                         $0
                             .resizable()
                             .frame(width: 100, height: 100)
@@ -30,22 +29,24 @@ struct ProfileTabScreen: View {
                         .font(.largeTitle)
                     Text(user.email)
                         .font(.footnote)
-                    Text("volunteer-hours-title \(user.hoursInEvents)")
-                        .font(.footnote)
-                    Spacer()
-                    .toolbar {
-                        ToolbarItem(placement: .automatic) {
-                            NavigationLink(destination: {
-                                EditProfileScreen(
-                                    viewModal: EditProfileViewModel(
-                                        user: user
-                                    )
-                                )
-                            }, label: {
-                                Text("edit-button")
-                            })
-                        }
+                    if let hours = user.hoursInEvents {
+                        Text("volunteer-hours-title \(hours)")
+                            .font(.footnote)
                     }
+                    Spacer()
+                        .toolbar {
+                            ToolbarItem(placement: .automatic) {
+                                NavigationLink(destination: {
+                                    EditProfileScreen(
+                                        viewModal: EditProfileViewModel(
+                                            user: user
+                                        )
+                                    )
+                                }, label: {
+                                    Text("edit-button")
+                                })
+                            }
+                        }
                 }
                 else {
                     ProgressView()

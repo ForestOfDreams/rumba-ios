@@ -29,8 +29,8 @@ struct TasksListView: View {
 struct TaskEditListView_Previews: PreviewProvider {
     static var previews: some View {
         TasksListView(
-            tasks: [DummyData.task],
-            event: DummyData.event,
+            tasks: [DummyData().task],
+            event: DummyData().event,
             showEdit: true,
             showAssignButton: false
         )

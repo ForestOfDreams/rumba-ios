@@ -25,9 +25,3 @@ struct CreatorEventCardView: View {
         }
     }
 }
-
-//struct CreatorEventCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CreatorEventCardView()
-//    }
-//}

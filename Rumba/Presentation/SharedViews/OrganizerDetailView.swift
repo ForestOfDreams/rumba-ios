@@ -31,7 +31,7 @@ struct OrganizerDetailView: View {
 struct OrganizerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TaskDetailView(
-            task: DummyData.task, event: DummyData.event,
+            task: DummyData().task, event: DummyData().event,
             manageMode: false, showAssignButton: true
         )
     }

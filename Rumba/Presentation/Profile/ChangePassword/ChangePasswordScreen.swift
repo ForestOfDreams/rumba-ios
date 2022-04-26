@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ChangePasswordScreen: View {
     @StateObject var viewModal: ChangePasswordViewModel = ChangePasswordViewModel()
-//    @EnvironmentObject var loginViewModel: LoginViewModel
     @EnvironmentObject var authentication: AuthenticatinViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -25,8 +25,8 @@ struct ChangePasswordScreen: View {
                         }
                     }
                     Section {
-                        TextField("new-password-placeholder", text: $viewModal.password)
-                        TextField("confirm-password-placeholder", text: $viewModal.confirmPassword)
+                        SecureField("new-password-placeholder", text: $viewModal.password)
+                        SecureField("confirm-password-placeholder", text: $viewModal.confirmPassword)
                     } footer: {
                         VStack(alignment: .leading) {
                             PasswordStrengthBarView(passwordStrength: viewModal.passwordStrength)
@@ -38,11 +38,16 @@ struct ChangePasswordScreen: View {
                 Button {
                     viewModal.onChangePassword(action: authentication.logOut)
                 } label: {
-                    Text("save-profile-btn")
+                    Text("change-password-btn")
                 }
                 .disabled(!viewModal.formIsValid)
                 .buttonStyle(PrimaryButton(color: .green))
                 .padding()
+            }
+            .onChange(of: viewModal.shouldCloseView) { newValue in
+                if newValue {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
             .navigationTitle("change-password-title")
             .navigationBarTitleDisplayMode(.inline)

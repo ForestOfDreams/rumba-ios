@@ -15,11 +15,13 @@ protocol LoginApiServiceProtocol: AnyObject {
 }
 
 final class LoginApiService:LoginApiServiceProtocol {
+    
     private var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return decoder
     }
+    
     var networker: NetworkerProtocol
     
     func loginUser(_ form: LoginForm) -> AnyPublisher<LoginResponse, Error> {

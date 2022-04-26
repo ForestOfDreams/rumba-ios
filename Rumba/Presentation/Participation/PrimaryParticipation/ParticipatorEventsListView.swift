@@ -48,7 +48,7 @@ struct ParticipatedListView_Previews: PreviewProvider {
     @State static var filterType = FilterType.all
     static var previews: some View {
         ParticipatorEventsListView(
-            events: [DummyData.event],
+            events: [DummyData().event, DummyData().event, DummyData().event],
             onRefresh: {},
             searchText: $searchText,
             filterType: $filterType

@@ -28,6 +28,6 @@ struct ParticipatorEventCardView: View {
 
 struct ParticipatorEventCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipatorEventCardView(event: DummyData.event)
+        ParticipatorEventCardView(event: DummyData().event)
     }
 }

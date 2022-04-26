@@ -292,7 +292,7 @@ extension EventEditViewModel {
         Publishers.CombineLatest($endDate, $startDate)
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map { endDate, startDate in
-                return endDate >= startDate
+                return endDate > startDate
             }
             .eraseToAnyPublisher()
     }
@@ -346,13 +346,13 @@ extension EventEditViewModel {
         case endDateInPast = "event-end-date-in-past"
         case endDateEarlierThanStartDate = "event-end-date-earlier-than-start-date"
     }
-
+    
     enum EventMainErrorMessage: String {
         case titleTooShort = "event-title-too-short"
         case titleTooLong = "event-title-too-long"
         case descriptionTooShort = "event-description-too-short"
     }
-
+    
     enum EventLocationErrorMessage: String {
         case locationIsEmpty = "event-location-is-empty"
     }
