@@ -91,19 +91,23 @@ struct EventEditScreen: View {
         .navigationTitle(viewModel.isEditMode ? "edit-event-title" : "create-event-title")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    viewModel.onSave()
-                } label: {
-                    Image(systemName: "square.and.arrow.down")
-                }
-                .disabled(!viewModel.isFormValid)
-            }
+            editButton
         }
         .onChange(of: viewModel.shouldCloseView) { newValue in
             if newValue {
                 presentationMode.wrappedValue.dismiss()
             }
+        }
+    }
+    
+    var editButton: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                viewModel.onSave()
+            } label: {
+                Image(systemName: "square.and.arrow.down")
+            }
+            .disabled(!viewModel.isFormValid)
         }
     }
 }

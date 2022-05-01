@@ -82,19 +82,23 @@ struct TaskEditScreen: View {
         .navigationTitle(viewModal.isEditMode ? "edit-task-title" : "create-task-title")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    viewModal.onSave()
-                } label: {
-                    Image(systemName: "square.and.arrow.down")
-                }
-                .disabled(!viewModal.isFormValid)
-            }
+            saveButton
         }
         .onChange(of: viewModal.shouldCloseView) { newValue in
             if newValue {
                 presentationMode.wrappedValue.dismiss()
             }
+        }
+    }
+    
+    var saveButton: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                viewModal.onSave()
+            } label: {
+                Image(systemName: "square.and.arrow.down")
+            }
+            .disabled(!viewModal.isFormValid)
         }
     }
 }

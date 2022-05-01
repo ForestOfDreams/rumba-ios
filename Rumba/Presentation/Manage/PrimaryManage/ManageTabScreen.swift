@@ -28,13 +28,17 @@ struct ManageTabScreen: View {
             })
             .navigationBarTitle("manage-title", displayMode: .large)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        EventEditScreen(viewModel: EventEditViewModel())
-                    } label: {
-                        Image(systemName: "plus.square")
-                    }
-                }
+                addButton
+            }
+        }
+    }
+    
+    var addButton: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            NavigationLink {
+                EventEditScreen(viewModel: EventEditViewModel())
+            } label: {
+                Image(systemName: "plus.square")
             }
         }
     }

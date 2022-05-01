@@ -35,17 +35,7 @@ struct ProfileTabScreen: View {
                     }
                     Spacer()
                         .toolbar {
-                            ToolbarItem(placement: .automatic) {
-                                NavigationLink(destination: {
-                                    EditProfileScreen(
-                                        viewModal: EditProfileViewModel(
-                                            user: user
-                                        )
-                                    )
-                                }, label: {
-                                    Text("edit-button")
-                                })
-                            }
+                            editButton(user: user)
                         }
                 }
                 else {
@@ -55,14 +45,32 @@ struct ProfileTabScreen: View {
             .onAppear(perform: viewModel.getCurrentUser)
             .navigationTitle("profile-title")
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button {
-                        authenticatiomViewModel.logOut()
-                    } label: {
-                        Image(systemName: "rectangle.portrait.and.arrow.right")
-                    }
-                }
+                logoutButton
             }
+        }
+    }
+    
+    var logoutButton: some ToolbarContent {
+        ToolbarItem(placement: .cancellationAction) {
+            Button {
+                authenticatiomViewModel.logOut()
+            } label: {
+                Image(systemName: "rectangle.portrait.and.arrow.right")
+            }
+        }
+    }
+    
+    func editButton(user: User) -> some ToolbarContent {
+        ToolbarItem(placement: .automatic) {
+            NavigationLink(destination: {
+                EditProfileScreen(
+                    viewModal: EditProfileViewModel(
+                        user: user
+                    )
+                )
+            }, label: {
+                Text("edit-button")
+            })
         }
     }
 }

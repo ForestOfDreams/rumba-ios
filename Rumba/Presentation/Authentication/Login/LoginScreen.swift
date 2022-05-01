@@ -46,16 +46,18 @@ struct LoginScreen: View {
                 .padding(.bottom)
             }
             .navigationTitle("login-title")
-            .alert(isPresented: self.$viewModel.showAlert, content: {
-                Alert(
-                    title: Text("error-title"),
-                    message: Text(viewModel.alertMessage),
-                    dismissButton: .default(
-                        Text("OK!"),
-                        action: {}
-                    )
-                )
-            })
+            .alert(isPresented: self.$viewModel.showAlert, content: errorAlert)
         }
+    }
+    
+    func errorAlert() -> Alert {
+        Alert(
+            title: Text("error-title"),
+            message: Text(viewModel.alertMessage),
+            dismissButton: .default(
+                Text("OK!"),
+                action: {}
+            )
+        )
     }
 }

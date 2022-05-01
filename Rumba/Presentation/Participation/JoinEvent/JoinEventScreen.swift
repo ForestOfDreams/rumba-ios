@@ -22,20 +22,10 @@ struct JoinEventScreen: View {
                 }
                 .navigationTitle("join-event-title")
                 .navigationBarTitleDisplayMode(.inline)
-                .alert(isPresented: self.$viewModel.showAlert, content: {
-                    Alert(
-                        title: Text("error-title"),
-                        message: Text(viewModel.alertMessages.joined(separator: " ")),
-                        dismissButton: .default(
-                            Text("OK!"),
-                            action: {}
-                        )
-                    )
-                    
-                })
+                .alert(isPresented: self.$viewModel.showAlert, content: errorSheet)
                 .onChange(of: viewModel.shouldCloseView) { newValue in
                     if newValue {
-                        dismiss.wrappedValue = false 
+                        dismiss.wrappedValue = false
                     }
                 }
             }
@@ -43,5 +33,16 @@ struct JoinEventScreen: View {
                 Text("invition-link-incorrect")
             }
         }
+    }
+    
+    func errorSheet() -> Alert {
+        Alert(
+            title: Text("error-title"),
+            message: Text(viewModel.alertMessages.joined(separator: " ")),
+            dismissButton: .default(
+                Text("OK!"),
+                action: {}
+            )
+        )
     }
 }

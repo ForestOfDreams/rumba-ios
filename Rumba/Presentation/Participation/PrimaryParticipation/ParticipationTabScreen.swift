@@ -26,14 +26,7 @@ struct ParticipationTabScreen: View {
             })
             .navigationBarTitle("participation-title", displayMode: .large)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        viewModel.isPresentingScanner = true
-                    } label: {
-                        Image(systemName: "qrcode.viewfinder")
-                    }
-                    
-                }
+                qrCodeButton
             }
         }
         .sheet(isPresented: $viewModel.isPresentingScanner) {
@@ -50,6 +43,16 @@ struct ParticipationTabScreen: View {
         }
         .onOpenURL { url in
             viewModel.openDeepLink(url: url)
+        }
+    }
+    
+    var qrCodeButton: some ToolbarContent  {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                viewModel.isPresentingScanner = true
+            } label: {
+                Image(systemName: "qrcode.viewfinder")
+            }
         }
     }
 }

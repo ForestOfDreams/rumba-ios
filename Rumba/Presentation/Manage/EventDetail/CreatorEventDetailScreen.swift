@@ -22,17 +22,7 @@ struct CreatorEventDetailScreen: View {
                 )
                 .navigationTitle(event.title)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink {
-                            EventEditScreen(
-                                viewModel: EventEditViewModel(
-                                    editingEventId: event.eventId
-                                )
-                            )
-                        } label: {
-                            Text("edit-button")
-                        }
-                    }
+                    editButton(eventId: event.eventId)
                 }
             }
             else {
@@ -41,6 +31,20 @@ struct CreatorEventDetailScreen: View {
         }
         .onAppear {
             viewModel.fetchEvent()
+        }
+    }
+    
+    func editButton(eventId: Int) -> some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            NavigationLink {
+                EventEditScreen(
+                    viewModel: EventEditViewModel(
+                        editingEventId: eventId
+                    )
+                )
+            } label: {
+                Text("edit-button")
+            }
         }
     }
 }

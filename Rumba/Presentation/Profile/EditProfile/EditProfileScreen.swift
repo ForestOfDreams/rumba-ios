@@ -53,13 +53,7 @@ struct EditProfileScreen: View {
         .navigationTitle("edit-profile-title")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    viewModal.onClear()
-                } label: {
-                    Text("restore-button")
-                }
-            }
+            restoreButton
         }
         .sheet(isPresented: $showChangePasswordScreen) {
             ChangePasswordScreen()
@@ -67,6 +61,16 @@ struct EditProfileScreen: View {
         .onChange(of: viewModal.shouldCloseView) { newValue in
             if newValue {
                 presentationMode.wrappedValue.dismiss()
+            }
+        }
+    }
+    
+    var restoreButton: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                viewModal.onClear()
+            } label: {
+                Text("restore-button")
             }
         }
     }

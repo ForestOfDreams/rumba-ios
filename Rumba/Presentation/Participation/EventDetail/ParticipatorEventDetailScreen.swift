@@ -32,14 +32,7 @@ struct ParticipatorEventDetailScreen: View {
         }
         .navigationTitle(viewModel.event?.title ?? "")
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    viewModel.fetchEvent()
-                    viewModel.fetchMyTask()
-                } label: {
-                    Image(systemName: "arrow.clockwise.circle")
-                }
-            }
+            reloadButton
         }
         .onChange(of: viewModel.shouldCloseView) { newValue in
             if newValue {
@@ -48,5 +41,16 @@ struct ParticipatorEventDetailScreen: View {
         }
         .onAppear(perform: viewModel.fetchEvent)
         .onAppear(perform: viewModel.fetchMyTask)
+    }
+    
+    var reloadButton: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                viewModel.fetchEvent()
+                viewModel.fetchMyTask()
+            } label: {
+                Image(systemName: "arrow.clockwise.circle")
+            }
+        }
     }
 }
